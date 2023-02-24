@@ -1,6 +1,4 @@
 E-Project DISM
 
-Members: Muhammad Umer Ejaz / Aiman Hussain / 	
-Syed Muhammad Osija Raza Rizvi / Muhammad Moiz
-
+Members: Muhammad Umer Ejaz / Aiman Hussain 	
 Topic: Vaccination Booking System
