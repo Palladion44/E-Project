@@ -1,3 +1,8 @@
+<?php 
+include "config.php";
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,13 +25,13 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
-                                        <form>
+                                        <form  action="login.php" method="post">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
+                                                <input name="adminname" class="form-control" id="inputEmail" type="text" placeholder="name@example.com" />
                                                 <label for="inputEmail">Email address</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" type="password" placeholder="Password" />
+                                                <input name="password" class="form-control" id="inputPassword" type="password" placeholder="Password" />
                                                 <label for="inputPassword">Password</label>
                                             </div>
                                             <div class="form-check mb-3">
@@ -35,7 +40,7 @@
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="password.html">Forgot Password?</a>
-                                                <a class="btn btn-primary" href="index.html">Login</a>
+                                                <button class="btn btn-primary" name="login" href="index.html">Login</button>
                                             </div>
                                         </form>
                                     </div>
@@ -67,3 +72,32 @@
         <script src="js/scripts.js"></script>
     </body>
 </html>
+<?php
+if (isset($_POST['login'])) {
+
+$useremail = $_POST['adminname'];
+$password = $_POST['password'];
+
+$login = "SELECT * FROM admin WHERE AdminName = '$useremail' AND  AdminPassword = '$password' ";
+
+$data = mysqli_query($conn, $login);
+$row = mysqli_fetch_assoc($data);
+// $userID = $row['UserID']
+// $userName = $row['userName
+
+
+
+
+if ($row == 0) {
+
+    echo "Login Failed";
+    
+    echo "<script>window.location.href = 'login.php';</script>";
+} else {
+    $_SESSION['user'] = $userName;
+    
+
+
+    echo "<script>window.location.href = 'index.php';</script>";
+}
+}?>
