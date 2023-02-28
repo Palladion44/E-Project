@@ -28,7 +28,7 @@ include "config.php";
                                         <form  action="login.php" method="post">
                                             <div class="form-floating mb-3">
                                                 <input name="adminname" class="form-control" id="inputEmail" type="text" placeholder="name@example.com" />
-                                                <label for="inputEmail">Email address</label>
+                                                <label for="inputEmail">UserName</label>
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input name="password" class="form-control" id="inputPassword" type="password" placeholder="Password" />
