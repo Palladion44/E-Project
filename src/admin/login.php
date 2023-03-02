@@ -1,5 +1,6 @@
 <?php 
 include "config.php";
+session_start();
 
  ?>
 
@@ -74,30 +75,32 @@ include "config.php";
 </html>
 <?php
 if (isset($_POST['login'])) {
-
-$useremail = $_POST['adminname'];
-$password = $_POST['password'];
-
-$login = "SELECT * FROM admin WHERE AdminName = '$useremail' AND  AdminPassword = '$password' ";
-
-$data = mysqli_query($conn, $login);
-$row = mysqli_fetch_assoc($data);
-// $userID = $row['UserID']
-// $userName = $row['userName
-
-
-
-
-if ($row == 0) {
-
-    echo "Login Failed";
     
-    echo "<script>window.location.href = 'login.php';</script>";
-} else {
-    $_SESSION['user'] = $userName;
+    $useremail = $_POST['adminname'];
+    $password = $_POST['password'];
     
-
-
+    $login = "SELECT * FROM admin WHERE AdminName = '$useremail' AND  AdminPassword = '$password' ";
+    
+    $data = mysqli_query($conn, $login);
+    $row = mysqli_fetch_assoc($data);
+    // $userID = $row['UserID']
+    $userName = $row['AdminName'];
+    
+    
+    
+    
+    if ($row == 0) {
+        
+        echo "Login Failed";
+        
+        echo "<script>window.location.href = 'login.php';</script>";
+    } else {
+        $_SESSION['user'] = $userName;
+        echo $_SESSION['user'] ;
+        // echo $_SESSION['user'];
+        
+        
+        
     echo "<script>window.location.href = 'index.php';</script>";
 }
 }?>
