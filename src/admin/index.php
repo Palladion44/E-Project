@@ -1,6 +1,5 @@
 <?php
 
-include "config.php";
 session_start();
 
 $username = $_SESSION['user'];
@@ -190,31 +189,77 @@ $username = $_SESSION['user'];
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
+                                        <th>Parent_Id</th>
                                             <th>ParentName</th>
                                             <th>ParentEmail</th>
-                                            <th>ParenPassword</th>
+                                            <th>ParentPassword</th>
                                            
                                         </tr>
                                     </thead>
                               
                                     <tbody>
+    <h1>Parents</h1>
+                                    
                                         <?php
-                                        $parentscript = 'SELECT * FROM parents';
-                                        $res = mysqli_query($conn, $parentscript);
-
+                                        
+                                            include "config.php";
+                                        $res = mysqli_query($conn, "SELECT * FROM parents");
+                                        $row = mysqli_fetch_assoc($res);
                                         ?>
-                                        <?php while($row = mysqli_fetch_assoc($res));{ ?>
+                                        <?php while($row = mysqli_fetch_assoc($res)){ ?>
                                         
                                         <tr>
+                                        <td><?php echo $row["parent_id"]  ?></td>
+
                                             <td><?php echo $row["parentname"]  ?></td>
                                             <td> <?php echo $row["parentemail"]  ?></td>
                                             <td><?php echo $row["parentpassword"] ?></td>
                                            
                                         </tr>
                                        
-                                   <?php }?>
+                                   <?php } ?>
                                     </tbody>
+
+
+                                    
                                 </table>
+                                <!-- <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                        <th>Parent_Id</th>
+                                            <th>ParentName</th>
+                                            <th>ParentEmail</th>
+                                            <th>ParentPassword</th>
+                                           
+                                        </tr>
+                                    </thead>
+                              
+                                    <tbody>
+
+                                    
+                                        <?php
+                                        
+                                            include "config.php";
+                                        $res = mysqli_query($conn, "SELECT * FROM hospitals");
+                                        $row = mysqli_fetch_assoc($res);
+                                        ?>
+                                        <?php while($row = mysqli_fetch_assoc($res)){ ?>
+                                        
+                                        <tr>
+                                        <td><?php echo $row["parent_id"]  ?></td>
+
+                                            <td><?php echo $row["parentname"]  ?></td>
+                                            <td> <?php echo $row["parentemail"]  ?></td>
+                                            <td><?php echo $row["parentpassword"] ?></td>
+                                           
+                                        </tr>
+                                       
+                                   <?php } ?>
+                                    </tbody>
+
+
+                                    
+                                </table> -->
                             </div>
                         </div>
                     </div>
@@ -222,7 +267,7 @@ $username = $_SESSION['user'];
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
+                            <div class="text-muted">Copyright Your Website 2022</div>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;
