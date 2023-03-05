@@ -7,10 +7,13 @@
     body{
      background-image: url(bgL.jpg);
      background-size: cover;
-     background-position: fixed;
+     background-position: fixed;    
      width:100%;
      height:100vh;
      background-repeat: no-repeat;
+     }
+     #Login{
+        margin-left: 45px;
      }
 </style>
 </head>
@@ -27,7 +30,7 @@
             <input type="text" class="input-feild" placeholder="User Id"required>
             <input type="password" class="input-feild" placeholder="Enter Password"required>
             <br>
-            <input type="checkbox" class="check-box"><span> Remember  Password</span>
+            <input type="checkbox" class="check-box"><span> Remember Me</span>
             <button type="Submit" name="Parentlogin" class="submit-btn"> Login </button>
          </form>
 
@@ -37,8 +40,9 @@
             <input type="email" name="regemail" class="input-feild" placeholder="Email Id"required>
             <input type="password" name="regpassword" class="input-feild" placeholder="Enter Password"required>
             <br>
-            <input type="checkbox" name="terms" class="check-box"><span> I agree to the teram sand conditions</span>
-            <button type="Submit"  name="ParentRegister" class="submit-btn"> Register  </button>
+            <input required type="checkbox" name="terms" class="check-box"><span> I agree to the teram sand conditions</span>
+            <p id="userregistered"></p>
+            <button type="Submit" id="submit" name="ParentRegister" class="submit-btn"> Register  </button>
          </form>
          </div>
     </div>
@@ -53,11 +57,12 @@
             z.style.left = "110px";
         }
         function login(){
-            x.style.left = "50px";
+            x.style.left = "0px";
             y.style.left = "450px";
             z.style.left = "0px";
         }
-
+        
+         
     </script>
 </body>
 </html>
@@ -81,8 +86,8 @@ VALUES
 
 if (mysqli_query($conn,$insert)) {
    
-    echo "User Registered !";
-    echo "<script>window.location.href = 'parentLoginReg.php';</script>"; 
+    echo '<script type="text/javascript">document.getElementById("userregistered").innerHTML="helllllll" ;</script>
+    ';
 
 } else 
 {
@@ -94,4 +99,35 @@ var_dump(mysqli_query($conn,$insert));
 
 }
 
+
+session_start();
+if (isset($_POST['Parentlogin'])) {
+
+    $useremail = $_POST['email'];
+    $password = $_POST['password'];
+
+    $login = "SELECT * FROM USERDETAILS WHERE useremail = '$useremail' AND  userpassword = '$password' ";
+
+    $data = mysqli_query($conn, $login);
+    $row = mysqli_fetch_assoc($data);
+    $username = $row['username'];
+
+
+
+
+    if ($row == 0) {
+
+        echo "Login Failed";
+
+        echo '<script type="text/javascript"> window.location="login.php";</script>';
+
+        
+        
+    }else{
+   
+        $_SESSION['user'] = $username;
+        echo '<script type="text/javascript"> </script>';
+
+}
+}
 ?>
