@@ -71,7 +71,7 @@ include "config.php";
 if(isset($_POST['ParentRegister'])){
 
 $regparentname = $_POST['regparentname'];
-$regemail= $_POST['regpemail'];
+$regemail= $_POST['regemail'];
 $regpassword= sha1( $_POST['regpassword']);
 
 $insert = "INSERT INTO parents(parentname , parentemail , parentpassword) 
