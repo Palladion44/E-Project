@@ -77,7 +77,8 @@ session_start();
 if (isset($_POST['login'])) {
     
     $useremail = $_POST['adminname'];
-    $password = $_POST['password'];
+       $password = sha1($_POST['password']);
+
     
     $login = "SELECT * FROM admin WHERE AdminName = '$useremail' AND  AdminPassword = '$password' ";
     
