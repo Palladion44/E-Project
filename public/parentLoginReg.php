@@ -20,6 +20,8 @@
 <body>
     <div class="hero">
         <div class="from-box">
+        <h3 id="userregistered"></h3>
+
         <div class="button-box">
             <div id="btn"></div>
             <button type="button" class="toggle-btn" onclick="login()">Login In</button>
@@ -27,8 +29,8 @@
          </div>
         
         <form method="post" action="parentLoginReg.php"  id="Login" class="input-group">
-            <input type="text" class="input-feild" placeholder="User Id"required>
-            <input type="password" class="input-feild" placeholder="Enter Password"required>
+            <input type="text" class="input-feild" name="username" placeholder="Enter UserName"required>
+            <input type="password" class="input-feild" name="password" placeholder="Enter Password"required>
             <br>
             <input type="checkbox" class="check-box"><span> Remember Me</span>
             <button type="Submit" name="Parentlogin" class="submit-btn"> Login </button>
@@ -41,7 +43,6 @@
             <input type="password" name="regpassword" class="input-feild" placeholder="Enter Password"required>
             <br>
             <input required type="checkbox" name="terms" class="check-box"><span> I agree to the teram sand conditions</span>
-            <p id="userregistered"></p>
             <button type="Submit" id="submit" name="ParentRegister" class="submit-btn"> Register  </button>
          </form>
          </div>
@@ -69,6 +70,7 @@
 
 
 <?php
+session_start();
 
 include "config.php";
 
@@ -85,32 +87,30 @@ VALUES
 
 
 if (mysqli_query($conn,$insert)) {
+    $_SESSION["Pname"]= $regparentname;
    
-    echo '<script type="text/javascript">document.getElementById("userregistered").innerHTML="helllllll" ;</script>
-    ';
-
-} else 
-{
-
+    echo '<script type="text/javascript"> document.getElementById("userregistered").innerHtml="acha"</script>';
     
-    echo "sigup failed !";
-}
-var_dump(mysqli_query($conn,$insert));
+
+} 
+else {
+
+    echo "<script>window.location.href = 'index.php';</script>"; 
+
 
 }
+}
 
-
-session_start();
 if (isset($_POST['Parentlogin'])) {
 
-    $useremail = $_POST['email'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
+    $psquery ="SELECT parentpassword from parents where parentname = '$username'";
 
-    $login = "SELECT * FROM USERDETAILS WHERE useremail = '$useremail' AND  userpassword = '$password' ";
+    $login = "SELECT * FROM PARENTS WHERE parentname = '$username' AND  parentpassword= '$password' ";
 
     $data = mysqli_query($conn, $login);
     $row = mysqli_fetch_assoc($data);
-    $username = $row['username'];
 
 
 
@@ -119,15 +119,13 @@ if (isset($_POST['Parentlogin'])) {
 
         echo "Login Failed";
 
-        echo '<script type="text/javascript"> window.location="login.php";</script>';
+        // echo '<script type="text/javascript"> window.location="login.php";</script>';
 
         
         
-    }else{
-   
-        $_SESSION['user'] = $username;
-        echo '<script type="text/javascript"> </script>';
+    }
 
-}
+
+
 }
 ?>

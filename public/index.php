@@ -1,5 +1,6 @@
 <?php
 include "../src/config.php";
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +14,7 @@ include "../src/config.php";
 </head>
 <body>
 <?php include "../src/navbar.php"?>
+<?php echo $_SESSION["user"];?>
 </body>
 </html>
 
