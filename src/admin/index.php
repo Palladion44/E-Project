@@ -58,16 +58,32 @@ if(!isset($_SESSION['user'])){
                             
                             <div class="sb-sidenav-menu-heading">Tables</div>
                             <a class="nav-link" href="Index.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Parents
                             </a>
                             <a class="nav-link" href="hospitalTable.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Hospitals
                             </a>
-                            <a class="nav-link" href="tables.html">
+                            <a class="nav-link" href="childrenTable.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
+                                Children
+                            </a>
+                            <a class="nav-link" href="vaccinationsTable.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Vaccines
+                            </a>
+                            <a class="nav-link" href="requestsTable.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Requests
+                            </a>
+                            <a class="nav-link" href="bookingsTable.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Bookings
+                            </a>
+                            <a class="nav-link" href="vaccinationDatesTable.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                               Vaccination Dates
                             </a>
                         </div>
                     </div>

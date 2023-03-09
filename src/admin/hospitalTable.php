@@ -2,7 +2,10 @@
 
 session_start();
 
-$username = $_SESSION['user'];
+
+if(!isset($_SESSION['user'])){
+    header("location: login.php");
+}
 ?>
     
 
@@ -19,6 +22,7 @@ $username = $_SESSION['user'];
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
+
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
@@ -40,7 +44,8 @@ $username = $_SESSION['user'];
                         <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        <li><a name="logout" class="dropdown-item" href="index.php?logout=true">Logout</a></li>
+                       
                     </ul>
                 </li>
             </ul>
@@ -50,68 +55,41 @@ $username = $_SESSION['user'];
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
-                            </a>
-                            <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Layouts
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
-                                </nav>
-                            </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Pages
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Authentication
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.html">Login</a>
-                                            <a class="nav-link" href="register.html">Register</a>
-                                            <a class="nav-link" href="password.html">Forgot Password</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="401.html">401 Page</a>
-                                            <a class="nav-link" href="404.html">404 Page</a>
-                                            <a class="nav-link" href="500.html">500 Page</a>
-                                        </nav>
-                                    </div>
-                                </nav>
-                            </div>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
-                            </a>
-                            <a class="nav-link" href="tables.html">
+                            
+                            <div class="sb-sidenav-menu-heading">Tables</div>
+                            <a class="nav-link" href="Index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
+                                Parents
+                            </a>
+                            <a class="nav-link" href="hospitalTable.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Hospitals
+                            </a>
+                            <a class="nav-link" href="childrenTable.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Children
+                            </a>
+                            <a class="nav-link" href="vaccinationsTable.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Vaccines
+                            </a>
+                            <a class="nav-link" href="requestsTable.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Requests
+                            </a>
+                            <a class="nav-link" href="bookingsTable.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Bookings
+                            </a>
+                            <a class="nav-link" href="vaccinationDatesTable.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                               Vaccination Dates
                             </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                            <?php  echo $username?>
+                            <?php  echo $_SESSION['user']?>
                     </div>
                 </nav>
             </div>
@@ -186,34 +164,78 @@ $username = $_SESSION['user'];
                                 DataTable Example
                             </div>
                             <div class="card-body">
+                              
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                        <th>Parent_Id</th>
-                                            <th>ParentName</th>
-                                            <th>ParentEmail</th>
-                                            <th>ParentPassword</th>
+                                        <th>Hospital_Id</th>
+                                            <th>HospitalName</th>
+                                            <th>HospitalEmail</th>
+                                            <th>HospitalPassword</th>
+                                            <th>HospitalAddress</th>
+                                            <th>Hepatitis_B_HepB</th>
+                                            <th>RotaVirus_RV</th>
+                                            <th>Diphteria_Tetanus_Pertussis_DTaP</th>
+                                            <th>H_Influenzae_type_B_Hib</th>
+                                            <th>Pneumococcal_PCV</th>
+                                            <th>Inactivated_Poliovirus_IPV</th>
+                                            <th>Measels_MumpsRubella_MMR</th>
+                                            <th>Varicella_VAR</th>
+                                            <th>Hepatitius_A_HepA</th>
+                                            <th>Influenza</th>
+                                            <th>Operations</th>
+                                            
                                            
                                         </tr>
                                     </thead>
                               
                                     <tbody>
-    <h1>Parents</h1>
+    <h1>Hospitals</h1>
                                     
                                         <?php
                                         
                                             include "config.php";
-                                        $res = mysqli_query($conn, "SELECT * FROM parents");
+                                        $res = mysqli_query($conn, "SELECT * FROM hospitals");
                                         $row = mysqli_fetch_assoc($res);
                                         ?>
                                         <?php while($row = mysqli_fetch_assoc($res)){ ?>
                                         
                                         <tr>
-                                        <td><?php echo $row["parent_id"]  ?></td>
+                                        <td><?php echo $row["hospital_id"]  ?></td>
 
-                                            <td><?php echo $row["parentname"]  ?></td>
-                                            <td> <?php echo $row["parentemail"]  ?></td>
-                                            <td><?php echo $row["parentpassword"] ?></td>
+                                            <td><?php echo $row["hospitalname"]  ?></td>
+                                            <td> <?php echo $row["hospitalemail"]  ?></td>
+                                            <td><?php echo $row["Hospitalpassword"] ?></td>
+                                            <td><?php echo $row["hospitaladdress"] ?></td>
+                                            <td><?php echo $row["Hepatitis_B_HepB"] ?></td>
+                                            <td><?php echo $row["RotaVirus_RV"] ?></td>
+                                            <td><?php echo $row["Diphteria_Tetanus_Pertussis_DTaP"] ?></td>
+
+                                            <td><?php echo $row["H_Influenzae_type_B_Hib"] ?></td>
+
+                                            <td><?php echo $row["Pneumococcal_PCV"] ?></td>
+
+                                            <td><?php echo $row["Inactivated_Poliovirus_IPV"] ?></td>
+
+                                            <td><?php echo $row["Measels_MumpsRubella_MMR"] ?></td>
+                                            <td><?php echo $row["Varicella_VAR"] ?></td>
+
+                                            <td><?php echo $row["Hepatitius_A_HepA"] ?></td>
+
+                                            <td><?php echo $row["Influenza"] ?></td>
+
+                                            
+
+                                            
+
+                                            
+                                            <td><button class="btn btn-primary">
+                                    <a href="update.php?hospitalid=<?php echo $row["hospital_id"] ?>" class="text-white "> Update
+                                    </a></button>
+                                <button class="btn btn-danger">
+                                    <a href="delete.php?hospitalid=<?php echo $row["hospital_id"] ?>" class="text-white "> Delete</a>
+                                </button></td>
+                            
                                            
                                         </tr>
                                        
@@ -253,3 +275,15 @@ $username = $_SESSION['user'];
         <script src="js/datatables-simple-demo.js"></script>
     </body>
 </html>
+<?php
+ if (isset($_GET["logout"])) {
+    session_unset();
+    session_destroy();
+
+    header("location:login.php");
+    echo '<script>window.location.href = "login.php"</script>'; 
+
+    
+}
+
+?>
