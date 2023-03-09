@@ -19,9 +19,9 @@
 </head>
 <body>
     <div class="hero">
+    <p id="userregistered"></p>
         <div class="from-box">
-        <h3 id="userregistered"></h3>
-
+    <p id="userExists" style="display: none">User Already exists</p>            
         <div class="button-box">
             <div id="btn"></div>
             <button type="button" class="toggle-btn" onclick="login()">Login In</button>
@@ -86,18 +86,33 @@ VALUES
 ('$regparentname' , '$regemail','$regpassword')";
 
 
+
+$check_query = "SELECT * FROM parents WHERE parentemail='$regemail'";
+$check_result = mysqli_query($conn, $check_query);
+// print_r(mysqli_num_rows($check_result));
+if (mysqli_num_rows($check_result) > 0) {
+    echo "<script>alert('Username already exists');</script>";
+    // echo "<p class='fw-bolder text-center' style='color:red;'>Username already exist</p>";
+    echo "<script>document.getElementById('userExists').style.display='block'</script>";
+    echo "<script>register();</script>";
+
+
+}
+else{
+
 if (mysqli_query($conn,$insert)) {
     $_SESSION["Pname"]= $regparentname;
    
-    echo '<script type="text/javascript"> document.getElementById("userregistered").innerHtml="acha"</script>';
+    // echo '<script type="text/javascript"> document.getElementById("userregistered").innerHtml="acha"</script>';
     
 
 } 
 else {
 
-    echo "<script>window.location.href = 'index.php';</script>"; 
+    // echo "<script>window.location.href = 'index.php';</script>"; 
 
 
+}
 }
 }
 

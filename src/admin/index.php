@@ -19,6 +19,7 @@ $username = $_SESSION['user'];
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
+
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
@@ -173,12 +174,12 @@ $username = $_SESSION['user'];
                                             <td> <?php echo $row["parentemail"]  ?></td>
                                             <td><?php echo $row["parentpassword"] ?></td>
                                             <td><button class="btn btn-primary">
-                                    <a href="update.php?id=<?php echo $row["parent_id"] ?>" class="text-white "> Update
+                                    <a href="update.php?parentid=<?php echo $row["parent_id"] ?>" class="text-white "> Update
                                     </a></button>
                                 <button class="btn btn-danger">
                                     <a href="delete.php?id=<?php echo $row["parent_id"] ?>" class="text-white "> Delete</a>
                                 </button></td>
-                            <td></td>
+                            
                                            
                                         </tr>
                                        

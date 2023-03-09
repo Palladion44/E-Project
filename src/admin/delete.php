@@ -1,12 +1,12 @@
 <?php 
 include 'config.php';
-$ID = $_GET['parent_id'];
+$ID = $_GET['id'];
 $delquery = "DELETE FROM parents WHERE parent_id = '$ID' ";
-
+echo $ID;
 
 if(mysqli_query($conn,$delquery)){
 
-// header("location: index.php");
+header("location: index.php");
 echo"dede";
 
 
