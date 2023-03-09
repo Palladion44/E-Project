@@ -2,7 +2,10 @@
 
 session_start();
 
-$username = $_SESSION['user'];
+
+if(!isset($_SESSION['user'])){
+    header("location: login.php");
+}
 ?>
     
 
@@ -41,7 +44,8 @@ $username = $_SESSION['user'];
                         <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        <li><a name="logout" class="dropdown-item" href="index.php?logout=true">Logout</a></li>
+                       
                     </ul>
                 </li>
             </ul>
@@ -69,7 +73,7 @@ $username = $_SESSION['user'];
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                            <?php  echo $username?>
+                            <?php  echo $_SESSION['user']?>
                     </div>
                 </nav>
             </div>
@@ -219,3 +223,15 @@ $username = $_SESSION['user'];
         <script src="js/datatables-simple-demo.js"></script>
     </body>
 </html>
+<?php
+ if (isset($_GET["logout"])) {
+    session_unset();
+    session_destroy();
+
+    header("location:login.php");
+    echo '<script>window.location.href = "login.php"</script>'; 
+
+    
+}
+
+?>
