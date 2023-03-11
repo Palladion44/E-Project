@@ -23,6 +23,8 @@
     height: 500px;
     box-shadow: 0 0 40px 20px rgba(0,0,0,0.26);
     perspective: 1000px;
+    border-radius: 100px;
+
 }
 .inner-box{
     position:relative;
@@ -30,6 +32,8 @@
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 1s;
+    border-radius: 100px;
+
 }
 .card-front, .card-back{
     position: absolute;
@@ -37,10 +41,11 @@
     height: 100%;
     background-position: center;
     background-size: cover;
-    background-image: url(hb.png);
-    padding: 55px;
+    background: #002F5C;
+        padding: 55px;
     box-sizing: border-box;
     backface-visibility: hidden;
+    border-radius: 100px;
 }
 .card-back{
     transform: rotateY(180deg);
@@ -83,9 +88,9 @@ button{
     cursor: pointer;
 }
 .submit-btn{
-    position: relative:
+    position: relative;
 }
-.submit-btn::after{
+/* .submit-btn::after{
     content:'\27a4';
     color: #333;
     line-height: 32px;
@@ -95,10 +100,11 @@ button{
     border-radius: 50%;
     background: #fff;
     position: absolute;
-    right: -1px;
-    top: -1px;
+    right: 30px;
+    top: 30px;
 
-}
+
+} */
 span{
     font-size: 13px;
     margin-left: 10px;
@@ -128,29 +134,29 @@ span{
 <div class="card">
 <div class="inner-box" id="card">
 <div class="card-front">
-    <h2>Login</h2>
+    <h2 style="color: white">Login</h2>
     <form>
            <input type="email" class="input-box" placeholder="Email Id"required>
             <input type="Password" class="input-box" placeholder="Enter Password"required>
             <br>
-            <button type="Submit" class="submit-btn" onclick="openRegister()"> Submit </button>
-            <input type="checkbox" ><span> Remember Me</span>
-</form>
-<button type="button" class="btn">I'm New Here </button>
-<a href="">Forget Password</a>
+            <a href="">Forgot Password?</a>
+            <input type="checkbox" ><span style="color: white"> Remember Me</span>
+
+
+            <button type="Submit" class="submit-btn" onclick=""> Submit </button>
+
+<button type="button" onclick="openRegister()" class="btn">I'm New Here </button>
 </div>
 
 <div class="card-back">
-<h2>Register</h2>
+<h2 style="color: white">Register</h2>
     <form>
     <input type="textl" class="input-box" placeholder="Your Name"required>
            <input type="email" class="input-box" placeholder="Email Id"required>
             <input type="Password" class="input-box" placeholder="Enter Password"required>
-            <button type="Submit" class="submit-btn" onclick="openLogin()" > Submit </button>
-            <input type="checkbox" ><span> Remember Me</span>
+            <button type="Submit" class="submit-btn" onclick="" > Submit </button>
 </form>
-<button type="button" class="btn">I've an account</button>
-<a href="">Forget Password</a>
+<button type="button" onclick="openLogin()" class="btn">I've an account</button>
 </div>
 </div>
 </div>
