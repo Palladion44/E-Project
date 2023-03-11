@@ -1,5 +1,12 @@
 <html lang="en">
 <head>
+
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true&libraries=places"></script>
+    <script type="text/javascript" src="https://rawgit.com/Logicify/jquery-locationpicker-plugin/master/dist/locationpicker.jquery.js"></script>
+    <script src="script.js"></script>
+  
     <title>Hospitals form</title>
     <style>
         *{
@@ -16,7 +23,16 @@
             display:flex;
             align-items:center;
             justify-content: center;
+
         
+}
+
+
+.containero{
+    position:absolute;
+    left:110%;
+    bottom:5%;
+
 }
 .card{
     width: 350px;
@@ -122,10 +138,6 @@ span{
 
 }
 
-
-
-
-
         
     </style>
 </head>
@@ -151,12 +163,32 @@ span{
 <div class="card-back">
 <h2 style="color: white">Register</h2>
     <form>
-    <input type="textl" class="input-box" placeholder="Your Name"required>
-           <input type="email" class="input-box" placeholder="Email Id"required>
-            <input type="Password" class="input-box" placeholder="Enter Password"required>
-            <button type="Submit" class="submit-btn" onclick="" > Submit </button>
+    <!-- <input type="text" class="input-box" placeholder="Your Name">
+           <input type="email" class="input-box" placeholder="Email Id">
+            <input type="Password" class="input-box" placeholder="Enter Password"> -->
+        <input type="text"  id="location">
+
+ 
+
+
+            <button type="Submit" class="submit-btn" onclick="kutta()" > Submit </button>
 </form>
+<script>
+
+function kutta(){
+let locvar = document.getElementById("location").value;
+document.getElementById.innerHtml=
+<div width="300px" height="300px" class="mapouter"><div class="gmap_canvas"><iframe width="300px" height="300px" id="gmap_canvas" src="https://maps.google.com/maps?q= <?php echo' <script> ${locvar}</script>';?>&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br><style>.mapouter{position:relative;text-align:right;height:300px;width:300px;}</style><a href="https://embedgooglemap.2yu.co">html embed google map</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:300px;width:300px;}</style></div></div>
+
+}
+</script>
 <button type="button" onclick="openLogin()" class="btn">I've an account</button>
+
+      <div class="containero">
+
+
+</div>
+  
 </div>
 </div>
 </div>
