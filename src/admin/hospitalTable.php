@@ -196,7 +196,6 @@ if(!isset($_SESSION['user'])){
                                         
                                             include "config.php";
                                         $res = mysqli_query($conn, "SELECT * FROM hospitals");
-                                        $row = mysqli_fetch_assoc($res);
                                         ?>
                                         <?php while($row = mysqli_fetch_assoc($res)){ ?>
                                         

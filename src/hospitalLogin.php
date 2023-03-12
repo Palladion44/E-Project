@@ -2,10 +2,6 @@
 <head>
 
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true&libraries=places"></script>
-    <script type="text/javascript" src="https://rawgit.com/Logicify/jquery-locationpicker-plugin/master/dist/locationpicker.jquery.js"></script>
-    <script src="script.js"></script>
   
     <title>Hospitals form</title>
     <style>
@@ -85,10 +81,10 @@
     text-align: center;
     color: #fff;
 }
-::placeholder{
+/* ::placeholder{
     color:#fff;
     font-size: 12px;
-}
+} */
 button{
     width: 100%;
     background: transparent;
@@ -104,7 +100,7 @@ button{
     cursor: pointer;
 }
 .submit-btn{
-    position: relative;
+    /* position: relative; */
 }
 /* .submit-btn::after{
     content:'\27a4';
@@ -147,48 +143,56 @@ span{
 <div class="inner-box" id="card">
 <div class="card-front">
     <h2 style="color: white">Login</h2>
-    <form>
-           <input type="email" class="input-box" placeholder="Email Id"required>
-            <input type="Password" class="input-box" placeholder="Enter Password"required>
+    <form method="POST" action="HospitalLogin.php">
+           <input type="text" name="hlname" class="input-box" placeholder="Hospital Name"required>
+            <input type="Password" name="hlpassword" class="input-box" placeholder="Enter Password"required>
             <br>
-            <a href="">Forgot Password?</a>
-            <input type="checkbox" ><span style="color: white"> Remember Me</span>
-
-
-            <button type="Submit" class="submit-btn" onclick=""> Submit </button>
-
-<button type="button" onclick="openRegister()" class="btn">I'm New Here </button>
+            <a href="forgotpasswordH.php">Forgot Password?</a>
+            <div class="form-check">
+  <input name="rememberMe" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label style="color: white;" class="form-check-label" for="flexRadioDefault1">
+    Remember Me
+  </label>
+</div>
+<div class="form-check">
+  <input name="forget" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+  <label style="color: white ;" class="form-check-label" for="flexRadioDefault2">
+    Forget me
+  </label>
 </div>
 
+            <button name="hospitallogin" class="submit-btn" name="hospitallogin" onclick=""> Submit </button>
+
+<button type="button" onclick="openRegister()" class="btn">I'm New Here </button>
+</form>
+
+</div>
 <div class="card-back">
+<p id="userExists" style="display: none">User Already exists</p>            
+
 <h2 style="color: white">Register</h2>
-    <form>
-    <!-- <input type="text" class="input-box" placeholder="Your Name">
-           <input type="email" class="input-box" placeholder="Email Id">
-            <input type="Password" class="input-box" placeholder="Enter Password"> -->
-        <input type="text"  id="location">
+
+
+    <form method="POST" action="HospitalLogin.php" >
+  
 
  
 
 
-            <button type="Submit" class="submit-btn" onclick="kutta()" > Submit </button>
+<input type="text"  name="hname"  class="input-box" placeholder="Hospital Name" required>
+
+<input type="email"  name="hemail" class="input-box"  placeholder="Hospital Email" required>
+
+<input type="text" name="haddress" class="input-box" id="hosadres"  placeholder="Hospital Address" required>
+
+<input type="password" name="hpassword" class="input-box" placeholder="Hospital Password" required>
+
+<button  class="submit-btn" name="hospitalregister" > Submit </button>
+
+
+<button type="button" onclick="openLogin()" class="btn">I have an account</button>
 </form>
-<script>
-
-function kutta(){
-let locvar = document.getElementById("location").value;
-document.getElementById.innerHtml=
-<div width="300px" height="300px" class="mapouter"><div class="gmap_canvas"><iframe width="300px" height="300px" id="gmap_canvas" src="https://maps.google.com/maps?q= <?php echo' <script> ${locvar}</script>';?>&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br><style>.mapouter{position:relative;text-align:right;height:300px;width:300px;}</style><a href="https://embedgooglemap.2yu.co">html embed google map</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:300px;width:300px;}</style></div></div>
-
-}
-</script>
-<button type="button" onclick="openLogin()" class="btn">I've an account</button>
-
-      <div class="containero">
-
-
-</div>
-  
+ 
 </div>
 </div>
 </div>
@@ -206,3 +210,96 @@ document.getElementById.innerHtml=
 </body>
 
 </html>
+
+
+<?php
+session_start();
+
+include "config.php";
+
+
+if(isset($_POST['hospitalregister'])){
+
+$regparentname = $_POST['hname'];
+$regemail= $_POST['hemail'];
+$regpassword= sha1( $_POST['hpassword']);
+$regpaddress= $_POST['haddress'];
+
+
+$insert = "INSERT INTO hospitals(hospitalname , hospitalemail , Hospitalpassword ,hospitaladdress) 
+VALUES 
+('$regparentname' , '$regemail','$regpassword','$regpaddress')";
+
+
+
+$check_query = "SELECT * FROM hospitals WHERE hospitalemail='$regemail'";
+$check_result = mysqli_query($conn, $check_query);
+// print_r(mysqli_num_rows($check_result));
+if (mysqli_num_rows($check_result) > 0) {
+    echo "<script>alert('hospitalname already exists');</script>";
+    echo "<script>document.getElementById('userExists').style.display='block'</script>";
+    echo "<script>openRegister();</script>";
+
+
+}
+else{
+
+if (mysqli_query($conn,$insert)) {
+    $_SESSION["hname"]= $regparentname;
+   
+    echo '<script type="text/javascript"> document.getElementById("userregistered").innerHtml="acha"</script>';
+    
+
+} 
+else {
+
+    echo "<script>window.location.href = 'index.php';</script>"; 
+
+
+}
+}
+}
+
+
+
+if (isset($_POST['hospitallogin'])) {
+
+    $username = $_POST['hlname'];
+    $password = sha1($_POST['hlpassword']);
+
+    $login = "SELECT * FROM hospitals WHERE hospitalname = '$username' AND  Hospitalpassword = '$password' ";
+
+    $data = mysqli_query($conn, $login);
+    $row = mysqli_fetch_assoc($data);
+    // $userID = $row['UserID']
+    $userName = $row['hlname'];
+
+    if(isset($_POST['rememberMe'])){
+        setcookie('hlname',$_POST['hlname'],time()+4000);
+        setcookie('hlpassword',$_POST['hlpassword'],time()+4000);
+        echo "cookies are set";
+    }
+    else{
+        echo "cookies are not set";
+    }
+    
+    if(isset($_POST['forget'])){
+        setcookie('useremail',$_POST['email'],time()-4000);
+        setcookie('userpassword',$_POST['password'],time()-4000);
+    }
+
+
+    if ($row == 0) {
+
+        echo "<script>alert('wrong credentials');</script>";
+
+        // echo "<script>window.location.href = 'loginform.php';</script>";
+    } else {
+        $_SESSION['user'] = $userName;
+
+
+        echo "<script>window.location.href = 'index.php';</script>";
+    }
+}
+
+?>

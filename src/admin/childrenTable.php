@@ -2,7 +2,6 @@
 
 session_start();
 
-
 if(!isset($_SESSION['user'])){
     header("location: login.php");
 }
@@ -168,22 +167,13 @@ if(!isset($_SESSION['user'])){
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                        <th>Hospital_Id</th>
-                                            <th>HospitalName</th>
-                                            <th>HospitalEmail</th>
-                                            <th>HospitalPassword</th>
-                                            <th>HospitalAddress</th>
-                                            <th>Hepatitis_B_HepB</th>
-                                            <th>RotaVirus_RV</th>
-                                            <th>Diphteria_Tetanus_Pertussis_DTaP</th>
-                                            <th>H_Influenzae_type_B_Hib</th>
-                                            <th>Pneumococcal_PCV</th>
-                                            <th>Inactivated_Poliovirus_IPV</th>
-                                            <th>Measels_MumpsRubella_MMR</th>
-                                            <th>Varicella_VAR</th>
-                                            <th>Hepatitius_A_HepA</th>
-                                            <th>Influenza</th>
-                                            <th>Operations</th>
+                                        <th>Child_Id</th>
+                                            <th>ChildName</th>
+                                            <th>DateOfBirth</th>
+                                            <th>Age Y/M/D</th>
+                                            <th>Parent_id</th>
+                                            <th> Operations</th>
+                                            
                                             
                                            
                                         </tr>
@@ -195,45 +185,30 @@ if(!isset($_SESSION['user'])){
                                         <?php
                                         
                                             include "config.php";
-                                        $res = mysqli_query($conn, "SELECT * FROM hospitals");
-                                        $row = mysqli_fetch_assoc($res);
+                                        $res = mysqli_query($conn, "SELECT * FROM children");
                                         ?>
                                         <?php while($row = mysqli_fetch_assoc($res)){ ?>
                                         
                                         <tr>
-                                        <td><?php echo $row["hospital_id"]  ?></td>
+                                        <td><?php echo $row["child_id"]  ?></td>
 
-                                            <td><?php echo $row["hospitalname"]  ?></td>
-                                            <td> <?php echo $row["hospitalemail"]  ?></td>
-                                            <td><?php echo $row["Hospitalpassword"] ?></td>
-                                            <td><?php echo $row["hospitaladdress"] ?></td>
-                                            <td><?php echo $row["Hepatitis_B_HepB"] ?></td>
-                                            <td><?php echo $row["RotaVirus_RV"] ?></td>
-                                            <td><?php echo $row["Diphteria_Tetanus_Pertussis_DTaP"] ?></td>
+                                            <td><?php echo $row["childname"]  ?></td>
+                                            <td> <?php echo $row["Dateofbirth"]?></td>
+                                        
+                                            <?php include "agecalc.php";?>
 
-                                            <td><?php echo $row["H_Influenzae_type_B_Hib"] ?></td>
-
-                                            <td><?php echo $row["Pneumococcal_PCV"] ?></td>
-
-                                            <td><?php echo $row["Inactivated_Poliovirus_IPV"] ?></td>
-
-                                            <td><?php echo $row["Measels_MumpsRubella_MMR"] ?></td>
-                                            <td><?php echo $row["Varicella_VAR"] ?></td>
-
-                                            <td><?php echo $row["Hepatitius_A_HepA"] ?></td>
-
-                                            <td><?php echo $row["Influenza"] ?></td>
-
+                                            <td> <?php echo $diff->y ."/" .$diff->m ."/" .$diff->d  ?></td>
                                             
+                                            <td><?php echo $row["parent_id"] ?></td>
 
                                             
 
                                             
                                             <td><button class="btn btn-primary">
-                                    <a href="update.php?hospitalid=<?php echo $row["hospital_id"] ?>" class="text-white "> Update
+                                    <a href="update.php?childid=<?php echo $row["child_id"] ?>" class="text-white "> Update
                                     </a></button>
                                 <button class="btn btn-danger">
-                                    <a href="delete.php?hospitalid=<?php echo $row["hospital_id"] ?>" class="text-white "> Delete</a>
+                                    <a href="delete.php?childid=<?php echo $row["child_id"] ?>" class="text-white "> Delete</a>
                                 </button></td>
                             
                                            

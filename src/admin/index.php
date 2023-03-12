@@ -183,7 +183,6 @@ if(!isset($_SESSION['user'])){
                                         
                                             include "config.php";
                                         $res = mysqli_query($conn, "SELECT * FROM parents");
-                                        $row = mysqli_fetch_assoc($res);
                                         ?>
                                         <?php while($row = mysqli_fetch_assoc($res)){ ?>
                                         
@@ -197,7 +196,7 @@ if(!isset($_SESSION['user'])){
                                     <a href="update.php?parentid=<?php echo $row["parent_id"] ?>" class="text-white "> Update
                                     </a></button>
                                 <button class="btn btn-danger">
-                                    <a href="delete.php?id=<?php echo $row["parent_id"] ?>" class="text-white "> Delete</a>
+                                    <a href="delete.php?parentid=<?php echo $row["parent_id"] ?>" class="text-white "> Delete</a>
                                 </button></td>
                             
                                            
