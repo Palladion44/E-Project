@@ -155,10 +155,8 @@ span{
   </label>
 </div>
 <div class="form-check">
-  <input name="forget" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-  <label style="color: white ;" class="form-check-label" for="flexRadioDefault2">
-    Forget me
-  </label>
+  <a name="forget" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  > </a>
+  
 </div>
 
             <button name="hospitallogin" class="submit-btn" name="hospitallogin" onclick=""> Submit </button>
