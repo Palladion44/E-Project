@@ -309,6 +309,60 @@ if (isset($_GET['childid'])) {
                 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+                               
+if (isset($_GET['requestid'])) {
+    $id = $_GET['requestid'];
+    $updatereq = "UPDATE `requests` SET 
+    `approved` = '1'  WHERE  `request_id` = '$id'";
+
+
+   $updatereqres = mysqli_query($conn, $updatereq);
+    $getData = "SELECT * FROM requests WHERE  request_id = '$id' ";
+    $res = mysqli_query($conn,$getData);
+   while($row=mysqli_fetch_assoc($res)){
+    $childid = $row['child_id'];
+    $hospitalid = $row['hospital_id'];
+    $bookingdate = $row['date_of_request'];
+    $vaccinationid =$row['vaccination_id'];
+    $rr= $row['parent_id'];
+
+        $insertbook="INSERT INTO `bookings` (`parent_id`,`child_id`, `vaccination_id`, `hospital_id`, `booking_date`) VALUES ('$rr','$childid','$vaccinationid','$hospitalid','$bookingdate')";
+if($insertres=mysqli_query($conn,$insertbook)){
+
+
+        
+    $getData2 = "SELECT * FROM parents WHERE  parent_id = '$rr' ";
+    $res2 = mysqli_query($conn,$getData2);
+    while($row2=mysqli_fetch_assoc($res2)){
+        $themail= $row2['parentemail'];
+$subject = "Vaccination Status Request";
+$body = "Your Request has been approved";
+$headers = "umertheninja44@gmail.com";
+
+
+
+
+if (mail($themail, $subject, $body, $headers)) {
+ echo "Email successfully sent to $themail...";
+ echo '<script>window.location.href = "requestsTable.php"</script>';
+} 
+    }
+
+
+   };
+}
+}
                 ?>
 
 

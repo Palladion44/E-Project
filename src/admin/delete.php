@@ -1,5 +1,6 @@
 <?php 
 include 'config.php';
+if(isset($_GET['parentid'])){
 $ID = $_GET['parentid'];
 $delquery = "DELETE FROM parents WHERE parent_id = '$ID' ";
 
@@ -17,6 +18,10 @@ echo"dede";
 
 
 }
+}
+
+
+if(isset($_GET['hospitalid'])){
 $Hid = $_GET['hospitalid'];
 $delquery2 = "DELETE FROM hospitals WHERE hospital_id = '$Hid' ";
 
@@ -34,6 +39,9 @@ echo"dede";
 
 
 }
+}
+
+if(isset($_GET['childid'])){
 $chid = $_GET['childid'];
 $delquery3 = "DELETE FROM children WHERE child_id = '$chid' ";
 
@@ -51,8 +59,11 @@ echo"dede";
 
 
 }
+
+}
+if(isset($_GET['vaccid'])){
 $vacid = $_GET['vaccid'];
-$delquery4 = "DELETE FROM vaccinations WHERE vaccinations_id = '$vacid' ";
+$delquery4 = "DELETE FROM vaccinations WHERE vaccination_id = '$vacid' ";
 
 
 if(mysqli_query($conn,$delquery4)){
@@ -68,14 +79,51 @@ echo"dede";
 
 
 }
+}
+
+
+ if(isset($_GET['requestid'])){
+$reqid = $_GET['requestid'];
+$delquery5 = "DELETE FROM `requests` WHERE `request_id` = '$reqid' ";
+
+
+if(mysqli_query($conn,$delquery5)){
+    $getData = "SELECT * FROM `requests` WHERE  `request_id` = '$reqid' ";
+    $res = mysqli_query($conn,$getData);
+   while($row = mysqli_fetch_assoc($res)){
+    $rr= $row['parent_id'];
+    $getDatap = "SELECT * FROM `parents` WHERE  `parent_id` = '$rr' ";
+
+    $res2 = mysqli_query($conn,$getDatap);
+
+   while($rowp = mysqli_fetch_assoc($res2)){
+   $themail =$rowp['parentemail']; 
+   $subject = "Vaccination Status Request";
+   $body = "Your Request has been Rejected Sorry Please Try again later";
+   $headers = "umertheninja44@gmail.com";
+   
+   
+   
+   
+   if (mail($themail, $subject, $body, $headers)) 
+   {
+   } 
+}
+
+
+
+}
+header("location: requestsTable.php");
+
+} else{
+
+    echo "error";
+
+
+}
 
 
 
 
-
-
-
-
-
-
+ }
 ?>

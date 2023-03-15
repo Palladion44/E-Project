@@ -167,12 +167,13 @@ if(!isset($_SESSION['user'])){
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                        <th>Child_Id</th>
-                                            <th>ChildName</th>
-                                            <th>DateOfBirth</th>
-                                            <th>Age Y/M/D</th>
+                                        <th>Request_id</th>
                                             <th>Parent_id</th>
-                                            <th> Operations</th>
+                                            <th>Child_id</th>
+                                            <th>Hospital_id</th>
+                                            <th>vaccination_id</th>
+                                            <th>date_of_request</th>
+                                            <th>Operations</th>
                                             
                                             
                                            
@@ -180,35 +181,34 @@ if(!isset($_SESSION['user'])){
                                     </thead>
                               
                                     <tbody>
-    <h1>Children</h1>
+    <h1>Requests</h1>
                                     
                                         <?php
                                         
                                             include "config.php";
-                                        $res = mysqli_query($conn, "SELECT * FROM children");
+                                        $res = mysqli_query($conn, "SELECT * FROM requests WHERE approved = '0'");
                                         ?>
                                         <?php while($row = mysqli_fetch_assoc($res)){ ?>
                                         
                                         <tr>
-                                        <td><?php echo $row["child_id"]  ?></td>
+                                        <td><?php echo $row["request_id"]  ?></td>
 
-                                            <td><?php echo $row["childname"]  ?></td>
-                                            <td> <?php echo $row["Dateofbirth"]?></td>
+                                            <td><?php echo $row["parent_id"]  ?></td>
+                                            <td> <?php echo $row["child_id"]?></td>
+                                            <td> <?php echo $row["hospital_id"]?></td>
+                                            <td> <?php echo $row["vaccination_id"]?></td>
+                                            <td> <?php echo $row["date_of_request"]?></td>
+
+
+
                                         
-                                            <?php include "agecalc.php";?>
-
-                                            <td> <?php echo $diff->y ."/" .$diff->m ."/" .$diff->d  ?></td>
-                                            
-                                            <td><?php echo $row["parent_id"] ?></td>
 
                                             
-
-                                            
-                                            <td><button class="btn btn-primary">
-                                    <a href="update.php?childid=<?php echo $row["child_id"] ?>" class="text-white "> Update
+                                            <td><button class="btn btn-success">
+                                    <a href="update.php?requestid=<?php echo $row["request_id"] ?>" class="text-white "> Approve
                                     </a></button>
                                 <button class="btn btn-danger">
-                                    <a href="delete.php?childid=<?php echo $row["child_id"] ?>" class="text-white "> Delete</a>
+                                    <a href="delete.php?requestid=<?php echo $row["request_id"] ?>" class="text-white "> Reject</a>
                                 </button></td>
                             
                                            

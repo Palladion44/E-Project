@@ -33,12 +33,16 @@ if(isset($_POST['submit'])){
     $regemail = $_POST['regemail'];
 $check_query = "SELECT * FROM hospitals WHERE hospitalemail='$regemail'";
 $check_result = mysqli_query($conn, $check_query);
-// print_r(mysqli_num_rows($check_result));
-if (mysqli_num_rows($check_result) > 0) {
+if (mysqli_num_rows($check_result) == 0) {
     echo "<script>alert('Email is not registerd or doesnt exist');</script>";
 
 }else{
-    
+  $_SESSION['hemail']=$regemail;
+ $recoverytoken= rand(100000,999999);
+$_SESSION['token']=$recoverytoken;
+  echo'<script>window.location.href = "mailtest.php"</script>';
+
 }
+
 }
 ?>
