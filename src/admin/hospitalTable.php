@@ -164,7 +164,7 @@ if(!isset($_SESSION['user'])){
                                 DataTable Example
                             </div>
                             <div class="card-body">
-                              
+                            <div class="table-responsive">
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
@@ -244,7 +244,7 @@ if(!isset($_SESSION['user'])){
 
                                     
                                 </table>
-
+                            </div>
                             </div>
                             
                         </div>
