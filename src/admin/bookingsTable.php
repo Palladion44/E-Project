@@ -173,7 +173,6 @@ if(!isset($_SESSION['user'])){
                                             <th>Vaccination_Id</th>
                                             <th>Hospital_Id</th>
                                             <th>Booking Date</th>
-                                            <th>Approved</th>
                                             
 
 
@@ -188,24 +187,19 @@ if(!isset($_SESSION['user'])){
                                         <?php
                                         
                                             include "config.php";
-                                        $res = mysqli_query($conn, "SELECT * FROM vaccinations");
+                                        $res = mysqli_query($conn, "SELECT * FROM bookings");
                                         ?>
                                         <?php
                                          while($row = mysqli_fetch_assoc($res) ){ ?>
                                         
                                         <tr>
-                                        <td><?php echo $row["vaccination_id"]  ?></td>
+                                        <td><?php echo $row["booking_id"]  ?></td>
 
-                                            <td><?php echo $row["vaccinationname"]  ?></td>
-                                            <td> <?php echo $row["birth"]  ?></td>
-                                            <td><?php echo $row["2months"] ?></td>
-                                            <td><?php echo $row["4months"] ?></td>
-                                            <td><?php echo $row["6months"] ?></td>
-                                            <td><?php echo $row["12months"] ?></td>
-                                            <td><?php echo $row["15months"] ?></td>
-                                            <td><?php echo $row["18months"] ?></td>
-                                            <td><?php echo $row["24months"] ?></td>
-                                            <td><?php echo $row["4_5years"] ?></td>
+                                            <td><?php echo $row["parent_id"]  ?></td>
+                                            <td> <?php echo $row["child_id"]  ?></td>
+                                            <td><?php echo $row["vaccination_id"] ?></td>
+                                            <td><?php echo $row["hospital_id"] ?></td>
+                                            <td><?php echo $row["booking_date"] ?></td>
 
 
 

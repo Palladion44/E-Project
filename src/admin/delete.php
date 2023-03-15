@@ -83,44 +83,50 @@ echo"dede";
 
 
  if(isset($_GET['requestid'])){
+
+
 $reqid = $_GET['requestid'];
-$delquery5 = "DELETE FROM `requests` WHERE `request_id` = '$reqid' ";
 
-
-if(mysqli_query($conn,$delquery5)){
     $getData = "SELECT * FROM `requests` WHERE  `request_id` = '$reqid' ";
     $res = mysqli_query($conn,$getData);
    while($row = mysqli_fetch_assoc($res)){
     $rr= $row['parent_id'];
+
+
     $getDatap = "SELECT * FROM `parents` WHERE  `parent_id` = '$rr' ";
 
     $res2 = mysqli_query($conn,$getDatap);
 
-   while($rowp = mysqli_fetch_assoc($res2)){
-   $themail =$rowp['parentemail']; 
-   $subject = "Vaccination Status Request";
-   $body = "Your Request has been Rejected Sorry Please Try again later";
-   $headers = "umertheninja44@gmail.com";
-   
-   
-   
-   
-   if (mail($themail, $subject, $body, $headers)) 
-   {
-   } 
+    while($rowp = mysqli_fetch_assoc($res2)){
+        $themail =$rowp['parentemail']; 
+        $subject = "Vaccination Status Request";
+        $body = "Your Request has been Rejected Sorry Please Try again later";
+        $headers = "umertheninja44@gmail.com";
+        
+        
+        
+        
+        if (mail($themail, $subject, $body, $headers)) 
+        {
+     
+      echo "Email successfully sent to $themail...";
+     
+        } 
+     }
+     
+
+
+$delquery5 = "DELETE FROM `requests` WHERE `request_id` = '$reqid' ";
+
+mysqli_query($conn,$delquery5);
+
+
+
+
 }
 
 
-
-}
-header("location: requestsTable.php");
-
-} else{
-
-    echo "error";
-
-
-}
+echo '<script>window.location.href = "requestsTable.php"</script>';
 
 
 
