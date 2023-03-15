@@ -1,3 +1,7 @@
+<?php 
+session_start();
+
+?>
 <html lang="en">
 <head>
 
@@ -211,7 +215,6 @@ span{
 
 
 <?php
-session_start();
 
 include "config.php";
 
@@ -234,8 +237,7 @@ $check_query = "SELECT * FROM hospitals WHERE hospitalemail='$regemail'";
 $check_result = mysqli_query($conn, $check_query);
 // print_r(mysqli_num_rows($check_result));
 if (mysqli_num_rows($check_result) > 0) {
-    echo "<script>alert('hospitalname already exists');</script>";
-    echo "<script>document.getElementById('userExists').style.display='block'</script>";
+    echo "<script>alert('hospital already exists');</script>";
     echo "<script>openRegister();</script>";
 
 
@@ -270,7 +272,7 @@ if (isset($_POST['hospitallogin'])) {
     $data = mysqli_query($conn, $login);
     $row = mysqli_fetch_assoc($data);
     // $userID = $row['UserID']
-    $userName = $row['hlname'];
+    $userName = $row['hospitalname'];
 
     if(isset($_POST['rememberMe'])){
         setcookie('hlname',$_POST['hlname'],time()+4000);
@@ -291,12 +293,11 @@ if (isset($_POST['hospitallogin'])) {
 
         echo "<script>alert('wrong credentials');</script>";
 
-        // echo "<script>window.location.href = 'loginform.php';</script>";
     } else {
-        $_SESSION['user'] = $userName;
+        $_SESSION['hospitaluser'] = $_POST['hlname'];
 
 
-        echo "<script>window.location.href = 'index.php';</script>";
+    echo "<script>window.location.href = 'updatevacc.php'</script>";
     }
 }
 
