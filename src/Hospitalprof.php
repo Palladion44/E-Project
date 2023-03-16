@@ -1,13 +1,67 @@
+
+
 <?php
-
-session_start();
-
-
-if(!isset($_SESSION['hospitaluser'])){
-    echo "<script>window.location.href = 'hospitalLogin.php';</script>";
-
+include "config.php";
+session_start(); 
+?>
+<?php if(!isset($_SESSION['hospitalid'])){
+    echo "<script>window.location.href = 'hospitalLogin.php'</script>";
 }
 ?>
+<html>
+    <head>
+        <?php       
+include "header.php";
+?>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+  .containero{
+   margin: 50px;
+    align-items: center;
+    display: inline-block;
+    justify-content: center;
+    outline: 1px solid grey;
+    width: fit-content;
+    border-radius: 25px;
+  }
+  #submitbutt{
+    margin-left: 50%;
+}
+#logout:hover{
+color: red;
+}
+</style>
+    </head>
+
+<body>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><?php echo $_SESSION['hospitaluser'] ?> Panel</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="updatevacc.php">Update Available Vaccines</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Hospitalprof.php">Appointments</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="updatevacc.php">Records</a>
+        </li>
+      <li class="d-flex nav-item">
+          <a class="nav-link active" id="logout" aria-current="page" href="updatevacc.php?logout=true">Logout</a>
+        </li>
+    </div>
+  </div>
+</nav>
+
 
 
 <!DOCTYPE html> 
@@ -32,7 +86,7 @@ if(!isset($_SESSION['hospitaluser'])){
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                        <th>Parent_Id</th>
+                                        <th>bookingid</th>
                                             <th>ParentName</th>
                                             <th>ParentEmail</th>
                                             <th>ParentPassword</th>
@@ -42,17 +96,19 @@ if(!isset($_SESSION['hospitaluser'])){
                                     </thead>
                               
                                     <tbody>
-    <h1>Parents</h1>
+    <h1>Appointments</h1>
                                     
                                         <?php
-                                        
+                                        $hide = $_SESSION['hospitalid'];
                                             include "config.php";
-                                        $res = mysqli_query($conn, "SELECT * FROM parents");
+                                          $queryb =  "SELECT * FROM `bookings`  WHERE  `bookings`.`hospital_id` = '$hide';";
+                                        $resb = mysqli_query($conn,$queryb);
+                                        
                                         ?>
-                                        <?php while($row = mysqli_fetch_assoc($res)){ ?>
+                                        <?php while($rowb = mysqli_fetch_assoc($resb)){ ?>
                                         
                                         <tr>
-                                        <td><?php echo $row["parent_id"]  ?></td>
+                                        <td><?php echo $rowb["booking_id"]  ?></td>
 
                                             <td><?php echo $row["parentname"]  ?></td>
                                             <td> <?php echo $row["parentemail"]  ?></td>
