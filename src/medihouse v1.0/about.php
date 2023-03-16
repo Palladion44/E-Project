@@ -1,3 +1,6 @@
+<!-- <?php
+include "./navbar1.php";
+?> -->
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -23,7 +26,7 @@
 	<link href="assets/css/slick.css" rel="stylesheet" />
 	<link href="assets/css/themify-icons.css" rel="stylesheet" />
 	<link href="assets/css/swiper.min.css" rel="stylesheet" />
-	<link href="assets/style.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
 	<link href="assets/css/responsive.css" rel="stylesheet" />
 	<!-- ========== End Stylesheet ========== -->
   
@@ -36,7 +39,7 @@
 	
 </head>
 
-<body class="demo-1" id="bdy">		
+<body >		
 
 	<!-- Start PreLoader
     ============================================= -->
@@ -45,120 +48,7 @@
 	
 	<!-- Start header
     ============================================= -->
-    <header class="header">
-		<div class="main-navigation">
-			<div class="header-top">
-				<div class="header-1">
-					<div class="container">
-						<div class="headerslogan">
-							<h5>Get update for Covid-19 <a href="#">Get now</a></h5>
-						</div>
-					</div>
-				</div>
-				<div class="container">
-					<div class="header-logo">
-						<a class="navbar-brand" href="index.html">
-							<img src="assets/img/logo/logo.png" class="logo-display" alt="thumb">
-						</a>
-						<div class="header-logo-1">
-							<ul>
-								<li>
-									<div class="header-logo-box">
-										<div class="header-icon">
-											<i><img src="assets/img/icons/loc.png" alt="thumb"></i>
-										</div>
-										<div class="header-logo-box-info">
-											<h6>Address:</h6>
-											<h5>NewYork USA.</h5>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="header-logo-box">
-										<div class="header-icon">
-											<i><img src="assets/img/icons/timer.png" alt="thumb"></i>
-										</div>
-										<div class="header-logo-box-info">
-											<h6>Opening hours:</h6>
-											<h5>Mon-Sat (8am-6pm)</h5>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="header-logo-box">
-										<div class="header-icon">
-											<i><img src="assets/img/icons/phn.png" alt="thumb"></i>
-										</div>
-										<div class="header-logo-box-info">
-											<h6>Phone number:</h6>
-											<h5>+778-99663369</h5>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="navbar navbar-expand-lg bsnav bsnav-sticky bsnav-sticky-slide bsnav-scrollspy">
-				<div class="container">
-					<div class="menu-bg">
-						<button class="navbar-toggler toggler-spring"><span class="navbar-toggler-icon"></span></button>
-						<div class="collapse navbar-collapse justify-content-sm-end">
-							<ul class="navbar-nav navbar-mobile mr-auto">
-								<li class="nav-item dropdown">
-								<a class="nav-link" href="#">Home <i class="caret ti-plus"></i></a>
-								<ul class="navbar-nav">
-									<li class="nav-item"><a class="nav-link" href="index.html">Home varsion 1</a></li>
-									<li class="nav-item"><a class="nav-link" href="index-2.html">Home varsion 2</a></li>
-									<li class="nav-item"><a class="nav-link" href="index-3.html">Home varsion 3</a></li>
-								</ul>
-							</li>
-							<li class="nav-item dropdown">
-								<a class="nav-link" href="#">Pages <i class="caret ti-plus"></i></a>
-								<ul class="navbar-nav">
-									<li class="nav-item"><a class="nav-link" href="dept.html">Department</a></li>
-									<li class="nav-item"><a class="nav-link" href="dept-details.html">Dept. Single</a></li>
-									<li class="nav-item"><a class="nav-link" href="doctor.html">Doctor</a></li>
-									<li class="nav-item"><a class="nav-link" href="doctor-profile.html">Doctor Single</a></li>
-									<li class="nav-item"><a class="nav-link" href="404.html">404 Page</a></li>
-								</ul>
-							</li>
-							<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-							<li class="nav-item dropdown">
-								<a class="nav-link" href="#">Blog <i class="caret ti-plus"></i></a>
-								<ul class="navbar-nav">
-									<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-									<li class="nav-item"><a class="nav-link" href="single.html">Blog Details</a></li>
-								</ul>
-							</li>
-							<li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
-							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-							</ul>
-						</div>
-						<div class="header-serarch-btn">
-							<div class="header-logo-box">
-								<div class="header-search un-srs">
-									<input type="checkbox" class="frm" id="frm">
-									<label for="frm"><i class="ti ti-search"></i></label>
-									<form class="header-form">
-										<input type="text" placeholder="search ...">
-										<button type="button" class="srs-btn"><i class="ti ti-search"></i></button>
-									</form>
-								</div>
-							</div>
-							<a href="contact.html" class="header-btn"><span>Appointment</span><i class="ti ti-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="bsnav-mobile">
-				<div class="bsnav-mobile-overlay"></div>
-				<div class="navbar"></div>
-			</div>
-		</div>
-    </header>
-    <!-- End header -->	
+    
 
 	<div class="clearfix"></div>
 
@@ -269,24 +159,6 @@
 		</div>
 		<!-- End About -->
 		
-		<!-- Start CTA
-		============================================= -->
-		<div class="ct-area ctt">
-			<div class="container">
-				<div class="ct-wrapper">
-					<div class="ct-box">
-						<div class="ct-left">
-							<i><img src="assets/img/icons/send.png" alt="thumb"></i>
-							<h5 class="mb-0">Apply to the apartment to get all our benefits</h5>
-						</div>
-						<div class="ct-right">
-							<a href="#">Get Appointment</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End CTA -->
 		
 		<!-- Start Counter 
 		============================================= -->
@@ -326,161 +198,8 @@
 		</div>
 		<!-- End Counter -->
 		
-		<!-- Start Departmental Services
-		============================================= -->
-		<div class="dep-sv de-padding">
-			<div class="container">
-				<div class="row">
-					<div class="col-xl-8 offset-xl-2">
-						<div class="site-title text-center">
-							<h5>_Departmental Services_</h5>
-							<h2>Our Medihouse department services</h2>
-							<p class="mt-10">
-								We have been providing Medi House professional services since 1987. With success we care for the patients with utmost care. This is very important to us.
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="dep-sv-wrapper grid-4">
-					<div class="de-sv-box">
-						<div class="de-sv-icon">
-							<i><img src="assets/img/icons/1-s.png" alt="Thumb"></i>
-						</div>
-						<div class="de-sv-info">
-							<h5>Care at home</h5>
-							<p>
-								Excepteur cras, earum ad rhoncus inceptos conubia ligula quod. Odio Amet eiusmod porta at! 
-							</p>
-							<a href="#"><i class="fas fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-					<div class="de-sv-box">
-						<div class="de-sv-icon">
-							<i><img src="assets/img/icons/2-s.png" alt="Thumb"></i>
-						</div>
-						<div class="de-sv-info">
-							<h5>Major Operation</h5>
-							<p>
-								Excepteur cras, earum ad rhoncus inceptos conubia ligula quod. Odio Amet eiusmod porta at! 
-							</p>
-							<a href="#"><i class="fas fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-					<div class="de-sv-box">
-						<div class="de-sv-icon">
-							<i><img src="assets/img/icons/3-s.png" alt="Thumb"></i>
-						</div>
-						<div class="de-sv-info">
-							<h5>Retirement Home</h5>
-							<p>
-								Excepteur cras, earum ad rhoncus inceptos conubia ligula quod. Odio Amet eiusmod porta at! 
-							</p>
-							<a href="#"><i class="fas fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-					<div class="de-sv-box">
-						<div class="de-sv-icon">
-							<i><img src="assets/img/icons/4-s.png" alt="Thumb"></i>
-						</div>
-						<div class="de-sv-info">
-							<h5>Care at home</h5>
-							<p>
-								Excepteur cras, earum ad rhoncus inceptos conubia ligula quod. Odio Amet eiusmod porta at! 
-							</p>
-							<a href="#"><i class="fas fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-					<div class="de-sv-box">
-						<div class="de-sv-icon">
-							<i><img src="assets/img/icons/5-s.png" alt="Thumb"></i>
-						</div>
-						<div class="de-sv-info">
-							<h5>Family Medicine</h5>
-							<p>
-								Excepteur cras, earum ad rhoncus inceptos conubia ligula quod. Odio Amet eiusmod porta at! 
-							</p>
-							<a href="#"><i class="fas fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-					<div class="de-sv-box">
-						<div class="de-sv-icon">
-							<i><img src="assets/img/icons/6-s.png" alt="Thumb"></i>
-						</div>
-						<div class="de-sv-info">
-							<h5>Fast Ambulance </h5>
-							<p>
-								Excepteur cras, earum ad rhoncus inceptos conubia ligula quod. Odio Amet eiusmod porta at! 
-							</p>
-							<a href="#"><i class="fas fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-					<div class="de-sv-box">
-						<div class="de-sv-icon">
-							<i><img src="assets/img/icons/7-s.png" alt="Thumb"></i>
-						</div>
-						<div class="de-sv-info">
-							<h5>Emergency doctors</h5>
-							<p>
-								Excepteur cras, earum ad rhoncus inceptos conubia ligula quod. Odio Amet eiusmod porta at! 
-							</p>
-							<a href="#"><i class="fas fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-					<div class="de-sv-box">
-						<div class="de-sv-icon">
-							<i><img src="assets/img/icons/5-s.png" alt="Thumb"></i>
-						</div>
-						<div class="de-sv-info">
-							<h5>Laboratory Test</h5>
-							<p>
-								Excepteur cras, earum ad rhoncus inceptos conubia ligula quod. Odio Amet eiusmod porta at! 
-							</p>
-							<a href="#"><i class="fas fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End Departmental Services -->
 		
-		<!-- Start Testimonial
-		============================================= -->
-		<div class="f1-area de-pb">
-			<div class="container">
-				<div class="row">
-					<div class="col-xl-8 offset-xl-2">
-						<div class="site-title text-center">
-							<h5>_Our Patients_</h5>
-							<h2>What patients says?</h2>
-							<p class="mb-0 mt-20">
-								We have been providing Medi House professional services since 1987. With success we care for the patients with utmost care. This is very important to us.
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="f1-wrapper grid-2">
-					<div class="f1-box">
-						<h5>"We care you & your <br>
-							family"
-						</h5>
-						<p>
-							Suspendisse blanditiis, magni nonummy fugiat, ac, tempora perferendis. Neque dis minim imperdiet mus ea ullam diam metus aliquid 
-						</p>
-						<span>MD. Mandiran Rasky (patient)</span>
-					</div>
-					<div class="f1-box">
-						<h5>"We care you & your <br>
-							family"
-						</h5>
-						<p>
-							Suspendisse blanditiis, magni nonummy fugiat, ac, tempora perferendis. Neque dis minim imperdiet mus ea ullam diam metus aliquid 
-						</p>
-						<span>MD. Mandiran Rasky (patient)</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End Testimonial -->
+		
 		
 	</main>	
 	<div class="clearfix"></div>

@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <title>footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         *{
             margin:0;
@@ -21,7 +23,7 @@
             padding:100px 0 30px;
             border-top-left-radius:125px;
             font-size: 13px;
-            line-height: 20px;
+            line-height: 10px;
 
         }
         .row{
@@ -100,6 +102,12 @@
         <h3>Newsletter</h3>
         <from>
             <input type="email" placeholder="Enter your email id"required>
+            <ul class="footer-social">
+							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+						</ul>
     </div>
    </footer> 
     
