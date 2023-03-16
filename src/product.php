@@ -20,8 +20,42 @@ include "./navbar.php";
 	<!-- <link rel="stylesheet" href="style.css">
     -->
 </head>
+<style>
+.carousel-inner,#carouselExampleControls{
+  width:100%;
+  height:400px;
+}
+.carousel-control-next{
+  left:85%;
+}
+.carousel-control-prev{
+ left:0;
+}
+
+</style>
 <body>
 	<br>
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner" >
+    <div  class="carousel-item active">
+      <img src="./proimages/carousel2 (1).jpg"   id="setsize"  class="d-block w-100 img-fluid" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="./proimages/carousel2 (2).jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://wallpaperaccess.com/full/1282798.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 	<div class="container">
 		<div class="row gy-3 my-3">
 			<div class=" col-sm-6 col-md-4 col-lg-3">
