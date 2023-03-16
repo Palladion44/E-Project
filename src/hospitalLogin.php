@@ -273,6 +273,7 @@ if (isset($_POST['hospitallogin'])) {
     $row = mysqli_fetch_assoc($data);
     // $userID = $row['UserID']
     $userName = $row['hospitalname'];
+    $hospid=$row['hospital_id'];
 
     if(isset($_POST['rememberMe'])){
         setcookie('hlname',$_POST['hlname'],time()+4000);
@@ -295,6 +296,7 @@ if (isset($_POST['hospitallogin'])) {
 
     } else {
         $_SESSION['hospitaluser'] = $_POST['hlname'];
+        $_SESSION['hospitalid']=$hospid;
 
 
     echo "<script>window.location.href = 'updatevacc.php'</script>";

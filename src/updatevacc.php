@@ -1,9 +1,10 @@
 <?php
 include "config.php";
-session_start();
+session_start(); 
 ?>
-<?php if(isset($_SESSION['hospitaluser'])){
- 
+<?php if(!isset($_SESSION['hospitalid'])){
+    echo "<script>window.location.href = 'hospitalLogin.php'</script>";
+}
 ?>
 <html>
     <head>
@@ -14,7 +15,38 @@ include "header.php";
     </head>
 
 <body>
-<h1>Update Available Vaccines</h1>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><?php echo $_SESSION['hospitaluser'] ?> Panel</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="updatevacc.php">Update Available Vaccines</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Hospitalprof.php">Appointments</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="updatevacc.php">Records</a>
+        </li>
+      <li class="d-flex nav-item">
+          <a class="nav-link active btn-primary" id="logout" aria-current="page" href="updatevacc.php?logout=true">Logout</a>
+        </li>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<div class="container containero">
+<h1>Set and Update Available Vaccines</h1>
 <form action="updatevacc.php" method="POST">
 <div class="form-check">
 <input type="hidden" name="Hepatitis_B_HepB" value=0><input type="checkbox" onclick="this.previousSibling.value=1-this.previousSibling.value">
@@ -83,16 +115,34 @@ include "header.php";
     Hepatitus A (HepA)
   </label>
 </div>
-<button name="updaterecord" type="submit" class="btn btn-primary">Submit</button>
+<button name="updaterecord" type="submit" id="submitbutt" class="btn btn-primary">Set Vaccination Records</button>
 
 </form>
+</div>
 </body>
+<style>
+  .containero{
+   margin: 50px;
+    align-items: center;
+    display: inline-block;
+    justify-content: center;
+    outline: 1px solid grey;
+    width: fit-content;
+    border-radius: 25px;
+  }
+  #submitbutt{
+    margin-left: 50%;
+}
+#logout:hover{
+color: red;
+}
+</style>
 </html>
-<?php }   ?>
-<?php
 
+<?php
 if(isset($_POST['updaterecord']))
 {
+  $hospname =$_SESSION['hospitaluser'];
 $hepat=$_POST['Hepatitis_B_HepB'];
 $penuma= $_POST['Pneumococcal_PCV'];
 $polio=$_POST['Inactivated_Poliovirus_IPV'];
@@ -115,7 +165,25 @@ $rota=$_POST['RotaVirus_RV'];
 // $hepa.
 // $_SESSION['hospitaluser']
 // );
-   
+// echo($_SESSION['hospitaluser'].$_SESSION['hospitalid']);
+$thehid =$_SESSION['hospitalid'];
+   $selecthosp= "UPDATE hospitals SET Hepatitis_B_HepB = '$hepat', RotaVirus_RV = '$rota', Diphteria_Tetanus_Pertussis_DTaP = '$dip',
+   H_Influenzae_type_B_Hib = '$hib', Pneumococcal_PCV = '$penuma', Inactivated_Poliovirus_IPV = '$polio', 
+   Measels_MumpsRubella_MMR = '$measl', Varicella_VAR = '$vari', Hepatitius_A_HepA = '$hepa', Influenza = '$infl'
+   WHERE hospitals.hospital_id = $thehid;";
+  if(mysqli_query($conn,$selecthosp)){
+    echo'Records have been updated';
+  }
 
 }
+if (isset($_GET["logout"])) {
+  session_unset();
+  session_destroy();
+
+  header("location:hospitalLogin.php");
+  echo '<script>window.location.href = "hospitalLogin.php"</script>'; 
+
+  
+}
+
 ?>
