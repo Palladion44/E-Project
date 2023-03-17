@@ -10,29 +10,37 @@
             padding:0;
             font:'poppins' sans-serif;
             box-sizing: border-box;
+            
         }
-        body{
-            background:#eef8ff;
-        }
-        footer{
+      
+        footerno{
             width:100%;
-            position:absolute;
-            bottom:0;
+            position:absolute    ;
+            bottom:0%;
             background: #5DBFE6;
-            color: #fff;
+            color: ;
             padding:100px 0 30px;
             border-top-left-radius:125px;
             font-size: 13px;
             line-height: 10px;
+    
 
         }
+        footerno > div{
+            height:10px !important;
+            font-size:10px !important;
+        }
+       
+       
         .row{
-            width:85%;
+            width:100%;
             margin:auto;
             display:flex;
             flex-wrap:wrap;
             align-items:flex-start;
             justify-content:space-between;
+            height:50px;
+            
         }
         .col{
             flex-basis: 25%;
@@ -72,7 +80,7 @@
 
 </head>
 <body>
-   <footer>
+   <footerno >
     <div class="row">
         <div class="col">
             <img src="flogo2.jpg" class="logo">
@@ -109,7 +117,8 @@
 							<li><a href="#"><i class="fab fa-youtube"></i></a></li>
 						</ul>
     </div>
-   </footer> 
+    </div>
+   </footerno> 
     
 </body>
 </html>

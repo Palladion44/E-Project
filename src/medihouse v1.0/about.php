@@ -1,6 +1,4 @@
-<!-- <?php
-include "./navbar1.php";
-?> -->
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -36,37 +34,114 @@ include "./navbar1.php";
 	  <script src="assets/js/html5/html5shiv.min.js"></script>
 	  <script src="assets/js/html5/respond.min.js"></script>
 	<![endif]-->
-	
+	<style>
+
+		.site-breadcrumb{
+margin-top: 500px !important;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("iStock-1027752634-blog.jpg");
+  background-size:10%;
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center bottom;
+  background-repeat:no-repeat;
+  background-size: cover;
+}
+.cnt-1 .fun-fact .fun-desc .timer .cnt-1 .fun-fact .fun-desc .timer::before, .cnt-1 .fun-fact:first-child .fun-desc .timer::after{
+    display:none;
+}
+.footer{
+	height:50px !important;
+}
+
+.col > p{
+	font-size:5px;
+}
+.peka{
+	font-size:50px !important;
+}
+.peka > p{
+	font-size:50px;
+}
+.logo{
+            width: 90px;
+            margin-bottom: 30px;
+        }
+footerno{
+            width:100%;
+            position:relative   ;
+            bottom:0%;
+            background: #5DBFE6;
+            color: ;
+            padding:100px 0 30px;
+            border-top-left-radius:125px;
+            font-size: 13px;
+            line-height: 10px;
+    
+
+        }
+		.row{
+            width:100%;
+            margin:auto;
+            display:flex;
+            flex-wrap:wrap;
+            align-items:flex-start;
+            justify-content:space-between;
+            height:50px;
+            
+        }
+		.col{
+            width:fit-content;
+            margin-bottom: 10px;
+            position:relative;
+        }
+        .email-id{
+            width: fit-content;
+            border-bottom: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        ul li{
+            list-style:none;
+            margin:
+        }
+        ul li a{
+            text-decoration: none;
+            color: #fff;
+        }
+	</style>
 </head>
 
 <body >		
 
-	<!-- Start PreLoader
+	<!-- NVARBAR
     ============================================= -->
-	<div class="se-pre-con"></div>
+	<?php
+include "navbar1.php";
+?>
 	<!-- Start PreLoader-->
 	
 	<!-- Start header
     ============================================= -->
     
 
-	<div class="clearfix"></div>
+	<!-- <div class="clearfix"></div> -->
 
 	<main class="main">
 		
 		<!-- Start Breadcrumb
 		============================================= -->
-		<div class="site-breadcrumb" style="background: url(assets/img/breadcrumb/breadcrumb.jpg)">
-			<div class="container">
-				<div class="site-breadcrumb-wpr">
-					<h2 class="breadcrumb-title">About Us</h2>
-					<ul class="breadcrumb-menu clearfix">
-						<li><a href="index.html">Home</a></li>
-						<li class="active">about</li>
-					</ul>
-				</div>
-			</div>
-		</div>
+		<p>Scroll Up and Down this page to see the parallax scrolling effect.</p>
+
+<div class="parallax"></div>
+
+
 		<!-- End  Breadcrumb -->
 		
 		<!-- Start Feature 
@@ -168,7 +243,7 @@ include "./navbar1.php";
 					<div class="fun-fact">
 						<span class="fun-icon"><i><img src="assets/img/icons/patients-1.png" alt="thumb"></i></span>
 						<div class="fun-desc">
-							<p class="timer" data-to="12" data-speed="3000">12k</p>
+							<p class="timer" data-to="46" data-speed="3000">1</p>
 							<span class="medium">Recovery Patients</span>
 						</div>
 					</div>
@@ -202,74 +277,45 @@ include "./navbar1.php";
 		
 		
 	</main>	
-	<div class="clearfix"></div>
-	
-	<!-- Start Footer
-	============================================= -->
-	<footer class="footer-3 footer">
-		<div class="container">
-			<div class="footer-widget">
-				<div class="footer-widget-wrapper de-padding">
-					<div class="footer-widget-box ab-us">
-						<h4 class="foo-widget-title">About Us</h4>
-						<p>
-							189, Kyes road, F1 456 Caron Town. Office No 3456
-						</p>
-						<div class="footer-addr">
-							<ul>
-								<li><i class="fas fa-envelope-open"></i> Medihouse@example.com</li>
-								<li><i class="fas fa-phone"></i>Phone: 234-5825852763</li>
-							</ul>
-						</div>
-						<ul class="footer-social">
+	<footerno >
+    <div class="row">
+        <div class="col peka">
+            <img src="../flogo2.jpg" class="logo"> 
+    </div>
+    <div class="col">
+        <h6>Hospitals<h6>
+        <p>Safi</p>
+        <p>Imam Clinic</p>
+        <p> Haleem</p>
+        <p> Ziadudin</p>
+        <p class="email-id"> hospital123@gmail.com</p>
+        <h4>+92 - 0120987276</h4>
+    </div>
+    <div class="col">
+        <h3>Links</h3>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Products</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Login</a></li>
+    </div>
+    <div class="col">
+        <h3>Newsletter</h3>
+        <from>
+            <input type="email" placeholder="Enter your email id"required>
+            <ul class="footer-social">
 							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
 							<li><a href="#"><i class="fab fa-instagram"></i></a></li>
 							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
 							<li><a href="#"><i class="fab fa-youtube"></i></a></li>
 						</ul>
-					</div>
-					<div class="footer-widget-box footer-sub">
-						<h4 class="foo-widget-title">Our Departments.</h4>
-						<ul class="foo-list">
-							<li><i class="fas fa-arrow-circle-right"></i><a href="#">Medoz & intensive care</a></li>
-							<li><i class="fas fa-arrow-circle-right"></i><a href="#">Home Care</a></li>
-							<li><i class="fas fa-arrow-circle-right"></i><a href="#">Caregivers</a></li>
-							<li><i class="fas fa-arrow-circle-right"></i><a href="#">Diagnosis & Investigation</a></li>
-							<li><i class="fas fa-arrow-circle-right"></i><a href="#">Medical & Surgical</a></li>
-							<li><i class="fas fa-arrow-circle-right"></i><a href="#">Mental Health</a></li>
-						</ul>											
-					</div>
-					<div class="footer-widget-box footer-cat">
-						<h4 class="foo-widget-title">Helpful Links.</h4>
-						<ul class="foo-list">
-							<li><i class="fas fa-arrow-circle-right"></i><a href="#">Who We Are</a></li>
-							<li><i class="fas fa-arrow-circle-right"></i><a href="#">Our Team Mission</a></li>
-							<li><i class="fas fa-arrow-circle-right"></i><a href="#">History</a></li>
-							<li><i class="fas fa-arrow-circle-right"></i><a href="#">Awards since </a></li>
-							<li><i class="fas fa-arrow-circle-right"></i><a href="#">Experience Perpose</a></li>
-							<li><i class="fas fa-arrow-circle-right"></i><a href="#">Success Story</a></li>
-							<li><i class="fas fa-arrow-circle-right"></i><a href="#">Specialised Support</a></li>
-						</ul>
-					</div>
-					<div class="footer-widget-box footer-link">
-						<h4 class="foo-widget-title">Opening Hours</h4>
-						<ul class="ads">
-							<li><span>Monday - Tuesday</span><span>9.00 - 17.00</span></li>
-							<li><span>Saturday</span><span>9.00 - 16.00</span></li>
-							<li><span>Monday - Tuesday</span><span>9.00 - 17.00</span></li>
-							<li><span>Sunday</span><span> Closed</span></li>
-						</ul>
-						<div class="subscribe">
-							<form>
-								<input type="text" placeholder="Type Your Email">
-								<button type="submit"><i class="fas fa-location-arrow"></i></button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>	
+    </div>
+    </div>
+   </footerno> 
+		
+
+	
+
 	<!-- End Footer-->
 	
 	<!-- Start display none
@@ -311,7 +357,9 @@ include "./navbar1.php";
 	<script src=" assets/js/simplyCountdown.min.js"></script>
     <script src=" assets/js/jquery.easypiechart.js"></script>
     <script src=" assets/js/main.js"></script>
-	
+
+
+
 </body>
 
 </html>

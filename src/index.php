@@ -1,14 +1,10 @@
-<?php
 
-include "./navbar.php";
-?>
-<!-- <?php
-include "../src/config.php";
-?> -->
-<?php
 
-// include "./navbar.php";
+
+<?php
+// include "config.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,10 +12,13 @@ include "../src/config.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<!-- <?php include "../src/header.php"?> -->
+<?php include "header.php"?>
 
 </head>
 <body>
+    <?php 
+include "navbar1.php";
+?>
     <div class="container">
         <div class="box">
         <button type="button" class="btn1">login</button>
@@ -31,6 +30,8 @@ include "../src/config.php";
         </div>
        
 </div>
+</body>
+</html>
 
 <style>
     .container{
@@ -79,7 +80,5 @@ include "../src/config.php";
 
 
 <!-- <?php include "../src/navbar.php"?> -->
-</body>
-</html>
 
  
