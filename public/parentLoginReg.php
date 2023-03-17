@@ -139,10 +139,6 @@ if (isset($_POST['Parentlogin'])) {
         echo "cookies are not set";
     }
     
-    if(isset($_POST['forget'])){
-        setcookie('useremail',$_POST['email'],time()-4000);
-        setcookie('userpassword',$_POST['password'],time()-4000);
-    }
 
 
     if ($row == 0) {

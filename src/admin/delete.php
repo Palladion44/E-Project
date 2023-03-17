@@ -100,7 +100,7 @@ $reqid = $_GET['requestid'];
     while($rowp = mysqli_fetch_assoc($res2)){
         $themail =$rowp['parentemail']; 
         $subject = "Vaccination Status Request";
-        $body = "Your Request has been Rejected Sorry Please Try again later";
+        $body = "Your Request has been  Rejected By Admins Sorry Please Try again later or Request a different date";
         $headers = "umertheninja44@gmail.com";
         
         

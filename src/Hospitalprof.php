@@ -86,10 +86,12 @@ color: red;
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                        <th>bookingid</th>
+                                        <th>booking_id</th>
                                             <th>ParentName</th>
-                                            <th>ParentEmail</th>
-                                            <th>ParentPassword</th>
+                                            <th>ChildName</th>
+                                            
+                                            <th>Booking Date</th>
+                                            <th>Vaccination Name</th>
                                             <th>Operations</th>
                                            
                                         </tr>
@@ -104,20 +106,42 @@ color: red;
                                           $queryb =  "SELECT * FROM `bookings`  WHERE  `bookings`.`hospital_id` = '$hide';";
                                         $resb = mysqli_query($conn,$queryb);
                                         
+                                        
                                         ?>
                                         <?php while($rowb = mysqli_fetch_assoc($resb)){ ?>
                                         
                                         <tr>
                                         <td><?php echo $rowb["booking_id"]  ?></td>
+                                            <?php $pid = $rowb["parent_id"];
+                                            $chid=$rowb["child_id"];
+                                            $vacid = $rowb["vaccination_id"];
+                                            $queryp = "SELECT * FROM `parents` WHERE `parents`.`parent_id` = '$pid' ;";
+                                        $resp = mysqli_query($conn,$queryp);
+                                        $rowp = mysqli_fetch_assoc($resp);
 
-                                            <td><?php echo $row["parentname"]  ?></td>
-                                            <td> <?php echo $row["parentemail"]  ?></td>
-                                            <td><?php echo $row["parentpassword"] ?></td>
-                                            <td><button class="btn btn-primary">
+                                            ?>
+                                            <td><?php echo $rowp["parentname"]  ?></td>
+                                            <?php
+                                             $queryc = "SELECT * FROM `children` WHERE `children`.`child_id` = '$chid' ;";
+                                             $resc = mysqli_query($conn,$queryc);
+                                             $rowc = mysqli_fetch_assoc($resc);
+                                            
+                                            ?>
+
+                                            <td> <?php echo $rowc["childname"]  ?></td>
+                                            <?php
+                                             $queryv = "SELECT * FROM `vaccinations` WHERE `vaccinations`.`vaccination_id` = '$vacid' ;";
+                                             $resv = mysqli_query($conn,$queryv);
+                                             $rowv = mysqli_fetch_assoc($resv);
+                                            
+                                            ?>
+                                            <td><?php echo $rowv["vaccinationname"] ?></td>
+                                            <td><?php echo $rowb["booking_date"] ?></td>
+                                            <td><button class="btn btn-success">
                                     <a href="update.php?parentid=<?php echo $row["parent_id"] ?>" class="text-white "> Update
                                     </a></button>
                                 <button class="btn btn-danger">
-                                    <a href="delete.php?parentid=<?php echo $row["parent_id"] ?>" class="text-white "> Delete</a>
+                                    <a href="delete.php?bookingid=<?php echo $rowb["booking_id"] ?>" class="text-white "> Delete</a>
                                 </button></td>
                             
                                            
@@ -147,7 +171,11 @@ color: red;
         <script src="js/datatables-simple-demo.js"></script>
     </body>
 </html>
+<?php
 
+
+
+?>
 <?php
  if (isset($_GET["logout"])) {
     session_unset();
