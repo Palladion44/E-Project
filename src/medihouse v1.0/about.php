@@ -79,7 +79,6 @@ footerno{
             position:relative   ;
             bottom:0%;
             background: #5DBFE6;
-            color: ;
             padding:100px 0 30px;
             border-top-left-radius:125px;
             font-size: 13px;
@@ -109,7 +108,6 @@ footerno{
         }
         ul li{
             list-style:none;
-            margin:
         }
         ul li a{
             text-decoration: none;
