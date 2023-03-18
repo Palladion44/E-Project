@@ -1,14 +1,10 @@
-
-.testero{
-}
-
 *{
     margin: 0;
     padding: 0;
     /* font-family: 'Popines', sans-serif; */
 }
 #banner{
-    background: url(bgH.jpg);
+    /* background: url(bgH.jpg); */
     background-size: cover;
     background-position: center;
     height: 100vh;
