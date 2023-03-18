@@ -14,7 +14,7 @@
             vaccine
         </p> -->
         <div class="banner-text">
-            <h1> Vaccine Booking System</h1>
+            <h1 class="testero"> Vaccine Booking System</h1>
             <p>Getting Vaccinated is the best way to protect our child</p>
 </section>
 <div id="sideNav">
