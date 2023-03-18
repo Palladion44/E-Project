@@ -81,9 +81,22 @@ nav ul li a{
     font-size: 50px;
     color:#104961 ;
     font-weight: bold;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+}
+.title-text p::after{
+    content: '';
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(#195780,#33AEFF);
+    position: absolute;
+    top:-20px;
+    left: 0;
+    z-index: -1;
 }
 .title-text h1{
-    font-size: 70px;
+    font-size: 50px;
 }
 
 

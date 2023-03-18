@@ -31,8 +31,8 @@
 <section id="features">
     <div class="title-text">
         <p> Features</p>
-        <h1>Choose Vaccine</h1>
-
+        <h1>SAFE AND EFFECTIVE</h1>
+</div>
 </section>
 <div id="menuBtn">
     <image src="menu.jpg " id="menu" >
@@ -57,7 +57,7 @@
     menuBtn.onclick = function(){
         if(sideNav.style.right =="-250px"){
             sideNav.style.right ="0";
-            menu.src = "close2.png";
+            menu.src = "closeb.png";
         }
         else{
             sideNav.style.right = "-250px";
