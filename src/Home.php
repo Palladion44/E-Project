@@ -61,7 +61,7 @@
         }
         else{
             sideNav.style.right = "-250px";
-            menu.src = "close2.png";
+            menu.src = "menu.jpg";
         }
     }
 

@@ -138,7 +138,7 @@ color: red;
                                             <td><?php echo $rowv["vaccinationname"] ?></td>
                                             <td><?php echo $rowb["booking_date"] ?></td>
                                             <td><button class="btn btn-success">
-                                    <a href="update.php?parentid=<?php echo $row["parent_id"] ?>" class="text-white "> Update
+                                    <a href="update.php?parentid=<?php echo $row["parent_id"] ?>" class="text-white "> Checked
                                     </a></button>
                                 <button class="btn btn-danger">
                                     <a href="delete.php?bookingid=<?php echo $rowb["booking_id"] ?>" class="text-white "> Delete</a>
