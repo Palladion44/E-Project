@@ -15,13 +15,22 @@
      #Login{
         margin-left: 45px;
      }
+     .ussed{
+        text-align: center;
+        font-family: sans-serif;
+        font-weight: 100;
+        margin-top: 10px;
+     }
 </style>
+
 </head>
 <body>
     <div class="hero">
     <p id="userregistered"></p>
         <div class="from-box">
-    <p id="userExists" style="display: none">User Already exists</p>            
+    <p id="userExists" style="display: none">User Already exists</p>       
+    <h3 class="ussed">Login or Register as a user</h3>
+
         <div class="button-box">
             <div id="btn"></div>
             <button type="button" class="toggle-btn" onclick="login()">Login In</button>
@@ -29,8 +38,8 @@
          </div>
         
         <form method="post" action="parentLoginReg.php"  id="Login" class="input-group">
-            <input type="text" class="input-feild" name="username" placeholder="Enter UserName"required>
-            <input type="password" class="input-feild" name="password" placeholder="Enter Password"required>
+            <input type="text" value="<?php if(isset($_COOKIE['username'])) { echo $_COOKIE['username']; } ?>"  class="input-feild" name="username" placeholder="Enter UserName"required>
+            <input type="password" value="<?php if(isset($_COOKIE['userpassword'])) { echo $_COOKIE['userpassword']; } ?>"  class="input-feild" name="password" placeholder="Enter Password"required>
             <br>
             <input type="checkbox" class="check-box"><span> Remember Me</span>
             <button type="Submit" name="Parentlogin" class="submit-btn"> Login </button>
@@ -38,11 +47,11 @@
 
          
          <form method="POST" action="parentLoginReg.php"   id="register" class="input-group">
-            <input type="text" name="regparentname" class="input-feild" placeholder="UserName"required>
+            <input type="text" minlength="8" name="regparentname" class="input-feild" placeholder="UserName"required>
             <input type="email" name="regemail" class="input-feild" placeholder="Email Id"required>
-            <input type="password" name="regpassword" class="input-feild" placeholder="Enter Password"required>
+            <input type="password" minlength="8" name="regpassword" class="input-feild" placeholder="Enter Password"required>
             <br>
-            <input required type="checkbox" name="terms" class="check-box"><span> I agree to the teram sand conditions</span>
+            <input required type="checkbox" name="terms" class="check-box"><span> I agree to the terms and conditions</span>
             <button type="Submit" id="submit" name="ParentRegister" class="submit-btn"> Register  </button>
          </form>
          </div>
@@ -73,6 +82,7 @@
 session_start();
 
 include "config.php";
+error_reporting(E_ERROR | E_PARSE);
 
 
 if(isset($_POST['ParentRegister'])){
@@ -103,7 +113,7 @@ else{
 if (mysqli_query($conn,$insert)) {
     $_SESSION["Pname"]= $regparentname;
    
-    // echo '<script type="text/javascript"> document.getElementById("userregistered").innerHtml="acha"</script>';
+    echo '<script type="text/javascript"> alert("Registeration Successful continue to login")</script>';
     
 
 } 
@@ -136,20 +146,19 @@ if (isset($_POST['Parentlogin'])) {
         echo "cookies are set";
     }
     else{
-        echo "cookies are not set";
     }
     
 
 
     if ($row == 0) {
 
-        echo "Login Failed";
+       echo "<script> alert('wrong credentials')</script>";
 
         // echo "<script>window.location.href = 'loginform.php';</script>";
     } else {
         $_SESSION['user'] = $userName;
 
 
-        echo "<script>window.location.href = 'index.php';</script>";
+        echo "<script>window.location.href = '../src/Home.php';</script>";
     }
 }

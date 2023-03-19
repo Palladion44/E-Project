@@ -31,9 +31,7 @@ include "header.php";
           <a class="nav-link active" aria-current="page" href="Hospitalprof.php">Appointments</a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="updatevacc.php">Records</a>
-        </li>
+     
       <li class="d-flex nav-item">
           <a class="nav-link active btn-primary" id="logout" aria-current="page" href="updatevacc.php?logout=true">Logout</a>
         </li>

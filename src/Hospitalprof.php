@@ -52,9 +52,7 @@ color: red;
           <a class="nav-link active" aria-current="page" href="Hospitalprof.php">Appointments</a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="updatevacc.php">Records</a>
-        </li>
+    
       <li class="d-flex nav-item">
           <a class="nav-link active" id="logout" aria-current="page" href="updatevacc.php?logout=true">Logout</a>
         </li>
@@ -138,11 +136,9 @@ color: red;
                                             <td><?php echo $rowv["vaccinationname"] ?></td>
                                             <td><?php echo $rowb["booking_date"] ?></td>
                                             <td><button class="btn btn-success">
-                                    <a href="update.php?parentid=<?php echo $row["parent_id"] ?>" class="text-white "> Checked
+                                    <a href="?bookingidh=<?php echo $rowb["booking_id"] ?>" class="text-white "> Checked
                                     </a></button>
-                                <button class="btn btn-danger">
-                                    <a href="delete.php?bookingid=<?php echo $rowb["booking_id"] ?>" class="text-white "> Delete</a>
-                                </button></td>
+                                </td>
                             
                                            
                                         </tr>

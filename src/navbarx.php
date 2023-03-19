@@ -1,3 +1,6 @@
+<?php
+session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -141,44 +144,27 @@ nav ul li a{
     </style>
 </head>
 <body>
-    <section id="banner">
-        <img src="vaccinelogo.jpg" class="logo">
-        <!-- <p>
-            vaccine
-        </p> -->
-        <div class="banner-text">
-            <h1 class="testero"> Vaccine Booking System</h1>
-            <p>Getting Vaccinated is the best way to protect our child</p>
-</section>
-<?php include('navbarx.php')?>
-<!-- features -->
-<section id="features">
-    <div class="title-text">
-        <p> Features</p>
-        <h1>SAFE AND EFFECTIVE</h1>
-</div>
-<div class="features-box">
-    <div class="features">
-        <h1> SAFTY FIRST</h1>
-</div>
-<div class="features-img">
-   <div class="fa-solid fa-person-shelter"></div>
-</div>
+    
 
-</section>
-<div id="menuBtn">
-    <image src="menu.jpg " id="menu" >
+<div id="sideNav">
+<nav>
+    <ul>
+    <li><a href="" class="inactiveLink"> <?php if(isset($_SESSION['user'])){
+        $name =$_SESSION['user'];  
+    echo "Logged in as  </br> $name";
+    } else{echo"Not logged in";} ?></a></li>
+        <li><a href="#">HOME</a></li>
+        <li><a href="register.php">REGISTER</a></li>
+        <li><a href="#">PRODUTS</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="../public/parentLoginReg.php">LOGIN AS A PARENT</a></li>
+        <li><a href="hospitalLogin.php">LOGIN AS A HOSPITAL</a></li>
+        <li><a href="navbarx.php?logout=true"> Logout </a></li>
+</ul>
+</nav>
 </div>
-<!-- <div class="container">
-        <div class="box">
-        <button type="button" class="btn1">login</button>
-        <button type="button" class="btn">Register</button>
-        </div>
-        <div class="box">
-        <button type="button" class="btn1">login</button>
-        <button type="button" class="btn">Register</button>
-        </div>  -->
-        
+</body>
+</html>
 <script>
     var menuBtn = document.getElementById("menuBtn")
     var sideNav = document.getElementById("sideNav")
@@ -198,5 +184,16 @@ nav ul li a{
     }
 
 </script>
-</body>
-</html>
+
+<?php
+ if (isset($_GET["logout"])) {
+    session_unset();
+    session_destroy();
+
+    header("location:Home.php");
+    echo '<script>window.location.href = "Home.php"</script>'; 
+
+    
+}
+
+?>

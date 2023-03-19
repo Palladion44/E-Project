@@ -151,7 +151,6 @@ span{
            <input type="text" name="hlname" class="input-box" placeholder="Hospital Name"required>
             <input type="Password" name="hlpassword" class="input-box" placeholder="Enter Password"required>
             <br>
-            <a href="forgotpasswordH.php">Forgot Password?</a>
             <div class="form-check">
   <input name="rememberMe" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
   <label style="color: white;" class="form-check-label" for="flexRadioDefault1">
@@ -163,7 +162,7 @@ span{
   
 </div>
 
-            <button name="hospitallogin" class="submit-btn" name="hospitallogin" onclick=""> Submit </button>
+            <button name="hospitallogin" class="submit-btn" name="hospitallogin" onclick=""> Login </button>
 
 <button type="button" onclick="openRegister()" class="btn">I'm New Here </button>
 </form>
@@ -189,7 +188,7 @@ span{
 
 <input type="password" name="hpassword" class="input-box" placeholder="Hospital Password" required>
 
-<button  class="submit-btn" name="hospitalregister" > Submit </button>
+<button  class="submit-btn" name="hospitalregister" > Register</button>
 
 
 <button type="button" onclick="openLogin()" class="btn">I have an account</button>
