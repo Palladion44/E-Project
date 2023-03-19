@@ -127,16 +127,41 @@ nav ul li a{
 }
 .feartures-img img{
     flex-basis: 50%;
-    margin: auto;
+    margin: auto ;
 }
 .feartures-img img{
     width: 70%;
+    border-radius: 10px;
+}
+.features h1{
+    text-align: left;
+    margin-bottom: 10px:
+    font-weight: 100;
+    color:#009688;
+}
+.features-desc{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.feature-icon .fa-regular{
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    border-radius: 8px;
+    color: #009688;
+    border: 1px solid #009688;
+}
+.feature-text{
+    padding: 0 20px;
+    text-align: inotial;
 }
 
-.inactiveLink {
+/* .inactiveLink {
     pointer-events: none;
-    cursor: default;
-}
+    cursor: default; */
+
 
     </style>
 </head>
@@ -160,11 +185,18 @@ nav ul li a{
 <div class="features-box">
     <div class="features">
         <h1> SAFTY FIRST</h1>
+        <div class="features-desc">
+        <div class="feature-icon"><i class="fa-regular fa-clipboard-check"></i>
+</div>
+        <div class="feature-text"></div>
+        <p>The Vaccine will be critical to ending the pandemic.No steps were skiped in the development 
+            process, and safty was a stop priority.</p>
+</div>
 </div>
 <div class="features-img">
-   <div class="fa-solid fa-person-shelter"></div>
+   <img src="feature(1).png">
 </div>
-
+</div>
 </section>
 <div id="menuBtn">
     <image src="menu.jpg " id="menu" >
