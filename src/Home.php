@@ -154,9 +154,14 @@ nav ul li a{
     color: #009688;
     border: 1px solid #009688;
 }
-.feature-text{
+/* .feature-text{
     padding: 0 20px;
-    text-align: inotial;
+} */
+@media screen and (max-weight: 770px){
+    .title-text h1{
+    font-size: 50px;
+    padding: 30px;
+}
 }
 
 /* .inactiveLink {
@@ -187,13 +192,38 @@ nav ul li a{
     <div class="features">
         <h1> SAFTY FIRST</h1>
         <div class="features-desc">
-        <div class="feature-icon"><i class="fa-regular fa-clipboard-check"></i>
+        <div class="feature-icon">
+            <i class="fa-regular fa-clipboard-check"></i>
 </div>
-        <div class="feature-text"></div>
+        <div class="feature-text">
         <p>The Vaccine will be critical to ending the pandemic.No steps were skiped in the development 
             process, and safty was a stop priority.</p>
 </div>
 </div>
+<h1> TRIED AND TESTED</h1>
+        <div class="features-desc">
+        <div class="feature-icon">
+        <i class="fa-regular fa-magnifying-glass"></i>
+</div>
+        <div class="feature-text">
+        <p>The Vaccine will be critical to ending the pandemic.No steps were skiped in the development 
+            process, and safty was a stop priority.</p>
+</div>
+</div>
+<h1>HEGHLY EFFECTIVE </h1>
+        <div class="features-desc">
+        <div class="feature-icon">
+        <i class="fa-regular fa-hundred-points"></i>
+</div>
+        <div class="feature-text">
+        <p>The Vaccine will be critical to ending the pandemic.No steps were skiped in the development 
+            process, and safty was a stop priority.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <div class="features-img">
    <img src="feature(1).png">
 </div>
