@@ -269,7 +269,8 @@ if (isset($_GET['childid'])) {
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="email">child age</label>
-                        <input type="text" class="form-control" id="email" name="cage" value="<?php echo $cage ?>">
+                        <input type="date" name="cage" min="<?php echo date('Y-m-d', strtotime('-5 years')); ?>">
+
                     </div>
               
 

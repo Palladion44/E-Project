@@ -41,29 +41,6 @@ color: red;
     </head>
 
 <body>
-<nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><?php echo $_SESSION['hospitaluser'] ?> Panel</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="updatevacc.php">Update Available Vaccines</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="Hospitalprof.php">Appointments</a>
-        </li>
-
-    
-      <li class="d-flex nav-item">
-          <a class="nav-link active" id="logout" aria-current="page" href="updatevacc.php?logout=true">Logout</a>
-        </li>
-    </div>
-  </div>
-</nav>
 
 
 
@@ -96,18 +73,18 @@ color: red;
                                             
                                             <th>Vaccination Name</th>
                                             <th>Booking Date</th>
-                                            <th>Operations</th>
+                            
                                            
                                         </tr>
                                     </thead>
                               
                                     <tbody>
-    <h1>Today's Appointments</h1>
+    <h1> Upcoming Appointments</h1>
                                     
                                         <?php
                                         $hide = $_SESSION['hospitalid'];
                                             include "config.php"; 
-                                          $queryb =  "SELECT *   FROM `bookings`  WHERE  `bookings`.`booking_date` = '$dater' and `bookings`.`hospital_id` = '$hide' and `bookings`.`approved`= '0';";
+                                          $queryb =  "SELECT *   FROM `bookings`  WHERE  `bookings`.`booking_date` > '$dater' and `bookings`.`hospital_id` = '$hide' and `bookings`.`approved`= '0';";
                                         $resb = mysqli_query($conn,$queryb);
                                         
                                         
@@ -141,11 +118,7 @@ color: red;
                                             ?>
                                             <td><?php echo $rowv["vaccinationname"] ?></td>
                                             <td><?php echo $rowb["booking_date"] ?></td>
-                                            <td><button class="btn btn-success">
-                                    <a href="?bookingidh=<?php echo $rowb["booking_id"] ?>" class="text-white "><i class="fa-solid fa-check"></i>
-                                    </a></button>
-                                </td>
-                            
+                                  
                                            
                                         </tr>
                                        
@@ -157,13 +130,7 @@ color: red;
                                 </table>
 
                                   
-                                        </br>
-                                        </br>
-                                        </br>
-                                        </br>
-                                        </br>
-                                        </br>
-                                <iframe src="upcomingaapoint.php" height="50%" width="100%" frameborder="0"></iframe>                   
+                       
 
                     
                 
@@ -189,8 +156,8 @@ color: red;
     session_unset();
     session_destroy();
 
-    header("location:hospitalLogin.php");
-    echo '<script>window.location.href = "hospitalLogin.php"</script>'; 
+    header("location:login.php");
+    echo '<script>window.location.href = "login.php"</script>'; 
 
     
 }
