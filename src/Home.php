@@ -1,3 +1,8 @@
+
+<?php
+include("config.php");
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -196,11 +201,7 @@ nav ul li a{
         <h1> SAFTY FIRST</h1>
         <div class="features-desc">
         <div class="feature-icon">
-<<<<<<< HEAD
-            <i class="fa-regular fa-clipboard-check"></i>
-=======
         <i class="fa-solid fa-clipboard-check"></i>
->>>>>>> 2d7083cde6f5eb5d4d94f310d40b6b18b5a2056a
 </div>
         <div class="feature-text">
         <p>The Vaccine will be critical to ending the pandemic.No steps were skiped in the development 
