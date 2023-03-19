@@ -28,7 +28,7 @@ if (isset($_GET['username'])) {
         <body>
             <div class="container  mt-5">
                 <h2 class="text-center">Add Child Information</h2>
-                <form action="update.php" method="post">
+                <form action="childinsert.php" method="post">
                 <div class="mb-3 mt-3">
                         <input type="text"  class="form-control" id="email" name="pid"  hidden value="<?php echo $pid ?>">
                     </div>
@@ -60,7 +60,11 @@ if (isset($_GET['username'])) {
             $pid=$_POST['pid'];
            $cname= $_POST['cname'];
            $cage= $_POST['cage'];
-           $childinsert="INSERT INTO children(`parent_id`,`childname`,`date_of_birth`)";
+           echo $pid;
+           echo $cage;
+           echo $cname;
+           $childinsert= "INSERT INTO `children` (`childname`, `Dateofbirth`, `parent_id`) VALUES ('$cname', '$cage', '$pid');";
+           mysqli_query($conn,$childinsert);
             
         }
         

@@ -1,5 +1,6 @@
 <?php
-session_start();?>
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -149,7 +150,8 @@ nav ul li a{
 <div id="sideNav">
 <nav>
     <ul>
-    <li><a href="" class="inactiveLink"> <?php if(isset($_SESSION['user'])){
+    <li><a href="" class="inactiveLink"> <?php
+     if(isset($_SESSION['user'])){
         $name =$_SESSION['user'];  
     echo "Logged in as  </br> $name";
     } else{echo"Not logged in";} ?></a></li>
@@ -186,6 +188,8 @@ nav ul li a{
 </script>
 
 <?php
+error_reporting(E_ERROR);
+
  if (isset($_GET["logout"])) {
     session_unset();
     session_destroy();

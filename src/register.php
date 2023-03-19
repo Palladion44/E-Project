@@ -31,13 +31,18 @@ else{
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
-
+<style>
+    a{
+        text-decoration: none;
+    }
+    #shi{
+        display: inline-block;
+        margin-right: 50px;
+    }
+</style>
     <body>
         
-                       
-    <button class="btn btn-primary">
-                                    <a href="childinsert.php?username=<?php echo $_SESSION["user"] ?>" class="text-white "> Add Child
-                                    </a></button>
+  
                                     <table id="datatablesSimple">
                                     <thead>
                                         <tr>
@@ -54,7 +59,10 @@ else{
                                     </thead>
                               
                                     <tbody>
-    <h1>Children</h1>
+    <h1 id="shi" >Manage your registered children</h1>                      
+    <button class="btn btn-primary">
+                                    <a href="childinsert.php?username=<?php echo $_SESSION["user"] ?>" class="text-white "> Register a Child
+                                    </a></button>
                                     
                                         <?php
                                          $pname=$_SESSION["user"];
@@ -80,11 +88,19 @@ else{
                                             
 
                                             
-                                            <td><button class="btn btn-primary">
+                                            <td>
+                                            <button class="btn btn-success">
+                                    <a href="update.php?childid=<?php echo $row["child_id"] ?>" class="text-white "> Request Appointment
+                                    </a></button>    
+                                    <button class="btn btn-success">
+                                    <a href="update.php?childid=<?php echo $row["child_id"] ?>" class="text-white "> Show Past Records
+                                    </a></button>
+                                            
+                                            <button class="btn btn-primary">
                                     <a href="update.php?childid=<?php echo $row["child_id"] ?>" class="text-white "> Update
                                     </a></button>
                                 <button class="btn btn-danger">
-                                    <a href="delete.php?childid=<?php echo $row["child_id"] ?>" class="text-white "> Delete</a>
+                                    <a href="register.php?childid=<?php echo $row["child_id"] ?>" class="text-white ">Remove</a>
                                 </button></td>
                             
                                            
@@ -115,3 +131,32 @@ else{
 
 
 <?php }?>
+
+<?php
+
+
+?>
+<?php
+
+
+if(isset($_GET['childid'])){
+    $chid = $_GET['childid'];
+    $delquery3 = "DELETE FROM children WHERE child_id = '$chid' ";
+    
+    
+    if(mysqli_query($conn,$delquery3)){
+    
+        echo "<script>window.location.href = 'register.php';</script>";
+
+
+    
+    
+    } else{
+    
+        echo "error";
+    
+    
+    }
+
+}
+?>
