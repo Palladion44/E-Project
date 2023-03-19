@@ -38,7 +38,10 @@ if (isset($_GET['username'])) {
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="email">Date of Birth</label>
-                        <input type="date" name="cage" min="<?php echo date('Y-m-d', strtotime('-5 years')); ?>">
+                        <input type="date" name="cage" 
+       min="<?php echo date('Y-m-d', strtotime('-5 years')); ?>" 
+       max="<?php echo date('Y-m-d'); ?>">
+
 
                     </div>
               
@@ -57,7 +60,7 @@ if (isset($_GET['username'])) {
             $pid=$_POST['pid'];
            $cname= $_POST['cname'];
            $cage= $_POST['cage'];
-           $childinsert="INSERT INTO children(`parent_id`,`childname`,`dateofbirth`)";
+           $childinsert="INSERT INTO children(`parent_id`,`childname`,`date_of_birth`)";
             
         }
         
