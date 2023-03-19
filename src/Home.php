@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <?php include('header.php') ?>
+    
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- <link rel="stylesheet" href="stylesheetH.css"> -->
@@ -136,7 +139,7 @@ nav ul li a{
 }
 .features h1{
     text-align: left;
-    margin-bottom: 10px:
+    margin-bottom: 10px;
     font-weight: 100;
     color:#009688;
 }
@@ -181,13 +184,14 @@ nav ul li a{
 <section id="features">
     <div class="title-text">
         <p> Features</p>
-        <h1>SAFE AND EFFECTIVE</h1>
+        <h1>SAFE AND EFFECTIVE</h1> 
 </div>
 <div class="features-box">
     <div class="features">
         <h1> SAFTY FIRST</h1>
         <div class="features-desc">
-        <div class="feature-icon"><i class="fa-regular fa-clipboard-check"></i>
+        <div class="feature-icon">
+        <i class="fa-solid fa-clipboard-check"></i>
 </div>
         <div class="feature-text"></div>
         <p>The Vaccine will be critical to ending the pandemic.No steps were skiped in the development 
