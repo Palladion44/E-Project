@@ -159,6 +159,6 @@ if (isset($_POST['Parentlogin'])) {
         $_SESSION['user'] = $userName;
 
 
-        echo "<script>window.location.href = '../src/Home.php';</script>";
+        echo "<script>window.location.href = 'Home.php';</script>";
     }
 }

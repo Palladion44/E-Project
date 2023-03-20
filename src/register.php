@@ -25,7 +25,7 @@ else{
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Hospital Profile</title>
+        <title>Register</title>
         <?php include('header.php')?>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
@@ -83,6 +83,7 @@ else{
 
                                             <td> <?php echo $diff->y ."/" .$diff->m ."/" .$diff->d  ?></td>
                                             
+                                            
                                             <td><?php echo $row["parent_id"] ?></td>
 
                                             
@@ -90,10 +91,10 @@ else{
                                             
                                             <td>
                                             <button class="btn btn-success">
-                                    <a href="update.php?childid=<?php echo $row["child_id"] ?>" class="text-white "> Request Appointment
+                                    <a href="setappoint.php?childid=<?php echo $row["child_id"] ?>" class="text-white "> Request Appointment
                                     </a></button>    
                                     <button class="btn btn-success">
-                                    <a href="update.php?childid=<?php echo $row["child_id"] ?>" class="text-white "> Show Past Records
+                                    <a href="records.php?childid=<?php echo $row["child_id"] ?>" class="text-white "> Show Past Records
                                     </a></button>
                                             
                                             <button class="btn btn-primary">
