@@ -356,7 +356,11 @@ nav ul li a{
         <div class="features-desc">
         <div class="feature-icon">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <i class="fa-solid fa-2xl fa-clipboard-check"></i>
+=======
+        <i class="fa-solid fa-clipboard-check"></i>
+>>>>>>> 6fcb90de8c6e9ec5807bd4dbf32002ba52f83c64
 =======
         <i class="fa-solid fa-clipboard-check"></i>
 >>>>>>> 6fcb90de8c6e9ec5807bd4dbf32002ba52f83c64

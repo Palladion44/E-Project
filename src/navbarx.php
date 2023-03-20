@@ -1,7 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!-- <?php
 session_start();
 ?> -->
+=======
+
+>>>>>>> 6fcb90de8c6e9ec5807bd4dbf32002ba52f83c64
 =======
 
 >>>>>>> 6fcb90de8c6e9ec5807bd4dbf32002ba52f83c64
