@@ -97,6 +97,7 @@ $resv = mysqli_query($conn,$selectvacc);
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body>
+    <div id="vaci">
         <div class="container">
             <form action="setappoint.php" method="POST">
             <select name='vaccinationname'>
@@ -104,16 +105,39 @@ $resv = mysqli_query($conn,$selectvacc);
                 <?php
               while($rowver = mysqli_fetch_assoc($resv)){    
 ?>
-                <option value="vaccinat"><?php echo $rowver['vaccinationname'] ?></option>
+                <option value="<?php echo $rowver['vaccinationname']?>"><?php echo $rowver['vaccinationname'] ?></option>
 
 
 
 <?php }?>
 </select>
-
+<button type="submit" onclick="" name="setvacc"> confirm vaccine  </button >
             </form>
 
         </div>
+        </div>
+        <?php if(isset($_POST['setvacc'])){
+    $vaccname = $_POST['vaccinationname'];
+    echo "<script> document.getElementById('vaci').innerHTML=' Vaccine: $vaccname'; </script>";
+    ?>
+        <div class="container">
+        <form action="setappoint.php" method="POST">
+            <select name='vaccinationname'>
+
+                <?php
+              while($rowver = mysqli_fetch_assoc($resv)){    
+?>
+                <option value="<?php echo $rowver['vaccinationname']?>"><?php echo $rowver['vaccinationname'] ?></option>
+
+
+
+<?php }?>
+</select>
+<button type="submit" onclick="" name="setvacc"> confirm vaccine  </button >
+            </form>
+        </div>
+<?php } ?>
+
     </body>
 </html>
 
