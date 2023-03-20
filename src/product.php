@@ -21,12 +21,12 @@
     -->
 </head>
 <style>
-  #myCarousel{
-    background: url(carasole.3.jpg);
+  #banner{
+    background: url(bgH.jpg);
     background-size: cover;
     background-position: center;
-    height: 400px;
-  }
+    height: 500px;
+}
   .logo{
     width: 170px;
     position:absolute;
@@ -38,57 +38,26 @@
   height:400px;
   */
 
-.carousel-control-next{
-  left:85%;
+
+#cards{
+  width: 100%;
 }
-.carousel-control-prev{
- left:0;
+.title-text h1{
+    font-size: 50px;
+    padding: 30px;
+    text-align:center;
 }
 
 </style>
 <body>
-  <div>
+<section id="banner">
         <img src="vaccinelogo.jpg" class="logo">
+</section>
+<section id="cards">
+<div class="title-text">
+        <h1>search Vaccine</h1> 
 </div>
-
-  
-<div width="100%" > 
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target= "#carousel2.jpg"  data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src="./proimages/carasole3.jpg" alt="Los Angeles" style="width:100%;">
-      </div>
-
-      <div class="item">
-        <img src="chicago.jpg" alt="Chicago" style="width:100%;">
-      </div>
-    
-      <div class="item">
-        <img src="ny.jpg" alt="New york" style="width:100%;">
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
-
-	<div  class="container">
+	<div  class="cards1">
 		<div class="row gy-3 my-3">
 			<div class=" col-sm-6 col-md-4 col-lg-3">
 			<div class="card" >
@@ -102,7 +71,7 @@
 </div>
 <div class="col-sm-6 col-md-4 col-lg-3">
 <div class="card" >
-  <img src="./proimages/diptanus.jpg" class="card-img-top" alt="image">
+  <img src="./proimages/tdap.jpg" class="card-img-top" alt="image">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -122,7 +91,7 @@
 </div>
 <div class="col-sm-6 col-md-4 col-lg-3">
 <div class="card" >
-  <img src="./proimages/diptanus.jpg" class="card-img-top" alt="image">
+  <img src="./proimages/infulenza.jpg" class="card-img-top" alt="image">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -132,7 +101,7 @@
 </div>
 <div class="col-sm-6 col-md-4 col-lg-3">
 <div class="card" >
-  <img src="./proimages/diptanus.jpg" class="card-img-top" alt="image">
+  <img src="./proimages/rotav.jpg" class="card-img-top" alt="image">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -142,7 +111,7 @@
 </div>
 <div class="col-sm-6 col-md-4 col-lg-3">
 <div class="card" >
-  <img src="./proimages/diptanus.jpg" class="card-img-top" alt="image">
+  <img src="./proimages/measle mumpus.jpg" class="card-img-top" alt="image">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -152,7 +121,7 @@
 </div>
 <div class="col-sm-6 col-md-4 col-lg-3">
 <div class="card" >
-  <img src="./proimages/diptanus.jpg" class="card-img-top" alt="image">
+  <img src="./proimages/rotav.jpg" class="card-img-top" alt="image">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -162,7 +131,7 @@
 </div>
 <div class="col-sm-6 col-md-4 col-lg-3">
 <div class="card" >
-  <img src="./proimages/diptanus.jpg" class="card-img-top" alt="image">
+  <img src="./proimages/hepathsis1.jpg" class="card-img-top" alt="image">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -172,7 +141,7 @@
 </div>
 <div class="col-sm-6 col-md-4 col-lg-3">
 <div class="card" >
-  <img src="./proimages/diptanus.jpg" class="card-img-top" alt="image">
+  <img src="./proimages/varicella_vaccine.jpg" class="card-img-top" alt="image">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -182,7 +151,7 @@
 </div>
 <div class="col-sm-6 col-md-4 col-lg-3">
 <div class="card" >
-  <img src="./proimages/diptanus.jpg" class="card-img-bottom" alt="image">
+  <img src="./proimages/pnemo.jpg" class="card-img-bottom" alt="image">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -190,6 +159,7 @@
 </div>
 </div>
 </div>
+</section>
 
 <script>
     var menuBtn = document.getElementById("menuBtn")
@@ -210,11 +180,11 @@
     }
 
 </script>
-</body>
-
+<?php
+include "footer2.php";
+?>
+  </body>
 </html>
-<!-- <?php
-include "./footer.php";
-?> -->
+
 
  

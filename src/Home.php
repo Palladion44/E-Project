@@ -284,7 +284,7 @@ nav ul li a{
         position: absolute;
         left: 50%;
         top: 35%;
-        transfrom: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
     }
     .social-links{
         text-align:center;
@@ -379,7 +379,7 @@ error_reporting(E_ERROR);
 <h1>HEGHLY EFFECTIVE </h1>
         <div class="features-desc">
         <div class="feature-icon">
-        <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+        <!-- <?xml version="1.0" encoding="UTF-8" standalone="no" ?> -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="200" height="200" viewBox="0 0 1080 1080" xml:space="preserve">
 <desc>Created with Fabric.js 5.2.4</desc>
@@ -443,7 +443,7 @@ error_reporting(E_ERROR);
 </div>
 
 <!-- register -->
-<section id="rigister">
+<section id="register">
     <div class="title-text">
         <p> REGISTER/LOGIN</P>
 </div>
