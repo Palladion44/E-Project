@@ -154,7 +154,7 @@ nav ul li a{
     echo "Logged in as  </br> $name";
     } else{echo"Not logged in";} ?></a></li>
         <li><a href="#">HOME </a></li>
-        <li><a href="register.php">REGISTER</a></li>
+        <li><a href="register.php">REGISTER CHILD</a></li>
         <li><a href="#">PRODUTS</a></li>
         <li><a href="#">ABOUT US</a></li>
         <li><a href="parentLoginReg.php">LOGIN AS A PARENT</a></li>
