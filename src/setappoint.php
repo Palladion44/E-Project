@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ERROR);
+
 include("config.php");
 session_start();
 
@@ -27,7 +29,10 @@ $chid = $_GET['childid'];
     $qwerty="SELECT * FROM `children` WHERE `child_id` = '$chid' ;";
     $resc = mysqli_query($conn,$qwerty);
     $row = mysqli_fetch_assoc($resc);
-                                            
+                                            $_SESSION['childerid']= $_GET['childid'];
+                                            $_SESSION['parenterid']=$row['parent_id'];
+
+
     $now = new DateTime();
     $dob = new DateTime($row['Dateofbirth']);
     
@@ -100,10 +105,14 @@ $resv = mysqli_query($conn,$selectvacc);
     <div id="vaci">
         <div class="container">
             <form action="setappoint.php" method="POST">
-            <select name='vaccinationname'>
+        <h1>Select Vaccine</h1>
+
+            <select class="form-select" aria-label="Default select example" name='vaccinationname'>
 
                 <?php
-              while($rowver = mysqli_fetch_assoc($resv)){    
+              while($rowver = mysqli_fetch_assoc($resv)){ 
+    $_SESSION['vaccinationid'] = $rowver['vaccination_id'];
+
 ?>
                 <option value="<?php echo $rowver['vaccinationname']?>"><?php echo $rowver['vaccinationname'] ?></option>
 
@@ -111,33 +120,105 @@ $resv = mysqli_query($conn,$selectvacc);
 
 <?php }?>
 </select>
-<button type="submit" onclick="" name="setvacc"> confirm vaccine  </button >
+<button type="submit" class="submit btn text-white bg-primary" onclick="" name="setvacc"> confirm vaccine  </button >
             </form>
 
         </div>
         </div>
         <?php if(isset($_POST['setvacc'])){
     $vaccname = $_POST['vaccinationname'];
+
     echo "<script> document.getElementById('vaci').innerHTML=' Vaccine: $vaccname'; </script>";
     ?>
         <div class="container">
         <form action="setappoint.php" method="POST">
-            <select name='vaccinationname'>
+
+        <h1>Select hospital</h1>
+            <select class="form-select" name='hospitalname'>
 
                 <?php
-              while($rowver = mysqli_fetch_assoc($resv)){    
-?>
-                <option value="<?php echo $rowver['vaccinationname']?>"><?php echo $rowver['vaccinationname'] ?></option>
+                $_SESSION['vacname']=$vaccname;
+                 $qwertyu="SELECT * FROM `hospitals` WHERE `$vaccname` = '1' ;";
+                 $resh = mysqli_query($conn,$qwertyu);
+              while($rowh = mysqli_fetch_assoc($resh)){    
+                echo $rowh['hospitalname'];
+                $_SESSION["hospitlerid"] = $rowh['hospital_id'];
+
+?>  
+
+                <option  value="<?php echo $rowh['hospitalname']?>"><?php echo $rowh['hospitalname'] ?></option>
 
 
 
 <?php }?>
 </select>
-<button type="submit" onclick="" name="setvacc"> confirm vaccine  </button >
+<h1>Set Appointment Date</h1>
+<input type="date" name="cage"  required
+       max="<?php echo date('Y-m-d', strtotime('+1 months')); ?>" 
+       min="<?php echo date('Y-m-d'); ?>">
+<button type="submit" class="submit btn text-white bg-primary" onclick="" name="sethospital"> confirm Hospital  </button >
             </form>
         </div>
 <?php } ?>
 
+<?php if(isset($_POST['sethospital'])){
+    $_SESSION['dateofreq']=$_POST['cage'];
+    $hospname = $_POST['hospitalname'];
+
+
+    echo "<script> document.getElementById('vaci').innerHTML=' Vaccine: $vaccname'; </script>";
+    ?> 
+    <div class="container">
+    <h3 class="bg-success text-white" id="confirmbox2" ></h3>
+    </div>
+        <div class="container" id="confirmbox">
+        <form action="setappoint.php" method="POST">
+
+        <h1>Confirm your choice</h1>
+        <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Vaccine</label>
+  <input type="text" disabled class="form-control" id="exampleFormControlInput1" placeholder="<?php echo  $_SESSION['vacname'] ?>">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Hospital</label>
+  <input type="text" disabled class="form-control" id="exampleFormControlInput1" placeholder="<?php echo $hospname ?>">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Date of Appointment</label>
+  <input type="text" disabled class="form-control" id="exampleFormControlInput1" placeholder="<?php echo $_SESSION['dateofreq'] ?>">
+</div>
+<button type="submit" class="submit btn text-white bg-primary"  name="requestadmin"> confirm Hospital  </button >
+            </form>
+        </div>
+
+                <?php
+
+?>  
+
+
+
+<?php }?>
+
+
+<?php
+    $dateofrequest =  $_SESSION['dateofreq'];
+    $thehospitalid = $_SESSION["hospitlerid"] ;
+    $thevaccinationid = $_SESSION['vaccinationid'];
+    $thechildid = $_SESSION['childerid'];
+   $theparentid  = $_SESSION['parenterid'];
+
+
+
+                //  $requery="INSERT INTO requests(`parent_id`,`child_id`,`hospital_id`,`vaccination_id`,`date_of_request`) VALUES('$theparentid','$thechildid','$thehospitalid','$thevaccinationid','$dateofrequest');";
+                $requery= "INSERT INTO `requests` ( `parent_id`, `child_id`, `hospital_id`, `vaccination_id`, `date_of_request`) VALUES ('$theparentid','$thechildid','$thehospitalid','$thevaccinationid','$dateofrequest')";
+if(isset($_POST['requestadmin'])){
+  
+    if(mysqli_query($conn,$requery)){
+    echo "<script>document.getElementById('confirmbox').innerHTML=''</script>";
+    echo "<script>document.getElementById('confirmbox2').innerHTML='Your request has been accepted'</script>";
+}
+}
+?>
     </body>
 </html>
 

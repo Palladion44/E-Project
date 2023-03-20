@@ -2,7 +2,7 @@
 
 session_start();
 
-if(!isset($_SESSION['user'])){
+if(!isset($_SESSION['useradmin'])){
     header("location: login.php");
 }
 ?>
@@ -88,7 +88,7 @@ if(!isset($_SESSION['user'])){
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                            <?php  echo $_SESSION['user']?>
+                            <?php  echo $_SESSION['useradmin']?>
                     </div>
                 </nav>
             </div>

@@ -96,8 +96,8 @@ if (isset($_POST['login'])) {
         
         echo "<script>window.location.href = 'login.php';</script>";
     } else {
-        $_SESSION['user'] = $userName;
-        echo $_SESSION['user'] ;
+        $_SESSION['useradmin'] = $userName;
+        echo $_SESSION['useradmin'] ;
         // echo $_SESSION['user'];
         
         
