@@ -15,7 +15,9 @@ if(!isset($_SESSION['user'])){
 }
 else{
 ?>
-
+<?php
+$childid=$_GET['childid'];
+?>
 
 <!DOCTYPE html> 
 <html lang="en">
@@ -25,7 +27,7 @@ else{
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Register</title>
+        <title>Past Records</title>
         <?php include('header.php')?>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
@@ -45,7 +47,7 @@ else{
 </style>
     <body>
         <div id="hoi" class="container ">
-    <a class="text-white btn bg-primary" href="Home.php">go back</a>
+    <a class="text-white btn bg-primary" href="register.php">go back</a>
     </div>
         <div class="container mt-5">
 
@@ -67,7 +69,7 @@ else{
                                     </thead>
                               
                                     <tbody>
-    <h1 id="shi" >Manage your registered children</h1>                      
+    <h1 id="shi" >Past Records of </h1>                      
     <button class="btn btn-primary">
                                     <a href="childinsert.php?username=<?php echo $_SESSION["user"] ?>" class="text-white "> Register a Child
                                     </a></button>
@@ -82,7 +84,7 @@ else{
                                         <?php while($row = mysqli_fetch_assoc($res)){ ?>
                                         
                                         <tr>
-                                        <td><?php echo $row["child_id"]  ?></td>
+                                        <td><?php echo $childid  ?></td>
 
                                             <td><?php echo $row["childname"]  ?></td>
                                             <td> <?php echo $row["Dateofbirth"]?></td>
@@ -134,38 +136,4 @@ else{
         <script src="js/datatables-simple-demo.js"></script>
     </body>
 </html>
-
-
-
-
-
 <?php }?>
-
-<?php
-
-
-?>
-<?php
-
-
-if(isset($_GET['childid'])){
-    $chid = $_GET['childid'];
-    $delquery3 = "DELETE FROM children WHERE child_id = '$chid' ";
-    
-    
-    if(mysqli_query($conn,$delquery3)){
-    
-        echo "<script>window.location.href = 'register.php';</script>";
-
-
-    
-    
-    } else{
-    
-        echo "error";
-    
-    
-    }
-
-}
-?>

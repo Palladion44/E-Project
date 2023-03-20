@@ -26,6 +26,9 @@ if (isset($_GET['username'])) {
         </head>
 
         <body>
+        <div class="container mt-5">
+    <a href="register.php" class=" bg-primary btn text-white ">go back </a>
+    </div>
             <div class="container  mt-5">
                 <h2 class="text-center">Add Child Information</h2>
                 <form action="childinsert.php" method="post">
@@ -60,12 +63,12 @@ if (isset($_GET['username'])) {
             $pid=$_POST['pid'];
            $cname= $_POST['cname'];
            $cage= $_POST['cage'];
-           echo $pid;
-           echo $cage;
-           echo $cname;
+        //    echo $pid;
+        //    echo $cage;
+        //    echo $cname;
            $childinsert= "INSERT INTO `children` (`childname`, `Dateofbirth`, `parent_id`) VALUES ('$cname', '$cage', '$pid');";
            mysqli_query($conn,$childinsert);
-            
+            echo"<script> window.location.href = 'register.php';</script>";
         }
         
         ?>

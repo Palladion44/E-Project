@@ -349,9 +349,15 @@ if($insertres=mysqli_query($conn,$insertbook)){
     $getData2 = "SELECT * FROM parents WHERE  parent_id = '$rr' ";
     $res2 = mysqli_query($conn,$getData2);
     while($row2=mysqli_fetch_assoc($res2)){
+        $hospitt = "SELECT * FROM HOSPITALS WHERE hospitaladdress = '$hospitalid'";
+        $resx = mysqli_query($conn,$hospitt);
+        $rowx=mysqli_fetch_assoc($resx);
         $themail= $row2['parentemail'];
+        $hosaddress=$rowx['hospitaladdress'];
 $subject = "Vaccination Status Request";
-$body = "Your Request has been approved";
+$body = "Your Request has been approved by admin";
+$body.="Hospital Location";
+$body.= "<iframe width='100%' height='500' src='https://maps.google.com/maps?q=<?php echo $hosaddress; ?>&output=embed'></iframe>";
 $headers = "umertheninja44@gmail.com";
 
 

@@ -40,7 +40,7 @@ $chid = $_GET['childid'];
      
                                             
 
- echo   $diff->y ."/" .$diff->m ."/" .$diff->d ;
+//  echo   $diff->y ."/" .$diff->m ."/" .$diff->d ;
 }
 if($diff->y == 0 && $diff->m < 1){
     $selectvacc ="SELECT * FROM `vaccinations` WHERE `Birth` = '1';";
@@ -102,6 +102,9 @@ $resv = mysqli_query($conn,$selectvacc);
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <div class="container mt-5">
+    <a href="register.php" class=" bg-primary btn text-white ">go back </a>
+    </div>
     <div id="vaci">
         <div class="container">
             <form action="setappoint.php" method="POST">
@@ -128,7 +131,7 @@ $resv = mysqli_query($conn,$selectvacc);
         <?php if(isset($_POST['setvacc'])){
     $vaccname = $_POST['vaccinationname'];
 
-    echo "<script> document.getElementById('vaci').innerHTML=' Vaccine: $vaccname'; </script>";
+    echo "<script> document.getElementById('vaci').innerHTML=' '; </script>";
     ?>
         <div class="container">
         <form action="setappoint.php" method="POST">
@@ -214,8 +217,31 @@ $resv = mysqli_query($conn,$selectvacc);
 if(isset($_POST['requestadmin'])){
   
     if(mysqli_query($conn,$requery)){
-    echo "<script>document.getElementById('confirmbox').innerHTML=''</script>";
-    echo "<script>document.getElementById('confirmbox2').innerHTML='Your request has been accepted'</script>";
+    echo "<script>document.body.innerHTML=''</script>";
+ 
+
+    $getData2 = "SELECT * FROM `parents` WHERE  `parent_id` = '$theparentid'; ";
+    $res2 = mysqli_query($conn,$getData2);
+    while($row2=mysqli_fetch_assoc($res2)){
+        $themail= $row2['parentemail'];
+$subject = "Vaccination Status Request";
+$body = "Your Request has been accepted and is awaiting approval from admin";
+$headers = "umertheninja44@gmail.com";
+
+
+
+
+if (mail($themail, $subject, $body, $headers)) {
+ echo "Email successfully sent to $themail...";
+ echo '<script>
+ if(confirm("Your request has been accepted")) {
+    window.location.href="register.php"
+ }
+ </script>';
+} 
+    }
+
+   
 }
 }
 ?>
