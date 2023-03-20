@@ -420,7 +420,7 @@ nav ul li a{
 
 <!-- footer -->
 <section id="footer">
-<img src="flogo2.jpg" class="footer-img">
+<!-- <img src="flogo2.jpg" class="footer-img"> -->
     <div class="title-text">
         <p>Contact</p>
         <h1>Visit website today</h1>
