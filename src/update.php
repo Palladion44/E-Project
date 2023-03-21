@@ -39,7 +39,9 @@ if (isset($_GET['childid'])) {
         </head>
 
         <body>
-            <div class="container  mt-3">
+        <?php include("navbarx.php")?>
+
+            <div class="container mt-5 mx-auto">
                 <a class="text-white btn bg-primary" href="register.php">go back</a>
                 <h2 class="text-center">Update Child Information</h2>
                 <form action="update.php" method="post">
@@ -51,7 +53,7 @@ if (isset($_GET['childid'])) {
                         <input type="text" class="form-control" id="email" name="cname" value="<?php echo $cname ?>">
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="email">child age</label>
+                        <label for="email">Birthdate</label> </br>
                         <input required type="date" name="cage" 
        min="<?php echo date('Y-m-d', strtotime('-5 years')); ?>" 
        max="<?php echo date('Y-m-d'); ?>">

@@ -52,73 +52,58 @@ $childid=$_GET['childid'];
         <div class="container mt-5">
 
         
-  
-                                    <table id="datatablesSimple">
+        <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                        <th>Child_Id</th>
-                                            <th>ChildName</th>
-                                            <th>DateOfBirth</th>
-                                            <th>Age Y/M/D</th>
-                                            <th>Parent_id</th>
-                                            <th> Operations</th>
+                                        <th>Vaccination_date_id</th>
+                                            <th>Child_id</th>
+                                            <th>vaccination_id</th>
+                                            <th>Date_of_vaccinations</th>
+                                            <th>is_completed</th>
                                             
-                                            
+
+
+
                                            
                                         </tr>
                                     </thead>
                               
                                     <tbody>
-    <h1 id="shi" >Past Records of </h1>                      
-    <button class="btn btn-primary">
-                                    <a href="childinsert.php?username=<?php echo $_SESSION["user"] ?>" class="text-white "> Register a Child
-                                    </a></button>
+    <h1>Vaccination Dates</h1>
                                     
                                         <?php
-                                         $pname=$_SESSION["user"];
-                                          $resp = mysqli_query($conn, "SELECT * FROM parents WHERE parentname ='$pname'");
-                                          $rowp = mysqli_fetch_assoc($resp);
-                                          $pid=$rowp['parent_id'];
-                                        $res = mysqli_query($conn, "SELECT * FROM children where parent_id = '$pid'");
+                                        
+                                            include "config.php";
+                                        $res = mysqli_query($conn, "SELECT * FROM vaccination_dates where child_id='$childid';");
                                         ?>
-                                        <?php while($row = mysqli_fetch_assoc($res)){ ?>
+                                        <?php
+                                         while($row = mysqli_fetch_assoc($res) ){ ?>
                                         
                                         <tr>
-                                        <td><?php echo $childid  ?></td>
+                                        <td><?php echo $row["vaccination_date_id"]  ?></td>
 
-                                            <td><?php echo $row["childname"]  ?></td>
-                                            <td> <?php echo $row["Dateofbirth"]?></td>
-                                        
-                                            <?php include "./admin/agecalc.php";?>
+                                            <td> <?php echo $row["child_id"]  ?></td>
+                                            <td><?php echo $row["vaccination_id"] ?></td>
+                                            <td><?php echo $row["date_of_vaccination"] ?></td>
+                                            <td><?php echo $row["is_completed"] ?></td>
 
-                                            <td> <?php echo $diff->y ."/" .$diff->m ."/" .$diff->d  ?></td>
-                                            
-                                            
-                                            <td><?php echo $row["parent_id"] ?></td>
 
-                                            
 
-                                            
-                                            <td>
-                                            <button class="btn btn-success">
-                                    <a href="setappoint.php?childid=<?php echo $row["child_id"] ?>" class="text-white "> Request Appointment
-                                    </a></button>    
-                                    <button class="btn btn-success">
-                                    <a href="records.php?childid=<?php echo $row["child_id"] ?>" class="text-white "> Show Past Records
-                                    </a></button>
-                                            
-                                            <button class="btn btn-primary">
-                                    <a href="update.php?childid=<?php echo $row["child_id"] ?>" class="text-white "> Update
-                                    </a></button>
-                                <button class="btn btn-danger">
-                                    <a href="register.php?childid=<?php echo $row["child_id"] ?>" class="text-white ">Remove</a>
-                                </button></td>
+
+
+
+
+                                         
                             
                                            
                                         </tr>
                                        
                                    <?php } ?>
                                     </tbody>
+
+
+                                    
+                                </table>
 
 
                                     

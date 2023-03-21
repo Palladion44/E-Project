@@ -102,6 +102,8 @@ $resv = mysqli_query($conn,$selectvacc);
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body>
+    <?php include("navbarx.php")?>
+
         <div class="container mt-5">
     <a href="register.php" class=" bg-primary btn text-white ">go back </a>
     </div>

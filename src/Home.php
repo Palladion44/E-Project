@@ -585,10 +585,7 @@
         <!-- </div>
 </div>
 </div> -->
-        <div id="menuBtn">
-            <image src="menu.jpg " id="menu">
-        </div>
-
+      
         <!-- register -->
         <section id="register">
             <div class="title-text">

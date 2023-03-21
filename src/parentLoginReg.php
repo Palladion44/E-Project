@@ -3,6 +3,8 @@
 <head>
     <title>login</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheetH" href="style.css">
+
 <style>
     body{
      background-image: url(bgL.jpg);
@@ -25,6 +27,8 @@
 
 </head>
 <body>
+<?php include("navbarx.php")?>
+
     <div class="hero">
     <p id="userregistered"></p>
         <div class="from-box">
@@ -41,7 +45,7 @@
             <input type="text" value="<?php if(isset($_COOKIE['username'])) { echo $_COOKIE['username']; } ?>"  class="input-feild" name="username" placeholder="Enter UserName"required>
             <input type="password" value="<?php if(isset($_COOKIE['userpassword'])) { echo $_COOKIE['userpassword']; } ?>"  class="input-feild" name="password" placeholder="Enter Password"required>
             <br>
-            <input type="checkbox" class="check-box"><span> Remember Me</span>
+            <input type="checkbox" name="rememberMe" class="check-box"><span> Remember Me</span>
             <button type="Submit" name="Parentlogin" class="submit-btn"> Login </button>
          </form>
 
@@ -141,8 +145,8 @@ if (isset($_POST['Parentlogin'])) {
     $userName = $row['parentname'];
 
     if(isset($_POST['rememberMe'])){
-        setcookie('username',$_POST['username'],time()+4000);
-        setcookie('userpassword',$_POST['password'],time()+4000);
+        setcookie('username' , $_POST['username'],time()+4000);
+        setcookie('userpassword', $_POST['password'],time()+4000);
         echo "cookies are set";
     }
     else{

@@ -26,6 +26,8 @@ if (isset($_GET['username'])) {
         </head>
 
         <body>
+        <?php include("navbarx.php")?>
+
         <div class="container mt-5">
     <a href="register.php" class=" bg-primary btn text-white ">go back </a>
     </div>

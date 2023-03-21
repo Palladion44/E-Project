@@ -44,6 +44,7 @@ else{
         }
 </style>
     <body>
+        <?php include("navbarx.php")?>
         <div id="hoi" class="container ">
     <a class="text-white btn bg-primary" href="Home.php">go back</a>
     </div>

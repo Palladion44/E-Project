@@ -10,6 +10,8 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home </title>
+<link rel="icon" href="vaccinelogo.jpg">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- <link rel="stylesheet" href="stylesheetH.css"> -->
@@ -156,9 +158,9 @@ nav ul li a{
         $name =$_SESSION['user'];  
     echo "Logged in as  </br> $name";
     } else{echo"Not logged in";} ?></a></li>
-        <li><a href="#">HOME </a></li>
+        <li><a href="Home.php">HOME </a></li>
         <li><a href="register.php">REGISTER CHILD</a></li>
-        <li><a href="#">PRODUTS</a></li>
+        <li><a href="product.php">PRODUTS</a></li>
         <li><a href="#">ABOUT US</a></li>
         <li><a href="parentLoginReg.php">LOGIN AS A PARENT</a></li>
         <li><a href="hospitalLogin.php">LOGIN AS A HOSPITAL</a></li>
@@ -166,6 +168,10 @@ nav ul li a{
 </ul>
 </nav>
 </div>
+<div id="menuBtn">
+                    <image src="menu.jpg " id="menu">
+                </div>
+        
 </body>
 </html>
 <script>

@@ -1,18 +1,18 @@
-*{
+/* *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-}
+} */
 
-nav{
+/* nav{
     width: 100%;
     height: 75px;
     line-height: 75px;
     padding: 0px 100px;
     position: fixed;
     background-image:linear-gradient( to right,#2685A3,#2EA3C7,#34B8E0);
-}
-nav .logo p{
+} */
+/* nav .logo p{
     font-size: 30px;
     font-weight: bold;
     float: left;
@@ -40,7 +40,7 @@ nav li a:hover{
     color:white;
     transition: all 0.4s ease 0s;
 
-}
+} */
  
 /* Login $Register */
 
@@ -121,12 +121,12 @@ nav li a:hover{
 .check-box{
     margin: 30px 10px 30px 0;
 }
- span{
+ /* span{
     color: #777;
     font-size: 17px;
     bottom: 68px;
     position:absolute;
- }
+ } */
  #login{
     left: 50px; 
 
