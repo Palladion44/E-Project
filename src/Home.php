@@ -380,6 +380,8 @@
 </head>
 
 <body>
+<iframe width='100%' height='500px' src='https://maps.google.com/maps?q=Dr.+Ziauddin+Hospital+North+Nazimabad+Campus,+Allama+Rasheed+Turabi+Road,+Wahid+Colony,+Karachi&output=embed'></iframe>
+
     <section id="banner">
         <img src="vaccinelogo.jpg" class="logo">
         <div class="banner-text">

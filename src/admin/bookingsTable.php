@@ -158,20 +158,16 @@ if(!isset($_SESSION['useradmin'])){
                                 </div>
                             </div>
                         </div> -->
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                DataTable Example
-                            </div>
+                      
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
                                         <th>Booking_Id</th>
-                                            <th>Parent_Id</th>
-                                            <th>Child_Id</th>
-                                            <th>Vaccination_Id</th>
-                                            <th>Hospital_Id</th>
+                                            <th>ChildName</th>
+                                            <th>ParentName</th>
+                                            <th>VaccinationName</th>
+                                            <th>HospitalName</th>
                                             <th>Booking Date</th>
                                             
 
@@ -187,18 +183,26 @@ if(!isset($_SESSION['useradmin'])){
                                         <?php
                                         
                                             include "config.php";
-                                        $res = mysqli_query($conn, "SELECT * FROM bookings");
-                                        ?>
+                                            $res = mysqli_query($conn, "SELECT bookings.booking_id,
+                                            parents.parentname,
+                                            children.childname,
+                                            vaccinations.vaccinationname,
+                                            hospitals.hospitalname, bookings.booking_date
+                                            FROM bookings INNER JOIN parents ON bookings.parent_id = parents.parent_id INNER JOIN children ON
+                                           bookings.child_id = children.child_id INNER JOIN hospitals ON bookings.hospital_id = hospitals.hospital_id
+                                            INNER JOIN vaccinations ON bookings.vaccination_id = vaccinations.vaccination_id ");
+                                            ?>
+                                        
                                         <?php
                                          while($row = mysqli_fetch_assoc($res) ){ ?>
                                         
                                         <tr>
                                         <td><?php echo $row["booking_id"]  ?></td>
 
-                                            <td><?php echo $row["parent_id"]  ?></td>
-                                            <td> <?php echo $row["child_id"]  ?></td>
-                                            <td><?php echo $row["vaccination_id"] ?></td>
-                                            <td><?php echo $row["hospital_id"] ?></td>
+                                            <td><?php echo $row["childname"]  ?></td>
+                                            <td> <?php echo $row["parentname"]  ?></td>
+                                            <td><?php echo $row["vaccinationname"] ?></td>
+                                            <td><?php echo $row["hospitalname"] ?></td>
                                             <td><?php echo $row["booking_date"] ?></td>
 
 

@@ -41,29 +41,8 @@ color: red;
     </head>
 
 <body>
-<nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><?php echo $_SESSION['hospitaluser'] ?> Panel</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="updatevacc.php">Update Available Vaccines</a>
-        </li>
+<?php include("hospitalnavix.php")?>
 
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="Hospitalprof.php">Appointments</a>
-        </li>
-
-    
-      <li class="d-flex nav-item">
-          <a class="nav-link active" id="logout" aria-current="page" href="updatevacc.php?logout=true">Logout</a>
-        </li>
-    </div>
-  </div>
-</nav>
 
 
 
@@ -84,10 +63,10 @@ color: red;
 
     <body>
         
-                       
-                        
+                        <div class="container-fluid ">
+                       <h1>Today's Appointments</h1>
                    
-                                <table id="datatablesSimple">
+                                <table id="datatablesSimple" >
                                     <thead>
                                         <tr>
                                         <th>booking_id</th>
@@ -102,7 +81,7 @@ color: red;
                                     </thead>
                               
                                     <tbody>
-    <h1>Today's Appointments</h1>
+    
                                     
                                         <?php
                                         $hide = $_SESSION['hospitalid'];
@@ -155,6 +134,7 @@ color: red;
 
                                     
                                 </table>
+                                </div>
 
                                   
                                         </br>
@@ -163,9 +143,10 @@ color: red;
                                         </br>
                                         </br>
                                         </br>
+                                        <div class="container-fluid">
                                 <iframe src="upcomingaapoint.php" height="50%" width="100%" frameborder="0"></iframe>                   
 
-                    
+                                </div>
                 
  
             

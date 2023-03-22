@@ -158,11 +158,7 @@ if(!isset($_SESSION['useradmin'])){
                                 </div>
                             </div>
                         </div> -->
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                DataTable Example
-                            </div>
+                      
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>
@@ -170,8 +166,7 @@ if(!isset($_SESSION['useradmin'])){
                                         <th>Vaccination_date_id</th>
                                             <th>Child_id</th>
                                             <th>vaccination_id</th>
-                                            <th>Date_of_vaccinations</th>
-                                            <th>is_completed</th>
+                                            <th>Date_of_vaccination</th>
                                             
 
 
@@ -186,7 +181,8 @@ if(!isset($_SESSION['useradmin'])){
                                         <?php
                                         
                                             include "config.php";
-                                        $res = mysqli_query($conn, "SELECT * FROM vaccination_dates");
+                                        $res = mysqli_query($conn, "SELECT vaccination_dates.vaccination_date_id,vaccination_dates.date_of_vaccination, children.childname, vaccinations.vaccinationname FROM vaccination_dates
+                                        INNER JOIN children on vaccination_dates.child_id = children.child_id INNER JOIN vaccinations on vaccination_dates.vaccination_id = vaccinations.vaccination_id");
                                         ?>
                                         <?php
                                          while($row = mysqli_fetch_assoc($res) ){ ?>
@@ -194,10 +190,9 @@ if(!isset($_SESSION['useradmin'])){
                                         <tr>
                                         <td><?php echo $row["vaccination_date_id"]  ?></td>
 
-                                            <td> <?php echo $row["child_id"]  ?></td>
-                                            <td><?php echo $row["vaccination_id"] ?></td>
+                                            <td> <?php echo $row["childname"]  ?></td>
+                                            <td><?php echo $row["vaccinationname"] ?></td>
                                             <td><?php echo $row["date_of_vaccination"] ?></td>
-                                            <td><?php echo $row["is_completed"] ?></td>
 
 
 

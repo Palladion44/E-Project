@@ -92,6 +92,7 @@ if(!isset($_SESSION['useradmin'])){
                     </div>
                 </nav>
             </div>
+            
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -157,21 +158,17 @@ if(!isset($_SESSION['useradmin'])){
                                 </div>
                             </div>
                         </div> -->
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                DataTable Example
-                            </div>
+                      
                             <div class="card-body">
                               
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
                                         <th>Request_id</th>
-                                            <th>Parent_id</th>
-                                            <th>Child_id</th>
-                                            <th>Hospital_id</th>
-                                            <th>vaccination_id</th>
+                                            <th>Parent_Name</th>
+                                            <th>Child_Name</th>
+                                            <th>Vaccine Name</th>
+                                            <th>Hospital Name</th>
                                             <th>date_of_request</th>
                                             <th>Operations</th>
                                             
@@ -186,17 +183,24 @@ if(!isset($_SESSION['useradmin'])){
                                         <?php
                                         
                                             include "config.php";
-                                        $res = mysqli_query($conn, "SELECT * FROM requests WHERE approved = '0'");
+                                        $res = mysqli_query($conn, "SELECT requests.request_id,
+                                        parents.parentname,
+                                        children.childname,
+                                        vaccinations.vaccinationname,
+                                        hospitals.hospitalname, requests.date_of_request
+                                        FROM requests INNER JOIN parents ON requests.parent_id = parents.parent_id INNER JOIN children ON
+                                        requests.child_id = children.child_id INNER JOIN hospitals ON requests.hospital_id = hospitals.hospital_id
+                                        INNER JOIN vaccinations on requests.vaccination_id = vaccinations.vaccination_id WHERE requests.approved = '0'");
                                         ?>
                                         <?php while($row = mysqli_fetch_assoc($res)){ ?>
                                         
                                         <tr>
                                         <td><?php echo $row["request_id"]  ?></td>
 
-                                            <td><?php echo $row["parent_id"]  ?></td>
-                                            <td> <?php echo $row["child_id"]?></td>
-                                            <td> <?php echo $row["hospital_id"]?></td>
-                                            <td> <?php echo $row["vaccination_id"]?></td>
+                                            <td><?php echo $row["parentname"]  ?></td>
+                                            <td> <?php echo $row["childname"]?></td>
+                                            <td> <?php echo $row["vaccinationname"]?></td>
+                                            <td> <?php echo $row["hospitalname"]?></td>
                                             <td> <?php echo $row["date_of_request"]?></td>
 
 

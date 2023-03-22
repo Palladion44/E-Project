@@ -50,9 +50,9 @@
 
 </style>
 <body>
-<section id="banner">
-        <img src="vaccinelogo.jpg" class="logo">
-</section>
+<?php include("navbarx.php")?>
+
+
 <div class="container">
 <div class="title-text">
         <h1>AVAILABLE VACCINE</h1> 

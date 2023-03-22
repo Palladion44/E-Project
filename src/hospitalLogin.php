@@ -142,6 +142,7 @@ span{
     </style>
 </head>
 <body>
+    <?php include("navbarx.php")?>
 <div class="container">
 <div class="card">
 <div class="inner-box" id="card">
