@@ -53,27 +53,27 @@ elseif($diff->y == 0 && $diff->m <= 4  && $diff->m < 6){
     $selectvacc ="SELECT * FROM `vaccinations` WHERE `4months` = '1';";
 
 }
-elseif($diff->y == 0 && $diff->m <= 6  && $diff->m < 7){
+elseif($diff->y == 0 && $diff->m <= 6  && $diff->m < 11){
     $selectvacc ="SELECT * FROM `vaccinations` WHERE `6months` = '1';";
 }
 
-elseif($diff->y == 1 && $diff->m < 2 ){
+elseif($diff->y == 1 && $diff->m <= 2 ){
     $selectvacc ="SELECT * FROM `vaccinations` WHERE `12months` = '1';";
 
 }
-elseif($diff->y == 1 && $diff->m < 5 ){
+elseif($diff->y == 1 && $diff->m <= 5 ){
     $selectvacc ="SELECT * FROM `vaccinations` WHERE `15months` = '1';";
 
 }
-elseif($diff->y == 1 && $diff->m < 7 ){
+elseif($diff->y == 1 && $diff->m <= 7 ){
     $selectvacc ="SELECT * FROM `vaccinations` WHERE `18months` = '1';";
 
 }
-elseif($diff->y == 2 && $diff->m < 11 ){
+elseif($diff->y == 2 && $diff->m <= 11 ){
     $selectvacc ="SELECT * FROM `vaccinations` WHERE `24months` = '1';";
 
 }
-elseif($diff->y <= 5 && $diff->m < 1 ){
+elseif($diff->y <= 5 && $diff->m <= 1 ){
     $selectvacc ="SELECT * FROM `vaccinations` WHERE `4_5years` = '1';";
 
 }

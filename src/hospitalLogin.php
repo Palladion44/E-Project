@@ -149,8 +149,16 @@ span{
 <div class="card-front">
     <h2 style="color: white">Login</h2>
     <form method="POST" action="HospitalLogin.php">
-           <input type="text" name="hlname" class="input-box" placeholder="Hospital Name"required>
-            <input type="Password" name="hlpassword" class="input-box" placeholder="Enter Password"required>
+           <input type="text" name="hlname" class="input-box"value="<?php 
+           if(isset($_COOKIE['hlname']))
+           {
+             echo $_COOKIE['hlname'];
+        }
+        ?>" placeholder="Hospital Name"required>
+            <input type="Password" name="hlpassword" class="input-box" value="<?php if(isset($_COOKIE['hlpassword']))
+            { echo $_COOKIE['hlpassword'];
+            }
+            ?>" placeholder="Enter Password"required>
             <br>
             <div class="form-check">
   <input name="rememberMe" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
@@ -283,11 +291,7 @@ if (isset($_POST['hospitallogin'])) {
     else{
         echo "cookies are not set";
     }
-    
-    if(isset($_POST['forget'])){
-        setcookie('useremail',$_POST['email'],time()-4000);
-        setcookie('userpassword',$_POST['password'],time()-4000);
-    }
+
 
 
     if ($row == 0) {

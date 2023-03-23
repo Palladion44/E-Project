@@ -169,16 +169,6 @@ if(!isset($_SESSION['useradmin'])){
                                             <th>HospitalEmail</th>
                                             <th>HospitalPassword</th>
                                             <th>HospitalAddress</th>
-                                            <th>Hepatitis_B_HepB</th>
-                                            <th>RotaVirus_RV</th>
-                                            <th>Diphteria_Tetanus_Pertussis_DTaP</th>
-                                            <th>H_Influenzae_type_B_Hib</th>
-                                            <th>Pneumococcal_PCV</th>
-                                            <th>Inactivated_Poliovirus_IPV</th>
-                                            <th>Measels_MumpsRubella_MMR</th>
-                                            <th>Varicella_VAR</th>
-                                            <th>Hepatitius_A_HepA</th>
-                                            <th>Influenza</th>
                                             <th>Operations</th>
                                             
                                            
@@ -202,22 +192,7 @@ if(!isset($_SESSION['useradmin'])){
                                             <td> <?php echo $row["hospitalemail"]  ?></td>
                                             <td><?php echo $row["Hospitalpassword"] ?></td>
                                             <td><?php echo $row["hospitaladdress"] ?></td>
-                                            <td><?php echo $row["Hepatitis_B_HepB"] ?></td>
-                                            <td><?php echo $row["RotaVirus_RV"] ?></td>
-                                            <td><?php echo $row["Diphteria_Tetanus_Pertussis_DTaP"] ?></td>
-
-                                            <td><?php echo $row["H_Influenzae_type_B_Hib"] ?></td>
-
-                                            <td><?php echo $row["Pneumococcal_PCV"] ?></td>
-
-                                            <td><?php echo $row["Inactivated_Poliovirus_IPV"] ?></td>
-
-                                            <td><?php echo $row["Measels_MumpsRubella_MMR"] ?></td>
-                                            <td><?php echo $row["Varicella_VAR"] ?></td>
-
-                                            <td><?php echo $row["Hepatitius_A_HepA"] ?></td>
-
-                                            <td><?php echo $row["Influenza"] ?></td>
+        
 
                                             
 

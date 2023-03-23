@@ -171,7 +171,10 @@ if (isset($_GET['hospitalid'])) {
                         <label for="email">Hospital Password</label>
                         <input type="text" class="form-control" id="email" value="<?php echo $row['Hospitalpassword'] ?>" name="hpassword">
                     </div>
-
+                    <div class="mb-3 mt-3">
+                        <label for="email">Hospital Adress</label>
+                        <input type="text" class="form-control" id="email" value="<?php echo $row['hospitaladdress'] ?>" name="hadress">
+                    </div>
                 
                     <button type="submit" class="btn btn-primary mt-2" name="updatehospital">Update</button>
                 </form>
@@ -188,9 +191,11 @@ if (isset($_GET['hospitalid'])) {
                     $hid = $_POST['hid'];
                     $hname =  $_POST['hname'];
                     $hemail =  $_POST['hemail'];
+                    $hadress =  $_POST['hadress'];
+
                     $hpassword =  sha1($_POST['hpassword']);
                     $update = "UPDATE `hospitals` SET
-                     `hospitalname` = '$hname', `hospitalemail` = '$hemail', `hospitalPassword` = '$hpassword' WHERE  `hospital_id` = '$hid'";
+                     `hospitalname` = '$hname', `hospitalemail` = '$hemail',`hospitaladdress`='$hadress', `hospitalPassword` = '$hpassword' WHERE  `hospital_id` = '$hid'";
        
 
                     $updateRes = mysqli_query($conn, $update);
@@ -268,7 +273,7 @@ if (isset($_GET['childid'])) {
                         <input type="text" class="form-control" id="email" name="cname" value="<?php echo $cname ?>">
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="email">child age</label>
+                        <label for="email">DOB</label>
                         <input type="date" name="cage" 
        min="<?php echo date('Y-m-d', strtotime('-5 years')); ?>" 
        max="<?php echo date('Y-m-d'); ?>">
@@ -349,21 +354,36 @@ if($insertres=mysqli_query($conn,$insertbook)){
     $getData2 = "SELECT * FROM parents WHERE  parent_id = '$rr' ";
     $res2 = mysqli_query($conn,$getData2);
     while($row2=mysqli_fetch_assoc($res2)){
-        $hospitt = "SELECT * FROM HOSPITALS WHERE hospital_id = '$hospitalid'";
+        $hospitt = "SELECT bookings.booking_id,
+        parents.parentname,
+        children.childname,
+        vaccinations.vaccinationname,
+        hospitals.hospitalname, bookings.booking_date
+        FROM bookings INNER JOIN parents ON bookings.parent_id = parents.parent_id INNER JOIN children ON
+       bookings.child_id = children.child_id INNER JOIN hospitals ON bookings.hospital_id = hospitals.hospital_id
+        INNER JOIN vaccinations ON bookings.vaccination_id = vaccinations.vaccination_id ";
         $resx = mysqli_query($conn,$hospitt);
         $rowx=mysqli_fetch_assoc($resx);
         $themail= $row2['parentemail'];
+        $childdname=$rowx['childname'];
+        $parentname=$rowx['parentname'];
+        $vaccinationname=$rowx['vaccinationname'];
+        $booking=$rowx['booking_date'];
         $hosaddress=$rowx['hospitaladdress'];
 $subject = "Vaccination Status Request";
-$hosaddress = preg_replace('/\s+/', '+', $hosaddress);
-$body =" 
-<iframe width='500px' height='500px' src='https://www.google.com/maps/dir//$hosaddress'></iframe>
-    "; 
+$body ="
+<h1>Your Request Has Been Approved</h1> <br>
+<h2>Hello $parentname your vaccination request has been approved by admin</h2> <br>
+<h3>Patient name:- $childdname</h3> <br>
+<h3>Vaccine name:- $vaccinationname</h3> <br>
+<h3>Hospital Name and Location:- $hosaddress</h3> <br>
+<h3>Appointment Date:- $booking date</h3> <br>
+"; 
 
 
 $headers = "Vaccine Booking System";
-$headers .= "MIME-Version: 1.0" . "\r\n"; 
-$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
+// $headers .= "MIME-Version: 1.0" . "\r\n"; 
+// $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
 
 
 if (mail($themail, $subject, $body, $headers)) {
