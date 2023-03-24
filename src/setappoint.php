@@ -159,18 +159,7 @@ $resv = mysqli_query($conn,$selectvacc);
 
 
 <?php }?>
-</select><?php
-	if (isset($_POST["hospitaladdress"]))
-	{
-		$address = $_POST["address"];
-		$address = str_replace(" ", "+", $address);
-		?>
-
-		<iframe width="100%" height="500" src="https://maps.google.com/maps?q=<?php echo $address; ?>&output=embed"></iframe>
-
-		<?php
-	}
-?>
+</select>
 <h1>Set Appointment Date</h1>
 <input type="date" name="cage"  required
        max="<?php echo date('Y-m-d', strtotime('+1 months')); ?>" 
@@ -185,7 +174,7 @@ $resv = mysqli_query($conn,$selectvacc);
     $hospname = $_POST['hospitalname'];
 
 
-    echo "<script> document.getElementById('vaci').innerHTML=' Vaccine: $vaccname'; </script>";
+    echo "<script> document.getElementById('vaci').innerHTML=' $vaccname'; </script>";
     ?> 
     <div class="container">
     <h3 class="bg-success text-white" id="confirmbox2" ></h3>
@@ -206,6 +195,7 @@ $resv = mysqli_query($conn,$selectvacc);
   <label for="exampleFormControlInput1" class="form-label">Date of Appointment</label>
   <input type="text" disabled class="form-control" id="exampleFormControlInput1" placeholder="<?php echo $_SESSION['dateofreq'] ?>">
 </div>
+
 <button type="submit" class="submit btn text-white bg-primary"  name="requestadmin"> confirm Hospital  </button >
             </form>
         </div>
