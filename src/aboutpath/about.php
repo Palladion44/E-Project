@@ -113,6 +113,12 @@ footerno{
             text-decoration: none;
             color: #fff;
         }
+		.parallax h1{
+			text-align:center;
+			padding:15%;
+			color:white;
+
+		}
 	</style>
 </head>
 
@@ -121,7 +127,7 @@ footerno{
 	<!-- NVARBAR
     ============================================= -->
 	<!-- <?php
-include "navbar1.php";
+include "/src/navbarx.php";
 ?> -->
 	<!-- Start PreLoader-->
 	
@@ -136,7 +142,11 @@ include "navbar1.php";
 		<!-- Start Breadcrumb
 		============================================= -->
 	
-<div class="parallax"></div>
+<div class="parallax">
+       <h1>
+		About US for Vaccine
+	   </h1>
+		</div>
 
 
 		<!-- End  Breadcrumb -->
@@ -220,25 +230,21 @@ include "navbar1.php";
 		<div class="ab-1 de-pt">
 			<div class="ab-1-wrapper grid-2">
 				<div class="ab-1-left">
-					<h5>About The Vaccine</h5>
-					<h2> PROTECT  </h2>
+					<h2> PROTECT OUR CHILD  </h2>
 					<p>
-						Every patient getting best care from us. again is there anyone who of itself, because it is pain.
+					All the ingredients of a vaccine play an important role in ensuring a vaccine is safe and effective. Some of these include:
 					</p>
 					<ul>
-						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i></li>
-						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i></li>
-						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i></li>
-						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i></li>
+						<li><i><img src="assets/img/icons/check-box.png" alt="thumb">Preservatives, which ensure a vaccine stays effective.</i></li>
+						<li><i><img src="assets/img/icons/check-box.png" alt="thumb">Stabilisers, which protect the vaccine during storage and transportation.</i></li>
+						<li><i><img src="assets/img/icons/check-box.png" alt="thumb">Adjuvants, which help to boost our immune response. This means they help vaccines to work better.</i></li>
+						<!-- <li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i></li>
 						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i> </li>
 						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i></li>
 						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i></li>
-						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i></li>
+						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i></li> -->
 					</ul>
-					<div class="ab-1-bt">
-						<a href="#">Start Services <i><img src="assets/img/icons/ar-cl.png" alt="thumb"></i></a>
-						<a href="#">Learn More <i><img src="assets/img/icons/ar-cl.png" alt="thumb"></i></a>
-					</div>
+					
 				</div>
 				<div class="ab-1-right">
 					<img src="vacpic.jpg" alt="thumb">
@@ -257,28 +263,28 @@ include "navbar1.php";
 						<span class="fun-icon"><i><img src="assets/img/icons/patients-1.png" alt="thumb"></i></span>
 						<div class="fun-desc">
 							<p class="timer" data-to="46" data-speed="3000">1</p>
-							<span class="medium">Recovery Patients</span>
+							<span class="medium">Vaccinate Childrens</span>
 						</div>
 					</div>
 					<div class="fun-fact fun-active">
 						<span class="fun-icon"><i><img src="assets/img/icons/patients-1.png" alt="thumb"></i></span>
 						<div class="fun-desc">
 							<p class="timer" data-to="307" data-speed="3000">307</p>
-							<span class="medium">Total Beds</span>
+							<span class="medium">Total Vaccine</span>
 						</div>
 					</div>
 					<div class="fun-fact">
 						<span class="fun-icon"><i><img src="assets/img/icons/patients-1.png" alt="thumb"></i></span>
 						<div class="fun-desc">
 							<p class="timer" data-to="80" data-speed="3000">80</p>
-							<span class="medium">Total Doctors</span>
+							<span class="medium">Total Hospital</span>
 						</div>
 					</div>
 					<div class="fun-fact">
 						<span class="fun-icon"><i><img src="assets/img/icons/patients-1.png" alt="thumb"></i></span>
 						<div class="fun-desc">
 							<p class="timer" data-to="120" data-speed="3000">120</p>
-							<span class="medium">Awards</span>
+							<span class="medium">Veiws</span>
 						</div>
 					</div>
 				</div>

@@ -114,7 +114,7 @@
         .title-text p {
             margin: auto;
             font-size: 40px;
-            color: #104961;
+            color: white;
             font-weight: bold;
             position: relative;
             z-index: 1;
@@ -168,7 +168,7 @@
             text-align: left;
             margin-bottom: 10px;
             font-weight: 100;
-            color: #009688;
+            color: white;
         }
 
         .features-desc {
@@ -183,7 +183,7 @@
             font-size: 30px;
             line-height: 50px;
             border-radius: 8px;
-            color: #009688;
+            color: white;
             border: 1px solid #009688;
         }
 
