@@ -121,7 +121,9 @@ footerno{
 
 	<!-- NVARBAR
     ============================================= -->
-	<?php include("navbarx.php")?>
+	<!-- <?php
+include "navbar1.php";
+?> -->
 	<!-- Start PreLoader-->
 	
 	<!-- Start header
