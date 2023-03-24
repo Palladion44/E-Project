@@ -284,54 +284,7 @@
         }
 
         /* Footer */
-        #footer {
-            padding: 100px 0 20px;
-            background: #efefef;
-            position: relative;
-        }
-
-        .footer-row {
-            width: 80%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .footer-left,
-        .footer-right {
-            flex-basis: 45%;
-            padding: 10px;
-            margin: 20px;
-        }
-
-        .footer-right {
-            text-align: center;
-        }
-
-        .footer-row h1 {
-            margin: 10px 0;
-        }
-
-        .footer-row p {
-            line-height: 35px;
-        }
-
-        .footer-left .fab,
-        .footer-right .fa {
-            font-size: 10px;
-            color: #009688;
-            margin: 10px;
-        }
-
-        .footer img {
-            max-width: 200px;
-            opacity: 0.1;
-            position: absolute;
-            left: 50%;
-            top: 35%;
-            transform: translate(-50%, -50%);
-        }
+       
 
         .social-links {
             text-align: center;
@@ -395,7 +348,8 @@
         <p> Features</p>
         <h1>SAFE AND EFFECTIVE</h1>
     </div>
-    <div class="row container">
+    
+    <div class="row container mx-auto">
 
         <div class="col col-lg-8">
             <!-- <div class="features-box"> -->
@@ -588,60 +542,54 @@
 </div> -->
       
         <!-- register -->
-        <section id="register">
-            <div class="title-text">
-                <p> REGISTER/LOGIN</P>
+        <div class="container">
+        <div class="row">
+            <div class="col-md-6 align-self-center ">
+            <h6 >
+            Coronaviruses are a family of viruses that can cause respiratory illness in humans. They are called “corona” because of crown-like spikes on the surface of the virus. Severe acute respiratory syndrome (SARS), Middle East respiratory syndrome (MERS) and the common cold are examples of coronaviruses that cause illness in humans.
+            </h6>
             </div>
-            <div class="container">
-                <div class="box1">
-                    <button type="button" class="btn1">Register/login</button>
-                </div>
-                <div class="box2">
-                    <button type="button" class="btn1">Register/login</button>
-                </div>
+            <div class="col-md-6">
+                <img src="coronaavout.jpg" alt="" class="img-fluid">
             </div>
-        </section>
+
+
+
+
+        </div>
+       </div>
 
         <!-- footer -->
-        <section id="footer">
-            <!-- <img src="flogo2.jpg" class="footer-img"> -->
-            <div class="title-text">
-                <p>Contact</p>
-                <h1>Visit website today</h1>
-            </div>
-            <div class="footer-row">
-                <div class="footer-left">
-                    <h1>Links</h1>
-                    <h2>HOME</h2>
-
-                    <h2>PRODUTS</h2>
-                    <h2>ABOUTS US</h2>
-                    <h2>HOSPITAL LOGIN</h2>
-                    <h2> PARENT LOGIN</h2>
+     
+        <?php
+         include "footer2.php";
+         ?>
 
 
-                </div>
 
-                <div class="footer-right">
-                    <h1> Hospitals</h1>
-                    <p>Safi</p>
-                    <p>Imam Clinic</p>
-                    <p> Haleem</p>
-                    <p> Ziadudin</p>
-                    <p class="email-id"> hospital123@gmail.com<i class="fa fa-paper-plane"></i></p>
-                    <h4>+92 - 0120987276<i class="fa fa-phone"></i></h4>
-                </div>
-            </div>
-            <div class="social-links">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-youtube"></i>
-                <p>
-                    Follow page
-                </p>
-            </div>
-        </section>
+
+
+
+        <script>
+            var menuBtn = document.getElementById("menuBtn")
+            var sideNav = document.getElementById("sideNav")
+            var menu = document.getElementById("menu")
+
+            sideNav.style.right = "-250px";
+
+            menuBtn.onclick = function() {
+                if (sideNav.style.right == "-250px") {
+                    sideNav.style.right = "0";
+                    menu.src = "closeb.png";
+                } else {
+                    sideNav.style.right = "-250px";
+                    menu.src = "menu.jpg";
+                }
+            }
+        </script>
+</body>
+
+</html>
 
 
 

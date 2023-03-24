@@ -5,7 +5,7 @@
 <head>	
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title> Medihouse - Hospital Medical Caregiver HTML Template </title>
+	<title>About us </title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -120,9 +120,7 @@ footerno{
 
 	<!-- NVARBAR
     ============================================= -->
-	<?php
-include "navbar1.php";
-?>
+	<?php include("navbarx.php")?>
 	<!-- Start PreLoader-->
 	
 	<!-- Start header
@@ -135,8 +133,7 @@ include "navbar1.php";
 		
 		<!-- Start Breadcrumb
 		============================================= -->
-		<p>Scroll Up and Down this page to see the parallax scrolling effect.</p>
-
+	
 <div class="parallax"></div>
 
 
@@ -144,7 +141,7 @@ include "navbar1.php";
 		
 		<!-- Start Feature 
 		============================================= -->
-		<div class="f-1-area de-pb">
+		<!-- <div class="f-1-area de-pb">
 			<div class="container">
 				<div class="f-1-wrapper grid-3">
 					<div class="f-1-box">
@@ -198,6 +195,22 @@ include "navbar1.php";
 				</div>
 			</div>
 		</div>
+					<div class="f-1-box">
+						<div class="f-1-icon">
+							<i><img src="assets/img/icons/loc-1.png" alt="thumb"></i>
+						</div>
+						<div class="f-1-info">
+							<h5 class="tx-1">Doctor table</h5>
+							<p>
+								Emergency doctors are here to solve any 
+								problem you may have. Call as needed
+							</p>
+							<a href="#">See available doctors</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
 		<!-- End Feature -->
 		
 		<!-- Start About
@@ -205,20 +218,20 @@ include "navbar1.php";
 		<div class="ab-1 de-pt">
 			<div class="ab-1-wrapper grid-2">
 				<div class="ab-1-left">
-					<h5>About The Medihouse</h5>
-					<h2>We’re lanched most powerful treatment system. </h2>
+					<h5>About The Vaccine</h5>
+					<h2> PROTECT  </h2>
 					<p>
 						Every patient getting best care from us. again is there anyone who of itself, because it is pain.
 					</p>
 					<ul>
-						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i>Praesent class magnis facere</li>
-						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i>Quia necessitatibus lacinia</li>
-						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i>Expedita commodi occaecat</li>
-						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i>Praesent class magnis facere</li>
-						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i>Ridiculus doloribus donec </li>
-						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i>Aliqua senectus felis tellus</li>
-						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i>Hymenaeos placerat lacinia </li>
-						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i>Praesent porta class </li>
+						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i></li>
+						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i></li>
+						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i></li>
+						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i></li>
+						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i> </li>
+						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i></li>
+						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i></li>
+						<li><i><img src="assets/img/icons/check-box.png" alt="thumb"></i></li>
 					</ul>
 					<div class="ab-1-bt">
 						<a href="#">Start Services <i><img src="assets/img/icons/ar-cl.png" alt="thumb"></i></a>
@@ -226,7 +239,7 @@ include "navbar1.php";
 					</div>
 				</div>
 				<div class="ab-1-right">
-					<img src="assets/img/about/ab-1.png" alt="thumb">
+					<img src="vacpic.jpg" alt="thumb">
 				</div>
 			</div>
 		</div>
@@ -272,48 +285,13 @@ include "navbar1.php";
 		<!-- End Counter -->
 		
 		
-		
+		<!-- footer start -->
 		
 	</main>	
-	<footerno >
-    <div class="row">
-        <div class="col peka">
-            <img src="../flogo2.jpg" class="logo"> 
-    </div>
-    <div class="col">
-        <h6>Hospitals<h6>
-        <p>Safi</p>
-        <p>Imam Clinic</p>
-        <p> Haleem</p>
-        <p> Ziadudin</p>
-        <p class="email-id"> hospital123@gmail.com</p>
-        <h4>+92 - 0120987276</h4>
-    </div>
-    <div class="col">
-        <h3>Links</h3>
-        <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Products</a></li>
-            <li><a href="">About Us</a></li>
-            <li><a href="">Login</a></li>
-    </div>
-    <div class="col">
-        <h3>Newsletter</h3>
-        <from>
-            <input type="email" placeholder="Enter your email id"required>
-            <ul class="footer-social">
-							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fab fa-youtube"></i></a></li>
-						</ul>
-    </div>
-    </div>
-   </footerno> 
-		
-
 	
 
+
+	
 	<!-- End Footer-->
 	
 	<!-- Start display none

@@ -158,13 +158,13 @@ nav ul li a{
         $name =$_SESSION['user'];  
     echo "Logged in as  </br> $name";
     } else{echo"Not logged in";} ?></a></li>
-        <li><a href="Home.php">HOME </a></li>
-        <li><a href="register.php">REGISTER CHILD</a></li>
-        <li><a href="product.php">PRODUTS</a></li>
-        <li><a href="aboutpath/about.php">ABOUT US</a></li>
-        <li><a href="parentLoginReg.php">LOGIN AS A PARENT</a></li>
-        <li><a href="hospitalLogin.php">LOGIN AS A HOSPITAL</a></li>
-        <li><a href="navbarx.php?logout=true"> Logout </a></li>
+        <li><a href="../Home.php">HOME </a></li>
+        <li><a href="../register.php">REGISTER CHILD</a></li>
+        <li><a href="../product.php">PRODUTS</a></li>
+        <li><a href="about.php">ABOUT US</a></li>
+        <li><a href="../parentLoginReg.php">LOGIN AS A PARENT</a></li>
+        <li><a href="../hospitalLogin.php">LOGIN AS A HOSPITAL</a></li>
+        <li><a href="../navbarx.php?logout=true"> Logout </a></li>
 </ul>
 </nav>
 </div>

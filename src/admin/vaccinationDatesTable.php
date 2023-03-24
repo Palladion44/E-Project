@@ -164,8 +164,8 @@ if(!isset($_SESSION['useradmin'])){
                                     <thead>
                                         <tr>
                                         <th>Vaccination_date_id</th>
-                                            <th>Child_id</th>
-                                            <th>vaccination_id</th>
+                                            <th>Child_Name</th>
+                                            <th>vaccination_name</th>
                                             <th>Date_of_vaccination</th>
                                             
 

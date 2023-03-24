@@ -42,18 +42,18 @@ $chid = $_GET['childid'];
 
 //  echo   $diff->y ."/" .$diff->m ."/" .$diff->d ;
 }
-if($diff->y == 0 && $diff->m < 1){
+if($diff->y == 0 && $diff->m < 2){
     $selectvacc ="SELECT * FROM `vaccinations` WHERE `Birth` = '1';";
 }
-elseif($diff->y == 0 && $diff->m <= 2  && $diff->m < 4){
+elseif($diff->y == 0 && $diff->m >= 2  && $diff->m < 4){
     $selectvacc ="SELECT * FROM `vaccinations` WHERE `2months` = '1';";
 
 }
-elseif($diff->y == 0 && $diff->m <= 4  && $diff->m < 6){
+elseif($diff->y == 0 && $diff->m >= 4  && $diff->m < 6){
     $selectvacc ="SELECT * FROM `vaccinations` WHERE `4months` = '1';";
 
 }
-elseif($diff->y == 0 && $diff->m <= 6  && $diff->m < 11){
+elseif($diff->y == 0 && $diff->m >= 6  && $diff->m < 11){
     $selectvacc ="SELECT * FROM `vaccinations` WHERE `6months` = '1';";
 }
 

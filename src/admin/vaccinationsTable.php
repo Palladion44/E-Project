@@ -158,8 +158,15 @@ if(!isset($_SESSION['useradmin'])){
                                 </div>
                             </div>
                         </div> -->
-                      <i class="bi bi-check">fsfs</i>
+                       
+                      <i class="bi bi-check"></i>
                             <div class="card-body">
+                            <div class="container">
+                            <button class="btn btn-primary">
+                                    <a href="update.php?insertvacc=<?php echo $_SESSION["useradmin"] ?>" class="text-white "> Insert new vaccine
+                                    </a></button>
+         
+                        </div>
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>

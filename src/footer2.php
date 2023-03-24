@@ -1,152 +1,118 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .title-text{
-    text-align:center;
-    padding-bottom: 70px;
-}
-.title-text p{
-    margin: auto;
-    font-size: 40px;
-    color:#104961 ;
-    font-weight: bold;
-    position: relative;
-    z-index: 1;
-    display: inline-block;
-}
-.title-text p::after{
-    content: '';
-    width: 50px;
-    height: 35px;
-    background: linear-gradient(#195780,#33AEFF);
-    position: absolute;
-    top:-20px;
-    left: 0;
-    z-index: -1;
-    transform: rotate(10deg);
-    border-top-left-radius: 35px;
-    border-bottom-right-radius: 35px;
-}
-.title-text h1{
-    font-size: 50px;
-    padding: 30px;
-}
-        #footer{
-        padding: 10px 0 20px;
-        background:#efefef;
-        position:relative;
-    }
-    .footer-row{
-        width: 80%;
-        margin:0 auto;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-    .footer-left,.footer-right{
-        flex-basis: 45%;
-        padding: 10px;
-        margin: 20px;
-    }
-    .footer-right{
-        text-align:center;
-    }
-    .footer-row h1{
-        margin: 10px 0;
-    }
-    .footer-row p{
-        line-height: 35px;
-    }
-    .footer-left .fab,.footer-right .fa{
-        font-size: 10px;
-        color: #009688;
-        margin: 10px;
-    }
-    .footer img{
-        max-width: 200px;
-        opacity: 0.1;
-        position: absolute;
-        left: 50%;
-        top: 35%;
-        transform: translate(-50%,-50%);
-    }
-    .social-links{
-        text-align:center;
-    }
-    .social-links .fab{
-        height: 40px;
-        width: 40px;
-        font-size: 20px;
-        line-height: 40px;
-        border: 1px solid #009688;
-        margin:40px 5px 0;
-        color: #009688;
-        cursor: pointer;
-        transition: .5s;
-    }
-    .social-links .fab:hover{
-        background: #009688;
-        color: #fff;
-        transform: translateY(-7px);
-    }
-    .social-links p{
-        font-size: 12px;
-        margin: 30px;
-    }
-    @media screen and (max-width:770px){
-        .footer-left,.footer-right{
-            flex-basis: 100%;
-            font-size: 14px;
-        }
-        .footer-img{
-            top: 25%;
-        }
-    }
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
-    </style>
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
 </head>
-<body>
-    <!-- footer -->
-<section id="footer">
-<!-- <img src="flogo2.jpg" class="footer-img"> -->
-    <div class="title-text">
-        <p>Contact</p>
-        <h1>Visit website today</h1>
-</div>
-<div class="footer-row">
-    <div class="footer-left">
-        <h1> </h1>
-        <p> vaccination helps protect you by creating an antibody response without you having 
-            to experience potentially severe illness or post-COVID conditions. Getting sick with COVID-19
-             can cause severeillness or death, even in children, and we can't 
-             reliably predict who will have mild or severe illness.
-             
-    </div>
-    <div class="footer-right">
-        <h1> Hospitals</h1>
-        <h2>Safi</h2>
-        <h2>Imam Clinic</h2>
-        <h2> Haleem</h2>
-        <h2> Ziadudin</h2>
-        <h2 class="email-id"> hospital123@gmail.com<i class="fa fa-paper-plane"></i></h2>
-        <h2>+92 - 0120987276<i class="fa fa-phone"></i></h2>
-    </div>
-</div>
-<div class="social-links">
-            <i class="fab fa-facebook-f"></i> 
-			 <i class="fab fa-instagram"></i>
-			<i class="fab fa-twitter"></i>
-			<i class="fab fa-youtube"></i>
-            <p>
-                Follow page
-            </p>
-</div>
-</section>
 
+<body>
+  <header>
+    <!-- place navbar here -->
+  </header>
+  <main>
+
+  </main>
+  <footer>
+   <!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    
+    <!-- Left -->
+
+    <!-- Right -->
+   
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="text-white">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Vaccine
+          </h6>
+          <p>
+          vaccination helps protect you by creating an antibody response without you having to experience potentially severe illness or post-COVID conditions. Getting sick with COVID-19 can cause severeillness or death, even in children, and we can't reliably predict who will have mild or severe illness.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Safi</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Imam Clinic
+</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Haleem</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Ziadudin
+</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+     
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            info@example.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
 </body>
+
 </html>
