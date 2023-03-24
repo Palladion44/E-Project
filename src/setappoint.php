@@ -65,7 +65,7 @@ elseif($diff->y == 1 && $diff->m <= 5 ){
     $selectvacc ="SELECT * FROM `vaccinations` WHERE `15months` = '1';";
 
 }
-elseif($diff->y == 1 && $diff->m <= 7 ){
+elseif($diff->y == 1 && $diff->m <= 11 ){
     $selectvacc ="SELECT * FROM `vaccinations` WHERE `18months` = '1';";
 
 }
@@ -73,9 +73,12 @@ elseif($diff->y == 2 && $diff->m <= 11 ){
     $selectvacc ="SELECT * FROM `vaccinations` WHERE `24months` = '1';";
 
 }
-elseif($diff->y <= 5 && $diff->m <= 1 ){
+elseif($diff->y <= 5 && $diff->y >=3 ){
     $selectvacc ="SELECT * FROM `vaccinations` WHERE `4_5years` = '1';";
 
+}
+else{
+    echo "<script> alert('This Child is not Suitabe for any vaccination at the moment')</script>";
 }
 $resv = mysqli_query($conn,$selectvacc);
 

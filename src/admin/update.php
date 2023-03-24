@@ -516,7 +516,7 @@ if (isset($_GET['insertvacc'])) {
                 </div>
 
                 
-                    <button type="submit" class="btn btn-primary mt-2" name="updateparent">Update</button>
+                    <button type="submit" class="btn btn-primary mt-2" name="insertnewvacc">Update</button>
                 </form>
                 
         </body>
@@ -527,22 +527,41 @@ if (isset($_GET['insertvacc'])) {
 
                 <?php
 
-                if (isset($_POST['updateparent'])) {
-                    $chid = $_POST['cid'];
-                    $cname =  $_POST['cname'];
-                    $cage =  $_POST['cage'];
-                    $update = "UPDATE `children` SET 
-                     `childname` = '$cname', `DateofBirth` = '$cage'  WHERE  `child_id` = '$chid'";
-       
+                if (isset($_POST['insertnewvacc'])) {
+                    $vaccname= $_POST['vaccname'];
+                    $birth = $_POST['birth'];
+                    $months2 = $_POST['2months'];
+                    $months4 = $_POST['4months'];
+                    $months6 = $_POST['6months'];
+                    $months12 = $_POST['12months'];
+                   $months15 = $_POST['15months'];
+                   $months18 = $_POST['18months'];
+                    $months24= $_POST['24months'];
+                    $years4_5 = $_POST['4_5years'];
 
-                    $updateRes = mysqli_query($conn, $update);
+             
+                    $insertvaccination = "INSERT INTO `vaccinations` ( `vaccinationname`, `birth`, `2months`, `4months`, `6months`, `12months`, `15months`, `18months`, `24months`, `4_5years`) VALUES ('$vaccname'
+                    ,$birth,
+                   $months2,
+                    $months4,
+                   $months6,
+                   $months12,
+                    $months15,
+                      $months18,
+                     $months24,
+                   $years4_5) ";
+       $addcolhosp="AlTER TABLE hospitals ADD `$vaccname` TINYINT(1) DEFAULT 0";
+
+                    $updatevacctable = mysqli_query($conn, $insertvaccination);
+                    $updatehosptable = mysqli_query($conn, $addcolhosp);
+
                     // echo $pid;
                     // echo $updateRes;
-                    if ($updateRes) {
+                    if ($updatevacctable && $updatehosptable) {
 
 
                         echo "record updated";
-                        header("location: childrenTable.php");
+                        header("location: vaccinationsTable.php");
 
                     } else {
 

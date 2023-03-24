@@ -205,73 +205,73 @@ if(!isset($_SESSION['useradmin'])){
 
                                             <td><?php echo $row["vaccinationname"]   ?></td>
                                             <td> <?php if($row["birth"] == 1 ){
-                                                echo "<i class='fa-solid fa-check fa-xl' style='color: #146C43;'></i>";
+                                                echo "<i class='fa-solid fa-check ' style='color: #146C43;'></i>";
                                             }
                                                 else{
-                                                    echo "<i class='fa-solid fa-xmark fa-xl' style='color: #B02A37;'></i>";
+                                                    echo "<i class='fa-solid fa-xmark ' style='color: #B02A37;'></i>";
                                                 };
                                               ?>  </td>
                                            <td> <?php if($row["2months"] == 1 ){
-                                                echo "<i class='fa-solid fa-check fa-xl' style='color: #146C43;'></i>";
+                                                echo "<i class='fa-solid fa-check ' style='color: #146C43;'></i>";
                                             }
                                                 else{
-                                                    echo "<i class='fa-solid fa-xmark fa-xl' style='color: #B02A37;'></i>";
+                                                    echo "<i class='fa-solid fa-xmark ' style='color: #B02A37;'></i>";
                                                 };
                                               ?>
                                               </td>
                                            <td> <?php if($row["4months"] == 1 ){
-                                                echo "<i class='fa-solid fa-check fa-xl' style='color: #146C43;'></i>";
+                                                echo "<i class='fa-solid fa-check ' style='color: #146C43;'></i>";
                                             }
                                                 else{
-                                                    echo "<i class='fa-solid fa-xmark fa-xl' style='color: #B02A37;'></i>";
+                                                    echo "<i class='fa-solid fa-xmark ' style='color: #B02A37;'></i>";
                                                 };
                                               ?>
                                               </td>
                                             <td> <?php if($row["6months"] == 1 ){
-                                                echo "<i class='fa-solid fa-check fa-xl' style='color: #146C43;'></i>";
+                                                echo "<i class='fa-solid fa-check ' style='color: #146C43;'></i>";
                                             }
                                                 else{
-                                                    echo "<i class='fa-solid fa-xmark fa-xl' style='color: #B02A37;'></i>";
+                                                    echo "<i class='fa-solid fa-xmark ' style='color: #B02A37;'></i>";
                                                 };
                                               ?>
                                               </td>
                                               <td> <?php if($row["12months"] == 1 ){
-                                                echo "<i class='fa-solid fa-check fa-xl' style='color: #146C43;'></i>";
+                                                echo "<i class='fa-solid fa-check ' style='color: #146C43;'></i>";
                                             }
                                                 else{
-                                                    echo "<i class='fa-solid fa-xmark fa-xl' style='color: #B02A37;'></i>";
+                                                    echo "<i class='fa-solid fa-xmark ' style='color: #B02A37;'></i>";
                                                 };
                                               ?>
                                               </td>
                                               <td> <?php if($row["15months"] == 1 ){
-                                                echo "<i class='fa-solid fa-check fa-xl' style='color: #146C43;'></i>";
+                                                echo "<i class='fa-solid fa-check ' style='color: #146C43;'></i>";
                                             }
                                                 else{
-                                                    echo "<i class='fa-solid fa-xmark fa-xl' style='color: #B02A37;'></i>";
+                                                    echo "<i class='fa-solid fa-xmark ' style='color: #B02A37;'></i>";
                                                 };
                                               ?>
                                               </td>
                                               <td> <?php if($row["18months"] == 1 ){
-                                                echo "<i class='fa-solid fa-check fa-xl' style='color: #146C43;'></i>";
+                                                echo "<i class='fa-solid fa-check ' style='color: #146C43;'></i>";
                                             }
                                                 else{
-                                                    echo "<i class='fa-solid fa-xmark fa-xl' style='color: #B02A37;'></i>";
+                                                    echo "<i class='fa-solid fa-xmark ' style='color: #B02A37;'></i>";
                                                 };
                                               ?>
                                               </td>
                                               <td> <?php if($row["24months"] == 1 ){
-                                                echo "<i class='fa-solid fa-check fa-xl' style='color: #146C43;'></i>";
+                                                echo "<i class='fa-solid fa-check ' style='color: #146C43;'></i>";
                                             }
                                                 else{
-                                                    echo "<i class='fa-solid fa-xmark fa-xl' style='color: #B02A37;'></i>";
+                                                    echo "<i class='fa-solid fa-xmark ' style='color: #B02A37;'></i>";
                                                 };
                                               ?>
                                               </td>
                                                <td> <?php if($row["4_5years"] == 1 ){
-                                                echo "<i class='fa-solid fa-check fa-xl' style='color: #146C43;'></i>";
+                                                echo "<i class='fa-solid fa-check ' style='color: #146C43;'></i>";
                                             }
                                                 else{
-                                                    echo "<i class='fa-solid fa-xmark fa-xl' style='color: #B02A37;'></i>";
+                                                    echo "<i class='fa-solid fa-xmark ' style='color: #B02A37;'></i>";
                                                 };
                                               ?>
                                               </td>

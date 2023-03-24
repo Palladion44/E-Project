@@ -1,4 +1,5 @@
-
+<?php  include("../config.php")?>
+<?php include("../header.php")?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -27,7 +28,7 @@
 	<link href="style.css" rel="stylesheet">
 	<link href="assets/css/responsive.css" rel="stylesheet" />
 	<!-- ========== End Stylesheet ========== -->
-  
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -260,31 +261,51 @@ include "/src/navbarx.php";
 			<div class="container">
 				<div class="counter-wrapper grid-4">
 					<div class="fun-fact">
-						<span class="fun-icon"><i><img src="assets/img/icons/patients-1.png" alt="thumb"></i></span>
+						<span class="fun-icon"><i class="fa-solid fa-5x fa-hospital "  style="color: #005eff;" ></i></span>
 						<div class="fun-desc">
-							<p class="timer" data-to="46" data-speed="3000">1</p>
-							<span class="medium">Vaccinate Childrens</span>
+							<?php   
+							$result = mysqli_query($conn,"SELECT COUNT(hospital_id) FROM hospitals");
+							$row = mysqli_fetch_assoc($result);
+$count = $row['COUNT(hospital_id)'];?>
+							<p class="timer" data-to="<?php  
+							echo $count?>" data-speed="3000">1</p>
+							<span class="medium">Collaborated Hospitals</span>
 						</div>
 					</div>
+					<?php   
+							$result2 = mysqli_query($conn,"SELECT COUNT(vaccination_id) FROM vaccinations");
+							$row2 = mysqli_fetch_assoc($result2);
+$count2 = $row2['COUNT(vaccination_id)'];?>
 					<div class="fun-fact fun-active">
-						<span class="fun-icon"><i><img src="assets/img/icons/patients-1.png" alt="thumb"></i></span>
+						<span class="fun-icon"><i class="fa-solid fa-syringe fa-5x" style="color: #005eff;"></i></span>
 						<div class="fun-desc">
-							<p class="timer" data-to="307" data-speed="3000">307</p>
-							<span class="medium">Total Vaccine</span>
+							<p class="timer" data-to="<?php  
+							echo $count2 ?>" data-speed="3000">307</p>
+							<span class="medium">Vaccines Available</span>
 						</div>
 					</div>
+					<?php   
+							$result3 = mysqli_query($conn,"SELECT COUNT(child_id) FROM vaccination_dates");
+							$row3 = mysqli_fetch_assoc($result3);
+$count3 = $row3['COUNT(child_id)'];?>
 					<div class="fun-fact">
-						<span class="fun-icon"><i><img src="assets/img/icons/patients-1.png" alt="thumb"></i></span>
+						<span class="fun-icon"><i class="fa-solid fa-children fa-5x" style="color: #005eff;"></i></span>
 						<div class="fun-desc">
-							<p class="timer" data-to="80" data-speed="3000">80</p>
-							<span class="medium">Total Hospital</span>
+							<p class="timer" data-to="<?php  
+							echo $count3 ?>" data-speed="3000">80</p>
+							<span class="medium">Total Children Vaccinated</span>
 						</div>
 					</div>
+					<?php   
+							$result4 = mysqli_query($conn,"SELECT COUNT(parent_id) FROM parents");
+							$row4 = mysqli_fetch_assoc($result4);
+$count4 = $row4['COUNT(parent_id)'];?>
 					<div class="fun-fact">
-						<span class="fun-icon"><i><img src="assets/img/icons/patients-1.png" alt="thumb"></i></span>
+						<span class="fun-icon"><i class="fa-solid fa-5x fa-user" style="color: #005eff;"></i></span>
 						<div class="fun-desc">
-							<p class="timer" data-to="120" data-speed="3000">120</p>
-							<span class="medium">Veiws</span>
+							<p class="timer" data-to="<?php  
+							echo $count4 ?>" data-speed="3000">120</p>
+							<span class="medium">Total Users</span>
 						</div>
 					</div>
 				</div>
