@@ -159,7 +159,18 @@ $resv = mysqli_query($conn,$selectvacc);
 
 
 <?php }?>
-</select>
+</select><?php
+	if (isset($_POST["hospitaladdress"]))
+	{
+		$address = $_POST["address"];
+		$address = str_replace(" ", "+", $address);
+		?>
+
+		<iframe width="100%" height="500" src="https://maps.google.com/maps?q=<?php echo $address; ?>&output=embed"></iframe>
+
+		<?php
+	}
+?>
 <h1>Set Appointment Date</h1>
 <input type="date" name="cage"  required
        max="<?php echo date('Y-m-d', strtotime('+1 months')); ?>" 
@@ -243,6 +254,8 @@ if (mail($themail, $subject, $body, $headers)) {
     window.location.href="register.php"
  }
  </script>';
+ header("register.php");
+
 } 
     }
 

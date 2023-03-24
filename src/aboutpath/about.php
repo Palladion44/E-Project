@@ -119,11 +119,9 @@ footerno{
 
 <body >		
 
-	<!-- NVARBAR
-    ============================================= -->
-	<!-- <?php
-include "navbar1.php";
-?> -->
+	 <?php
+include "navbarx.php";
+?>
 	<!-- Start PreLoader-->
 	
 	<!-- Start header
