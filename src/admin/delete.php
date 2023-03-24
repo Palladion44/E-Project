@@ -2,7 +2,7 @@
 include 'config.php';
 if(isset($_GET['parentid'])){
 $ID = $_GET['parentid'];
-$delquery = "DELETE FROM parents WHERE parent_id = '$ID' ";
+$delquery = "DELETE FROM parents WHERE parent_id = '$ID'; ";
 
 if(mysqli_query($conn,$delquery)){
 
