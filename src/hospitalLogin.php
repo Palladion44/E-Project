@@ -154,11 +154,11 @@ span{
            {
              echo $_COOKIE['hlname'];
         }
-        ?>" placeholder="Hospital Name"required>
+        ?>" placeholder="Hospital Name"required minlength="5">
             <input type="Password" name="hlpassword" class="input-box" value="<?php if(isset($_COOKIE['hlpassword']))
             { echo $_COOKIE['hlpassword'];
             }
-            ?>" placeholder="Enter Password"required>
+            ?>" placeholder="Enter Password" minlength="8" required>
             <br>
             <div class="form-check">
   <input name="rememberMe" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
@@ -189,13 +189,13 @@ span{
  
 
 
-<input type="text"  name="hname"  class="input-box" placeholder="Hospital Name" required>
+<input type="text" min-length="5"  name="hname"  class="input-box" placeholder="Hospital Name" required>
 
-<input type="email"  name="hemail" class="input-box"  placeholder="Hospital Email" required>
+<input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address"  name="hemail" class="input-box"  placeholder="Hospital Email" required>
 
-<input type="text" name="haddress" class="input-box" id="hosadres"  placeholder="Hospital Address" required>
+<input type="text" min-length="10" name="haddress" class="input-box" id="hosadres"  placeholder="Hospital Address" required>
 
-<input type="password" name="hpassword" class="input-box" placeholder="Hospital Password" required>
+<input type="password" min-length="8" name="hpassword" class="input-box" placeholder="Hospital Password" required>
 
 <button  class="submit-btn" name="hospitalregister" > Register</button>
 

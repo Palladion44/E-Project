@@ -42,8 +42,9 @@
          </div>
         
         <form method="post" action="parentLoginReg.php"  id="Login" class="input-group">
-            <input type="text" value="<?php if(isset($_COOKIE['username'])) { echo $_COOKIE['username']; } ?>"  class="input-feild" name="username" placeholder="Enter UserName"required>
-            <input type="password" value="<?php if(isset($_COOKIE['userpassword'])) { echo $_COOKIE['userpassword']; } ?>"  class="input-feild" name="password" placeholder="Enter Password"required>
+        <input type="text" value="<?php if(isset($_COOKIE['username'])) { echo $_COOKIE['username']; } ?>" class="input-feild" name="username" placeholder="Enter UserName"  min-length="5" >
+
+        <input type="password" value="<?php if(isset($_COOKIE['userpassword'])) { echo $_COOKIE['userpassword']; } ?>"  class="input-feild" name="password" placeholder="Enter Password"required>
             <br>
             <input type="checkbox" name="rememberMe" class="check-box"><span> Remember Me</span>
             <button type="Submit" name="Parentlogin" class="submit-btn"> Login </button>
@@ -51,8 +52,9 @@
 
          
          <form method="POST" action="parentLoginReg.php"   id="register" class="input-group">
-            <input type="text" minlength="8" name="regparentname" class="input-feild" placeholder="UserName"required>
-            <input type="email" name="regemail" class="input-feild" placeholder="Email Id"required>
+        <input type="text" value="<?php if(isset($_COOKIE['username'])) { echo $_COOKIE['username']; } ?>" class="input-feild" name="username" placeholder="Enter UserName" min-length="5" >
+         
+            <input type="email" name="regemail" minlength="8" class="input-feild" placeholder="Email Id" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address" required>
             <input type="password" minlength="8" name="regpassword" class="input-feild" placeholder="Enter Password"required>
             <br>
             <input required type="checkbox" name="terms" class="check-box"><span> I agree to the terms and conditions</span>
