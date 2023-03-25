@@ -125,11 +125,17 @@ footerno{
 
 <body >		
 
+<<<<<<< HEAD
 	<!-- NVARBAR
     ============================================= -->
 	<!-- <?php
 include "/src/navbarx.php";
 ?> -->
+=======
+	 <?php
+include "navbarx.php";
+?>
+>>>>>>> 7b66a8ca2f436b77799ca97cf64504b0eab50c97
 	<!-- Start PreLoader-->
 	
 	<!-- Start header

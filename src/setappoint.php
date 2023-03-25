@@ -174,7 +174,7 @@ $resv = mysqli_query($conn,$selectvacc);
     $hospname = $_POST['hospitalname'];
 
 
-    echo "<script> document.getElementById('vaci').innerHTML=' Vaccine: $vaccname'; </script>";
+    echo "<script> document.getElementById('vaci').innerHTML=' $vaccname'; </script>";
     ?> 
     <div class="container">
     <h3 class="bg-success text-white" id="confirmbox2" ></h3>
@@ -195,6 +195,7 @@ $resv = mysqli_query($conn,$selectvacc);
   <label for="exampleFormControlInput1" class="form-label">Date of Appointment</label>
   <input type="text" disabled class="form-control" id="exampleFormControlInput1" placeholder="<?php echo $_SESSION['dateofreq'] ?>">
 </div>
+
 <button type="submit" class="submit btn text-white bg-primary"  name="requestadmin"> confirm Hospital  </button >
             </form>
         </div>
@@ -243,6 +244,8 @@ if (mail($themail, $subject, $body, $headers)) {
     window.location.href="register.php"
  }
  </script>';
+ header("register.php");
+
 } 
     }
 

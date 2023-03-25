@@ -358,7 +358,7 @@ if($insertres=mysqli_query($conn,$insertbook)){
         parents.parentname,
         children.childname,
         vaccinations.vaccinationname,
-        hospitals.hospitalname, bookings.booking_date
+        hospitals.hospitalname, bookings.booking_date, hospitals.hospitaladdress
         FROM bookings INNER JOIN parents ON bookings.parent_id = parents.parent_id INNER JOIN children ON
        bookings.child_id = children.child_id INNER JOIN hospitals ON bookings.hospital_id = hospitals.hospital_id
         INNER JOIN vaccinations ON bookings.vaccination_id = vaccinations.vaccination_id ";
@@ -377,13 +377,13 @@ $body ="
 <h3>Patient name:- $childdname</h3> <br>
 <h3>Vaccine name:- $vaccinationname</h3> <br>
 <h3>Hospital Name and Location:- $hosaddress</h3> <br>
-<h3>Appointment Date:- $booking date</h3> <br>
+<h3>Appointment Date:- $booking </h3> <br>
 "; 
 
 
 $headers = "Vaccine Booking System";
-// $headers .= "MIME-Version: 1.0" . "\r\n"; 
-// $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
+$headers .= "MIME-Version: 1.0" . "\r\n"; 
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
 
 
 if (mail($themail, $subject, $body, $headers)) {
