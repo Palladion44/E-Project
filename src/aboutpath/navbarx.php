@@ -1,14 +1,11 @@
 
-<!-- <?php
-session_start();
+<?php
 ?>
 
- -->
     <style>
         *{
     margin: 0;
     padding: 0;
-    font-family: 'Kanit', sans-serif;
     /* font-family: 'Popines', sans-serif; */
 }
 #banner{
@@ -153,12 +150,12 @@ nav ul li a{
         <li><a href="about.php">ABOUT US</a></li>
         <li><a href="../parentLoginReg.php">LOGIN AS A PARENT</a></li>
         <li><a href="../hospitalLogin.php">LOGIN AS A HOSPITAL</a></li>
-        <li><a href="../fnavbarx.php?logout=true"> Logout </a></li>
+        <li><a href="../navbarx.php?logout=true"> Logout </a></li>
 </ul>
 </nav>
 </div>
 <div id="menuBtn">
-                    <image src="menu.jpg " id="menu">
+                    <image src="../menu.jpg " id="menu">
                 </div>
         
 </body>
@@ -173,11 +170,11 @@ nav ul li a{
     menuBtn.onclick = function(){
         if(sideNav.style.right =="-250px"){
             sideNav.style.right ="0";
-            menu.src = "closeb.png";
+            menu.src = "../closeb.png";
         }
         else{
             sideNav.style.right = "-250px";
-            menu.src = "menu.jpg";
+            menu.src = "../menu.jpg";
         }
     }
 
