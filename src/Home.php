@@ -188,7 +188,7 @@
         }
 
         .feature-text {
-            padding: 0 20px;
+            padding: 10px;
             text-align: initial;
         }
 
@@ -226,6 +226,9 @@
             margin: 100px auto;
             display: flex;
             justify-content: center;
+        }
+        .container {
+            font-size: 15px;
         }
 
         .box1 {
@@ -544,10 +547,16 @@
         <!-- register -->
         <div class="container">
         <div class="row">
-            <div class="col-md-6 align-self-center ">
-            <h6 >
-            Coronaviruses are a family of viruses that can cause respiratory illness in humans. They are called “corona” because of crown-like spikes on the surface of the virus. Severe acute respiratory syndrome (SARS), Middle East respiratory syndrome (MERS) and the common cold are examples of coronaviruses that cause illness in humans.
-            </h6>
+            <div class="col-md-6 align-self-center  ">
+                <h1> The Important of Vaccine</h1>
+            <h4 >
+                Vaccine work by stimulating the body's immune system to produce antibodies that can fight off specific
+                diseases.
+                <br>
+                This means that if a vaccinated child is exposed to a disease, their immune system is already primed to 
+                it off,reading the serverity of the illness or preventing it altogether.
+            
+            </h4>
             </div>
             <div class="col-md-6">
                 <img src="coronaavout.jpg" alt="" class="img-fluid">

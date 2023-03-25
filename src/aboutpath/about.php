@@ -125,17 +125,9 @@ footerno{
 
 <body >		
 
-<<<<<<< HEAD
-	<!-- NVARBAR
-    ============================================= -->
-	<!-- <?php
-include "/src/navbarx.php";
-?> -->
-=======
 	 <?php
 include "navbarx.php";
 ?>
->>>>>>> 7b66a8ca2f436b77799ca97cf64504b0eab50c97
 	<!-- Start PreLoader-->
 	
 	<!-- Start header
@@ -156,81 +148,6 @@ include "navbarx.php";
 		</div>
 
 
-		<!-- End  Breadcrumb -->
-		
-		<!-- Start Feature 
-		============================================= -->
-		<!-- <div class="f-1-area de-pb">
-			<div class="container">
-				<div class="f-1-wrapper grid-3">
-					<div class="f-1-box">
-						<div class="f-1-icon">
-							<i><img src="assets/img/icons/time-fast.png" alt="thumb"></i>
-						</div>
-						<div class="f-1-info">
-							<h5 class="tx-1">Opening hours</h5>
-							<ul>
-								<li>
-									<span>Monday – Friday </span>
-									<span>8.00 – 7:00 pm</span>
-								</li>
-								<li>
-									<span>Monday – Friday </span>
-									<span>8.00 – 7:00 pm</span>
-								</li>
-								<li>
-									<span>Monday – Friday </span>
-									<span>8.00 – 7:00 pm</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="f-1-box">
-						<div class="f-1-icon">
-							<i><img src="assets/img/icons/phone-vol.png" alt="thumb"></i>
-						</div>
-						<div class="f-1-info">
-							<h5 class="tx-1">Emergency call</h5>
-							<p>
-								Call us to get the service in any emergency. 
-								The three of us will get there
-							</p>
-							<h5 class="tx-2">Phone: +178-34528890</h5>
-						</div>
-					</div>
-					<div class="f-1-box">
-						<div class="f-1-icon">
-							<i><img src="assets/img/icons/loc-1.png" alt="thumb"></i>
-						</div>
-						<div class="f-1-info">
-							<h5 class="tx-1">Doctor table</h5>
-							<p>
-								Emergency doctors are here to solve any 
-								problem you may have. Call as needed
-							</p>
-							<a href="#">See available doctors</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-					<div class="f-1-box">
-						<div class="f-1-icon">
-							<i><img src="assets/img/icons/loc-1.png" alt="thumb"></i>
-						</div>
-						<div class="f-1-info">
-							<h5 class="tx-1">Doctor table</h5>
-							<p>
-								Emergency doctors are here to solve any 
-								problem you may have. Call as needed
-							</p>
-							<a href="#">See available doctors</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-		<!-- End Feature -->
 		
 		<!-- Start About
 		============================================= -->
@@ -321,11 +238,99 @@ $count4 = $row4['COUNT(parent_id)'];?>
 		
 		
 		<!-- footer start -->
-		
-	</main>	
-	
+		<footer class="text-center text-lg-start bg-dark text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    
+    <!-- Left -->
 
+    <!-- Right -->
+   
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
 
+  <!-- Section: Links  -->
+  <section class="text-white">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Vaccine
+          </h6>
+          <p>
+          vaccination helps protect you by creating an antibody response without you having to experience potentially severe illness or post-COVID conditions. </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Hospitals
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Safi</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Imam Clinic
+</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Haleem</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Ziadudin
+</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+     
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            info@example.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i>021 54372762</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+
+  <!-- Copyright -->
+</footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+ <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+		 <!-- Bootstrap CSS -->
+		 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 	
 	<!-- End Footer-->
 	
