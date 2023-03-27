@@ -154,11 +154,11 @@ span{
            {
              echo $_COOKIE['hlname'];
         }
-        ?>" placeholder="Hospital Name"required minlength="5">
+        ?>" placeholder="Hospital Name"required >
             <input type="Password" name="hlpassword" class="input-box" value="<?php if(isset($_COOKIE['hlpassword']))
             { echo $_COOKIE['hlpassword'];
             }
-            ?>" placeholder="Enter Password" minlength="8" required>
+            ?>" placeholder="Enter Password"  required>
             <br>
             <div class="form-check">
   <input name="rememberMe" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">

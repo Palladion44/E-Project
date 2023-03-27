@@ -52,7 +52,7 @@
 
          
          <form method="POST" action="parentLoginReg.php"   id="register" class="input-group">
-        <input type="text" value="<?php if(isset($_COOKIE['username'])) { echo $_COOKIE['username']; } ?>" class="input-feild" name="username" placeholder="Enter UserName" min-length="5" >
+        <input type="text" value="<?php if(isset($_COOKIE['username'])) { echo $_COOKIE['username']; } ?>" class="input-feild" name="regparentname" placeholder="Enter UserName" min-length="5" >
          
             <input type="email" name="regemail" minlength="8" class="input-feild" placeholder="Email Id" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address" required>
             <input type="password" minlength="8" name="regpassword" class="input-feild" placeholder="Enter Password"required>
